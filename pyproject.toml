@@ -1,0 +1,36 @@
+[project]
+name = "xiakedao"
+version = "0.1.0"
+description = "中文医疗内容能力平台 - 模块化内容能力底座 + 主编排器"
+authors = [{name = "Xiakedao Team"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.5.0",
+    "python-docx>=0.8.11",
+    "python-dotenv>=1.0.0",
+    "python-multipart>=0.0.6",
+    "PyMuPDF>=1.23.0",
+    "Pillow>=10.0.0",
+    "python-pptx>=0.6.21",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "httpx>=0.26.0",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

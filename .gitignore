@@ -1,0 +1,27 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+
+# Python local environment and packaging artifacts
+.venv/
+*.egg-info/
+.pytest_cache/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+
+# OpenCode local dependencies
+.opencode/node_modules/
+.opencode/
+
+# Local runtime logs
+beta_server.log
+.env
+
+# Legacy repo-local runtime state
+/data/tasks.db
+/src/data/uploads/
+
+# Generated outputs
+/output/

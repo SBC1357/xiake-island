@@ -1,0 +1,12 @@
+{
+  "timestamp": "20260406_185457_405",
+  "candidate_id": "ctad_p279_c",
+  "candidate_name": "CTAD P279 长期治疗机制支撑",
+  "case_type": "C",
+  "status": "ready",
+  "exit_code": 0,
+  "run_directory": "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test\\20260406_185457_405_ctad_p279_c",
+  "contract": "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test\\20260406_185457_405_ctad_p279_c\\whitebox_contract.json",
+  "summary": "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test\\20260406_185457_405_ctad_p279_c\\whitebox_summary.md",
+  "candidate_pool": "D:\\汇度编辑部1\\侠客岛\\docs\\多Agent藏经阁实验\\侠客岛白盒编排器\\config\\ii_candidate_pool.json"
+}

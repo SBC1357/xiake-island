@@ -1,0 +1,435 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-04-04",
+  "scope": "项目文稿与辰公子藏经阁语料去重映射",
+  "corpus_root": "/mnt/d/汇度编辑部1/藏经阁/staging/editorial/source_articles/chengongzi",
+  "total_project_docs": 8,
+  "use_corpus_count": 4,
+  "supplement_count": 4,
+  "items": [
+    {
+      "title": "FLAURA2最终OS结果深度解析，联合化疗的优势很大，但场景很小……",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2025项目表/艾力斯/伏美替尼/FLURA2 OS应对/初稿/V2【初稿】FLAURA2最终OS结果深度解析，联合化疗的优势很大，但场景很小.docx",
+      "source_filename": "V2【初稿】FLAURA2最终OS结果深度解析，联合化疗的优势很大，但场景很小.docx",
+      "bucket": "临床结果 / 机制 / 指南解读",
+      "secondary_label": "治疗场景边界稿",
+      "paragraph_count": 73,
+      "char_count": 6297,
+      "resolution": "supplement",
+      "top_title_candidates": [
+        {
+          "score": 0.2581,
+          "article_id": "CGZ-YJWYJ-20241224-0044",
+          "title": "L858R突变一线治疗，FLAURA2方案用心良苦，但弊端确实太多了……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2,
+          "article_id": "CGZ-YJWYJ-20251021-0060",
+          "title": "COMPASSION-15最终OS分析：刷新历史记录的HR值，到底意味着什么？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.1724,
+          "article_id": "CGZ-YSD-20221009-0050",
+          "title": "深度 | 出海策略全解析，每一款创新药都需要「量身定制」的临床试验！",
+          "source_key": "ysd"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.0766,
+          "article_id": "CGZ-YJWYJ-20241231-0045",
+          "title": "EGFR突变伴脑转移怎么治？三代TKI剂量优化是个好选择，但奥希替尼的尝试让事情变得复杂了……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0711,
+          "article_id": "CGZ-YJWYJ-20241224-0044",
+          "title": "L858R突变一线治疗，FLAURA2方案用心良苦，但弊端确实太多了……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0589,
+          "article_id": "CGZ-YJWYJ-20250114-0049",
+          "title": "终于有研究把9款已上市的EGFR-TKI拉出来比一比了……",
+          "source_key": "yjwyj"
+        }
+      ],
+      "supplement_id": "SUPP-PROJ-001"
+    },
+    {
+      "title": "EGFR ex20ins靶向治疗，副作用这么大吗？",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2025项目表/艾力斯/伏美替尼/ex20ins应对/生活质量相关/初稿/V3【初稿】EGFR ex20ins靶向治疗，副作用这么大吗？.docx",
+      "source_filename": "V3【初稿】EGFR ex20ins靶向治疗，副作用这么大吗？.docx",
+      "bucket": "疾病 / 赛道 / 治疗格局综述",
+      "secondary_label": "患者沟通型安全性比较稿",
+      "paragraph_count": 91,
+      "char_count": 6822,
+      "resolution": "supplement",
+      "top_title_candidates": [
+        {
+          "score": 0.4074,
+          "article_id": "CGZ-YJWYJ-20241013-0035",
+          "title": "首个且唯一！舒沃替尼斩获全线治疗EGFR ex20ins中美突破性疗法「大满贯」",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2174,
+          "article_id": "CGZ-YJWYJ-20250114-0049",
+          "title": "终于有研究把9款已上市的EGFR-TKI拉出来比一比了……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2162,
+          "article_id": "CGZ-YJWYJ-20240602-0019",
+          "title": "DESTINY-Breast06结果重磅出炉！",
+          "source_key": "yjwyj"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.0851,
+          "article_id": "CGZ-YJWYJ-20250114-0049",
+          "title": "终于有研究把9款已上市的EGFR-TKI拉出来比一比了……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0617,
+          "article_id": "CGZ-YJWYJ-20241013-0035",
+          "title": "首个且唯一！舒沃替尼斩获全线治疗EGFR ex20ins中美突破性疗法「大满贯」",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0498,
+          "article_id": "CGZ-YJWYJ-20251103-0063",
+          "title": "EGFR突变NSCLC亚型高达数百种，是时候给它们分分类了",
+          "source_key": "yjwyj"
+        }
+      ],
+      "supplement_id": "SUPP-PROJ-002"
+    },
+    {
+      "title": "停药超过两年，AD抗Aβ治疗的获益——就全没了？！",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2025项目表/卫材/仑卡奈单抗/2025 CTAD/文章撰写/等墨墨-LB21/V4-停药超过两年，AD抗Aβ治疗的获益——就全没了？！.docx",
+      "source_filename": "V4-停药超过两年，AD抗Aβ治疗的获益——就全没了？！.docx",
+      "bucket": "临床结果 / 机制 / 指南解读",
+      "secondary_label": "慢病管理解释稿",
+      "paragraph_count": 27,
+      "char_count": 1416,
+      "resolution": "supplement",
+      "top_title_candidates": [
+        {
+          "score": 0.2703,
+          "article_id": "CGZ-YJWYJ-20250327-0052",
+          "title": "能停用的Aβ抗体，真的是DMT治疗吗？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2667,
+          "article_id": "CGZ-YJWYJ-20250325-0054",
+          "title": "攻克阿尔茨海默病的第一步，从读懂抗Aβ新药的获益开始",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2439,
+          "article_id": "CGZ-YSD-20230724-0091",
+          "title": "吉利德这CD47的疗效，咋说没就没了呢...",
+          "source_key": "ysd"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.071,
+          "article_id": "CGZ-YJWYJ-20250731-0057",
+          "title": "仑卡奈单抗4年随访数据披露！56%极早期阿尔茨海默病患者认知功能改善……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0705,
+          "article_id": "CGZ-YJWYJ-20250205-0048",
+          "title": "今年春晚的MVP，竟然是一则广告……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0612,
+          "article_id": "CGZ-YJWYJ-20241206-0042",
+          "title": "阿尔茨海默病量表困境：卷尺怎能测出分子的长度？",
+          "source_key": "yjwyj"
+        }
+      ],
+      "supplement_id": "SUPP-PROJ-003"
+    },
+    {
+      "title": "COMPASSION-15最终OS分析重磅发布: 刷新胃癌一线获益新纪录",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2025项目表/康方/卡度尼利单抗/COMPASSION-15最终OS结果解读/V2 -COMPASSION-15最终OS分析重磅发布： 刷新胃癌一线获益新纪录.docx",
+      "source_filename": "V2 -COMPASSION-15最终OS分析重磅发布： 刷新胃癌一线获益新纪录.docx",
+      "bucket": "临床结果 / 机制 / 指南解读",
+      "secondary_label": "获益纪录解读稿",
+      "paragraph_count": 49,
+      "char_count": 3936,
+      "resolution": "use_corpus",
+      "top_title_candidates": [
+        {
+          "score": 0.5517,
+          "article_id": "CGZ-YJWYJ-20251021-0060",
+          "title": "COMPASSION-15最终OS分析：刷新历史记录的HR值，到底意味着什么？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2333,
+          "article_id": "CGZ-YJWYJ-20260112-0064",
+          "title": "2026 ASCO GI 上的硬菜：中位PFS近2年！晚期胃癌一线的「王炸组合」来了？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2041,
+          "article_id": "CGZ-YJWYJ-20240813-0027",
+          "title": "重磅！T-DXd胃癌适应症获批，HER2克星来了……",
+          "source_key": "yjwyj"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.661,
+          "article_id": "CGZ-YJWYJ-20251021-0060",
+          "title": "COMPASSION-15最终OS分析：刷新历史记录的HR值，到底意味着什么？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0872,
+          "article_id": "CGZ-YJWYJ-20240930-0034",
+          "title": "卡度尼利单抗获批胃癌！PD-1单抗遇挫下，及时到来的新「解」",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0783,
+          "article_id": "CGZ-YJWYJ-20250905-0059",
+          "title": "仑卡奈单抗治疗4年，81.4%的患者仍维持轻度AD或MCI状态！",
+          "source_key": "yjwyj"
+        }
+      ],
+      "duplicate_type": "near_duplicate",
+      "corpus_article_id": "CGZ-YJWYJ-20251021-0060",
+      "corpus_title": "COMPASSION-15最终OS分析：刷新历史记录的HR值，到底意味着什么？",
+      "corpus_path": "/mnt/d/汇度编辑部1/藏经阁/staging/editorial/source_articles/chengongzi/yjwyj/articles/CGZ-YJWYJ-20251021-0060.json",
+      "dedup_evidence": "题目不同，但正文骨架、核心数据点、段落推进与藏经阁版本高度重合；对前12000字符归一化比对，相似度约 0.6589。"
+    },
+    {
+      "title": "卡度尼利单抗获批胃癌！PD-1单抗遇挫下，及时到来的新「解」",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2024项目表/康方/胃癌/获批深度稿/【发布版】卡度尼利单抗获批胃癌！PD-1单抗遇挫下，及时到来的新「解」.docx",
+      "source_filename": "【发布版】卡度尼利单抗获批胃癌！PD-1单抗遇挫下，及时到来的新「解」.docx",
+      "bucket": "审批 / 监管 / 注册博弈",
+      "secondary_label": "获批深度稿",
+      "paragraph_count": 36,
+      "char_count": 2435,
+      "resolution": "use_corpus",
+      "top_title_candidates": [
+        {
+          "score": 1.0,
+          "article_id": "CGZ-YJWYJ-20240930-0034",
+          "title": "卡度尼利单抗获批胃癌！PD-1单抗遇挫下，及时到来的新「解」",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.4074,
+          "article_id": "CGZ-YJWYJ-20240316-0008",
+          "title": "舒格利单抗获批一线胃癌适应症，成为「全球首个」挺进胃癌的PD-L1单抗",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.32,
+          "article_id": "CGZ-YJWYJ-20250101-0047",
+          "title": "最快速度惠及胃癌患者！卡度尼利单抗9月获批，今已大幅降价……",
+          "source_key": "yjwyj"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.9509,
+          "article_id": "CGZ-YJWYJ-20240930-0034",
+          "title": "卡度尼利单抗获批胃癌！PD-1单抗遇挫下，及时到来的新「解」",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.1663,
+          "article_id": "CGZ-YJWYJ-20250206-0050",
+          "title": "胃癌全人群获益被重新定义后，卡度尼利单抗成了免疫疗法中的唯一……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.1217,
+          "article_id": "CGZ-YJWYJ-20250101-0047",
+          "title": "最快速度惠及胃癌患者！卡度尼利单抗9月获批，今已大幅降价……",
+          "source_key": "yjwyj"
+        }
+      ],
+      "duplicate_type": "exact_title_duplicate",
+      "corpus_article_id": "CGZ-YJWYJ-20240930-0034",
+      "corpus_title": "卡度尼利单抗获批胃癌！PD-1单抗遇挫下，及时到来的新「解」",
+      "corpus_path": "/mnt/d/汇度编辑部1/藏经阁/staging/editorial/source_articles/chengongzi/yjwyj/articles/CGZ-YJWYJ-20240930-0034.json",
+      "dedup_evidence": "标题完全一致；对前12000字符归一化比对，相似度约 0.9463。"
+    },
+    {
+      "title": "迷雾拨开，LEAP-012补足了多少循证缺口？",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2024项目表/卫材/仑伐替尼/LEAP-012/深度稿/V3 迷雾拨开，LEAP-012补足了多少循证缺口？.docx",
+      "source_filename": "V3 迷雾拨开，LEAP-012补足了多少循证缺口？.docx",
+      "bucket": "临床结果 / 机制 / 指南解读",
+      "secondary_label": "循证缺口解读稿",
+      "paragraph_count": 49,
+      "char_count": 4200,
+      "resolution": "use_corpus",
+      "top_title_candidates": [
+        {
+          "score": 1.0,
+          "article_id": "CGZ-YJWYJ-20241008-0037",
+          "title": "迷雾拨开，LEAP-012补足了多少循证缺口？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.1667,
+          "article_id": "CGZ-YSD-20231204-0104",
+          "title": "辉瑞终止开发小分子GLP-1RA背后：诡异的40%安慰剂组停药率，引爆了这条赛道最大的危机……",
+          "source_key": "ysd"
+        },
+        {
+          "score": 0.1667,
+          "article_id": "CGZ-YJWYJ-20250527-0055",
+          "title": "成为KRAS G12C抑制剂中的「最长生存」王者，戈来雷塞做对了什么？",
+          "source_key": "yjwyj"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.9668,
+          "article_id": "CGZ-YJWYJ-20241008-0037",
+          "title": "迷雾拨开，LEAP-012补足了多少循证缺口？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0621,
+          "article_id": "CGZ-YJWYJ-20250114-0049",
+          "title": "终于有研究把9款已上市的EGFR-TKI拉出来比一比了……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.062,
+          "article_id": "CGZ-YJWYJ-20250317-0051",
+          "title": "深度解读ORIENT-16：中国胃癌人群最长mOS是怎么来的？",
+          "source_key": "yjwyj"
+        }
+      ],
+      "duplicate_type": "exact_title_duplicate",
+      "corpus_article_id": "CGZ-YJWYJ-20241008-0037",
+      "corpus_title": "迷雾拨开，LEAP-012补足了多少循证缺口？",
+      "corpus_path": "/mnt/d/汇度编辑部1/藏经阁/staging/editorial/source_articles/chengongzi/yjwyj/articles/CGZ-YJWYJ-20241008-0037.json",
+      "dedup_evidence": "标题完全一致；对前12000字符归一化比对，相似度约 0.9469。"
+    },
+    {
+      "title": "同样是Aβ抗体，仑卡奈单抗和多奈单抗有啥区别？",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2024项目表/卫材/仑卡奈单抗/2025仑卡奈/12月到1月密集发布文章/10篇文章/第二篇：不是所有Aβ抗体，都叫「仑卡奈单抗」/V3 同样是Aβ抗体，仑卡奈单抗和Donanemab有啥区别？.docx",
+      "source_filename": "V3 同样是Aβ抗体，仑卡奈单抗和Donanemab有啥区别？.docx",
+      "bucket": "疾病 / 赛道 / 治疗格局综述",
+      "secondary_label": "同类药比较稿",
+      "paragraph_count": 59,
+      "char_count": 4732,
+      "resolution": "supplement",
+      "top_title_candidates": [
+        {
+          "score": 0.2727,
+          "article_id": "CGZ-YJWYJ-20241115-0043",
+          "title": "大反转！EMA建议批准仑卡奈单抗，背后的逻辑是什么？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2308,
+          "article_id": "CGZ-YJWYJ-20240729-0022",
+          "title": "明朝的剑能不能斩清朝的官？论EMA和FDA对仑卡奈单抗的审评分歧",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2273,
+          "article_id": "CGZ-YJWYJ-20240309-0001",
+          "title": "突发！FDA推迟审批礼来Donanemab，为何如此谨慎..…",
+          "source_key": "yjwyj"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.1623,
+          "article_id": "CGZ-YJWYJ-20250327-0052",
+          "title": "能停用的Aβ抗体，真的是DMT治疗吗？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0761,
+          "article_id": "CGZ-YJWYJ-20250325-0054",
+          "title": "攻克阿尔茨海默病的第一步，从读懂抗Aβ新药的获益开始",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.0744,
+          "article_id": "CGZ-YJWYJ-20250905-0059",
+          "title": "仑卡奈单抗治疗4年，81.4%的患者仍维持轻度AD或MCI状态！",
+          "source_key": "yjwyj"
+        }
+      ],
+      "supplement_id": "SUPP-PROJ-004"
+    },
+    {
+      "title": "胃癌后线治疗，取得OS阳性结果怎么这么难？",
+      "source_path": "/mnt/d/汇度编辑部1/项目文章/2024项目表/信达/达伯舒/胃癌/2024/24H2宣传/系列文章/二线打呋喹/V2 胃癌后线治疗，取得OS阳性结果怎么这么难？.docx",
+      "source_filename": "V2 胃癌后线治疗，取得OS阳性结果怎么这么难？.docx",
+      "bucket": "临床结果 / 机制 / 指南解读",
+      "secondary_label": "负结果门槛解释稿",
+      "paragraph_count": 39,
+      "char_count": 3585,
+      "resolution": "use_corpus",
+      "top_title_candidates": [
+        {
+          "score": 1.0,
+          "article_id": "CGZ-YJWYJ-20240913-0028",
+          "title": "胃癌后线治疗，取得OS阳性结果怎么这么难？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2353,
+          "article_id": "CGZ-YJWYJ-20240914-0029",
+          "title": "ENTJ | 肝癌一线治疗，双抗闪亮登场",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.2273,
+          "article_id": "CGZ-YJWYJ-20250317-0051",
+          "title": "深度解读ORIENT-16：中国胃癌人群最长mOS是怎么来的？",
+          "source_key": "yjwyj"
+        }
+      ],
+      "top_body_candidates": [
+        {
+          "score": 0.9084,
+          "article_id": "CGZ-YJWYJ-20240913-0028",
+          "title": "胃癌后线治疗，取得OS阳性结果怎么这么难？",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.1722,
+          "article_id": "CGZ-YJWYJ-20240604-0020",
+          "title": "二线治疗mOS近13个月！全球首个胃癌「免疫治疗进展后」人群前瞻性研究，实现巨大突破……",
+          "source_key": "yjwyj"
+        },
+        {
+          "score": 0.1114,
+          "article_id": "CGZ-YJWYJ-20241024-0038",
+          "title": "胃来加“免”——免疫时代，怎样理解胃癌治疗「以免疫为核心」的联合策略？",
+          "source_key": "yjwyj"
+        }
+      ],
+      "duplicate_type": "exact_title_duplicate",
+      "corpus_article_id": "CGZ-YJWYJ-20240913-0028",
+      "corpus_title": "胃癌后线治疗，取得OS阳性结果怎么这么难？",
+      "corpus_path": "/mnt/d/汇度编辑部1/藏经阁/staging/editorial/source_articles/chengongzi/yjwyj/articles/CGZ-YJWYJ-20240913-0028.json",
+      "dedup_evidence": "标题完全一致；对前12000字符归一化比对，相似度约 0.8711。"
+    }
+  ]
+}

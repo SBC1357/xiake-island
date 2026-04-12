@@ -1,0 +1,14 @@
+﻿{
+    "candidate_id":  "ctad_p279_c",
+    "candidate_name":  "CTAD P279 长期治疗机制支撑",
+    "status":  "completed",
+    "exit_code":  0,
+    "run_directory":  "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test_probe\\probe2_ctad_p279_c",
+    "draft_started_at":  "2026-04-06 20:22:18",
+    "draft_completed_at":  "2026-04-06 20:22:54",
+    "draft_path":  "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test_probe\\probe2_ctad_p279_c\\draft.txt",
+    "draft_prompt_path":  "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test_probe\\probe2_ctad_p279_c\\draft_prompt.md",
+    "reference_answer_guard_path":  "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test_probe\\probe2_ctad_p279_c\\reference_answer.txt",
+    "reference_answer_visible_before_draft":  false,
+    "error":  null
+}

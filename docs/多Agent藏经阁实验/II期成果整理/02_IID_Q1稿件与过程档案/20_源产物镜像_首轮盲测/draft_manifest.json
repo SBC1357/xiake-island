@@ -1,0 +1,14 @@
+{
+  "candidate_id": "ctad_p279_c",
+  "candidate_name": "CTAD P279 长期治疗机制支撑",
+  "status": "failed",
+  "exit_code": 1,
+  "run_directory": "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test\\20260406_185457_405_ctad_p279_c",
+  "draft_started_at": "2026-04-06 18:55:15",
+  "draft_completed_at": "2026-04-06 18:55:15",
+  "draft_path": null,
+  "draft_prompt_path": "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test\\20260406_185457_405_ctad_p279_c\\draft_prompt.md",
+  "reference_answer_guard_path": "D:\\汇度编辑部1\\侠客岛-runtime\\iid_q1_blind_test\\20260406_185457_405_ctad_p279_c\\reference_answer.txt",
+  "reference_answer_visible_before_draft": false,
+  "error": "llm_request_failed: MethodNotAllowed {\n  \"error\": \"Coding Plan is currently only available for Coding Agents\"\n}"
+}

@@ -1,0 +1,72 @@
+{
+  "generated_at": "2026-04-06 18:54:57",
+  "candidate_id": "ctad_p279_c",
+  "candidate_name": "CTAD P279 长期治疗机制支撑",
+  "case_type": "C",
+  "status": "ready",
+  "exit_code": 0,
+  "source_root": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写",
+  "candidate_pool": "D:\\汇度编辑部1\\侠客岛\\docs\\多Agent藏经阁实验\\侠客岛白盒编排器\\config\\ii_candidate_pool.json",
+  "input_contract": {
+    "allowed_inputs": [
+      {
+        "path": "CTAD重点报告传播策略.xlsx",
+        "mode": "allow_file"
+      },
+      {
+        "path": "等老刘-P279（学士）",
+        "mode": "allow_all_except_docx"
+      }
+    ],
+    "forbidden_inputs": [
+      "禁止使用 等老刘-P279（学士） 下任何 docx 作为正式输入"
+    ]
+  },
+  "writing_contract": {
+    "audience": "医学专业人士",
+    "target_word_count": 2200,
+    "purpose": "用机制/模型支撑“持续治疗获益递增”，给长期治疗提供理论支撑。",
+    "genre": "CTAD poster机制与模型解读",
+    "must_include_facts": [
+      "48个月获益提高到3.7倍(vs 18个月)",
+      "CDR-SB评分:1.73分(48个月) vs 0.47分(18个月)",
+      "QSP模型对安慰剂组的48个月模拟",
+      "81.4%患者维持轻度AD或MCI状态(OLE数据)",
+      "血浆Aβ42/40比值变化预测"
+    ],
+    "required_structure": [
+      "持续治疗的核心问题",
+      "P279研究核心发现",
+      "QSP模型机制支撑",
+      "长期获益递增证据链",
+      "临床意义"
+    ]
+  },
+  "evaluation_contract": {
+    "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写\\等老刘-P279（学士）\\V1-治疗48个月获益提高到3.7倍？仑卡奈单抗长期获益持续递增，刷新AD治疗认知…….docx",
+    "scoring_mode": "closed_book_then_reference_compare"
+  },
+  "orchestration_contract": {
+    "route_profile": {
+      "mode": "closed_book_clean",
+      "required_steps": [
+        "锁定题型与受众",
+        "从允许材料提取主承重事实",
+        "组装成稿合同",
+        "闭卷输出整稿"
+      ],
+      "required_outputs": [
+        "主承重清单",
+        "必须写入的数字/事实",
+        "成稿合同"
+      ],
+      "failure_modes": [
+        "路线不稳",
+        "数字漏写",
+        "语体不匹配"
+      ]
+    },
+    "pseudo_load_bearing_points": []
+  },
+  "manual_gates": []
+}

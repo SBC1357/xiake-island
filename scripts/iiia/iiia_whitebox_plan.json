@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "plan_id": "iiia_whitebox_v1",
+  "candidate_order": [
+    "lecanemab_patient",
+    "lecanemab_mechanism",
+    "lecanemab_news"
+  ],
+  "continue_on_blocked_manual": false,
+  "revise": {
+    "enabled": true,
+    "mode": "local",
+    "max_rounds": 3,
+    "target_score": 70,
+    "max_stale_rounds": 2,
+    "max_local_tasks_per_round": 4,
+    "apply_to_qualified": false
+  }
+}

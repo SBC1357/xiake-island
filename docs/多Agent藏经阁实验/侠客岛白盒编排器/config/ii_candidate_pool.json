@@ -1,0 +1,930 @@
+{
+  "version": 1,
+  "candidates": [
+    {
+      "id": "compassion15_os_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "COMPASSION-15 最终 OS 结果解读",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\COMPASSION-15最终OS结果解读",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\COMPASSION-15最终OS结果解读\\V2 -COMPASSION-15最终OS分析重磅发布： 刷新胃癌一线获益新纪录.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2200,
+      "purpose": "围绕 COMPASSION-15 最终 OS，突出双抗在胃癌一线全人群和低 CPS 人群优势，并压制 PD-1 单抗竞品。",
+      "genre": "临床研究最终OS结果解读",
+      "formula_positions": {
+        "write_target": "让医学专业人士理解COMPASSION-15最终OS分析如何证实双特异抗体在胃癌一线全人群的长期生存优势，尤其在低CPS人群中的突破——用数据压制PD-1单抗叙事",
+        "arrangement_rule": "先锚胃癌一线免疫治疗的OS瓶颈，再展COMPASSION-15最终OS的绝对优势+CPS分层差异，后收与KEYNOTE-859/CheckMate 649的竞争位置",
+        "persona": "肿瘤治疗决策支持者——站在一线治疗医生的选择压力点上，把最终OS数据翻译成'为什么双抗值得考虑'的临床依据",
+        "range": "RANGE-01",
+        "min_content_unit": [
+          "一条硬事实",
+          "一个判断",
+          "一条边界声明",
+          "数据锤击",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04"
+        ],
+        "effective_content_unit": [
+          "一条关于最终OS HR 0.61的硬事实",
+          "一个关于CPS<5人群获益确立的判断",
+          "一条关于跨试验比较边界（不能替代头对头）的声明",
+          "ITT人群13.9 vs 11.1个月+CPS≥5人群16.8 vs 10.8个月+2年OS率36%的数据锤击",
+          "33.9个月中位随访和多项亚组一致性作为证据基础的权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'一线OS瓶颈→最终分析长期数据→分层突破→竞品上下文→临床决策'单一主线贯穿"
+        ],
+        "content_combo": "竞品区隔型——一线治疗困局引出+最终OS核心数据锤击+CPS分层优势+与同类方案对标+选择依据",
+        "logic_combo": "ARCH-04承重——沿'治疗选择困惑→最终分析坐实获益→分层见优势→竞品定位→选用建议'单一主线",
+        "outline": [
+          "骨架论点：一线胃癌OS瓶颈与双抗探索背景",
+          "核心数据：最终OS分析的绝对优势",
+          "分层证据：CPS不同阈值下的相对优势",
+          "竞品位置：与KEYNOTE-859/CheckMate 649的上下文比较",
+          "临床启示：最终分析对一线选择策略的指导"
+        ],
+        "effective_outline": [
+          "[背景锚定] 一线胃癌中位OS长期徘徊在11-13个月，双特异靶向如何尝试突破",
+          "[核心锤击] 最终OS HR 0.61(0.51-0.73)+mOS 13.9 vs 11.1个月→长期生存优势成立",
+          "[分层见效] CPS≥5的HR 0.49+低CPS人群也有统计学显著→全人群获益不因亚组崩坏",
+          "[竞品定位] ITT mOS与K药/O药数据排列→不是绝对碾压而是有竞争力的位置",
+          "[选择收口] 最终随访时间长，数据稳定，可作一线选择的补充证据"
+        ]
+      },
+      "core_data_points": [
+        "最终OS中位随访时间(33.9个月)",
+        "OS HR值(0.61)",
+        "2年OS率",
+        "低CPS人群获益数据",
+        "与PD-1单抗竞品的数据对比",
+        "配表中的竞品横向HR比较"
+      ],
+      "required_structure": [
+        "研究背景与问题",
+        "最终OS核心结果(含关键数字)",
+        "亚组分析(重点低CPS人群)",
+        "竞品横向对比",
+        "临床意义与价值定位"
+      ],
+      "input_rules": [
+        {
+          "path": "参考文献",
+          "mode": "allow_all_except_docx"
+        },
+        {
+          "path": "最终OS汇报",
+          "mode": "allow_all_except_docx"
+        },
+        {
+          "path": "配表 (version 1).xlsx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "新视觉配图.pptx",
+          "mode": "allow_file"
+        }
+      ],
+      "blocked_by": []
+    },
+    {
+      "id": "zolbetuximab_safety_d",
+      "case_type": "D",
+      "status": "ready",
+      "name": "络益不绝【十四期】安全性决策稿",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\络益不绝【十四期】",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\络益不绝【十四期】\\【十四期-ref】FM18.2 络益不绝 ：从安全性角度，看CLDN18.2高表达胃癌的治疗决策.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医生",
+      "target_word_count": 2000,
+      "purpose": "从安全性与耐受性切入，讨论 CLDN18.2 高表达胃癌治疗决策应优先选择更能支撑长期获益的方案。",
+      "genre": "安全性决策稿",
+      "formula_positions": {
+        "write_target": "让胃癌治疗医生理解佐妥昔单抗的毒性管理负担如何折算进长期获益，做出安全性与疗效平衡下的治疗决策",
+        "arrangement_rule": "先锚一线胃癌治疗的效果vs耐受权衡焦点，再展SPOTLIGHT/GLOW的安全性对比与管理框架，后收临床决策要点与患者管理启示",
+        "persona": "安全性-获益结合的决策翻译者——帮肿瘤医生把抽象的AE数据翻译成能不能在临床中管理的判断模型",
+        "range": "RANGE-05/决策辅助-结果边界澄清",
+        "min_content_unit": [
+          "一个判断",
+          "一条边界声明",
+          "风险解剖",
+          "数据锤击",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04",
+          "人群分流/选择建议落点"
+        ],
+        "effective_content_unit": [
+          "一个关于佐妥昔单抗毒性可预期可管理的判断",
+          "一条明确说明毒性高不等于不可用边界的声明",
+          "把SPOTLIGHT与GLOW的停药率、骨髓抑制、胃肠道反应分解成哪些患者会遇到如何管理的风险解剖",
+          "≥3级AE 66-87%±恶心呕吐/骨髓抑制具体数字的数据锤击",
+          "SPOTLIGHT/GLOW作为正式注册研究的权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'治疗决策困境→安全性数据全景→毒性管理实操→患者分层建议→选择路径'单一链贯穿",
+          "人群分流/选择建议落点——最终回收到哪类患者适合选佐妥昔哪类需要提前准备更强支撑"
+        ],
+        "content_combo": "决策支撑型——治疗选择焦虑引出+安全性数据坦诚+毒性解剖+管理框架+患者分层建议",
+        "logic_combo": "ARCH-04承重+人群分流/选择建议落点——先锚定如何权衡的困惑，沿安全性数据链展开，回收到适合谁的具体建议",
+        "outline": [
+          "[焦点锚定] 一线胃癌免疫联合时代的效果vs耐受权衡",
+          "[安全性全景] SPOTLIGHT/GLOW的毒性谱与管理对比",
+          "[毒性分解] 高频AE的发生率与管理难度",
+          "[管理框架] 从指南到临床的毒性管理路径",
+          "[患者分流] 哪类患者适合、哪类需要加强支撑"
+        ],
+        "effective_outline": [
+          "[焦点锚定] 一线化疗已经有获益，接下来问题不是安全吗而是管得了吗",
+          "[核心数据] SPOTLIGHT ≥3级AE 72.8%、停药7.1% vs GLOW 87%、停药14%→不同骨架下风险不一样",
+          "[毒性解剖] 骨髓抑制和恶心呕吐是主要负担，但都是既往化疗就有的图谱，不是新毒性",
+          "[管理支撑] 中国CACA和CSCO指南都已覆盖这些毒性的防治，临床不缺工具",
+          "[患者建议] 肿瘤负荷大/ECOG 0-1且愿意接受监测的患者可考虑，肾功/血象基础差的需回避或加强支撑"
+        ]
+      },
+      "core_data_points": [
+        "SPOTLIGHT研究依从性良好患者mOS 21.5个月",
+        "消化道AE可预测vs irAE多系统且长期的核心区分",
+        "佐妥昔单抗与免疫治疗在AE管理难度对比",
+        "长期获益支撑方案选择的决策逻辑"
+      ],
+      "required_structure": [
+        "临床决策问题引出",
+        "安全性数据正面呈现",
+        "与免疫治疗AE的对比",
+        "获益-风险权衡与方案选择建议"
+      ],
+      "input_rules": [
+        {
+          "path": "【十四期】络益不绝文献包",
+          "mode": "allow_all_except_docx"
+        },
+        {
+          "path": "配表.xlsx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "配图.pptx",
+          "mode": "allow_file"
+        }
+      ],
+      "d_signals": {
+        "risk_profile": [
+          "高噪声大包",
+          "文献量大",
+          "容易堆成综述",
+          "容易偏离决策主线"
+        ],
+        "manual_followups": [
+          "当前已按默认白盒口径预填 2 个伪承重点；如口径不认，可后续替换。"
+        ]
+      },
+      "pseudo_load_bearing_points": [
+        "把“CLDN18.2 是什么、高表达怎么定义、机制背景如何”写成全文主轴，导致决策稿退化成标志物背景综述。",
+        "把“恶心、呕吐等常见不良反应管理细节”写成全文主轴，导致治疗决策只剩 AE 管理技巧，丢掉方案取舍和长期获益权衡。"
+      ],
+      "blocked_by": []
+    },
+    {
+      "id": "sindi_gastric_esmo_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "信达胃癌 ESMO poster 解读",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\2025项目表\\信达\\胃癌\\ESMO研究解读思路",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\2025项目表\\信达\\胃癌\\ESMO研究解读思路\\V1【初稿】晚期HER2阴性胃癌一线新方案，mPFS突破1年！.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2200,
+      "purpose": "解读信迪利单抗+IBI305+化疗在晚期胃癌一线的探索结果，强调其突破 PD-1+化疗瓶颈和 CPS<5 人群潜力。",
+      "genre": "ESMO poster研究解读",
+      "formula_positions": {
+        "write_target": "让医学专业人士理解信迪利单抗+IBI305+化疗的mPFS 12.2个月如何突破PD-1单抗+化疗瓶颈，尤其在CPS<5人群的潜力",
+        "arrangement_rule": "先锚胃癌一线免疫治疗的mPFS现状和CPS<5人群的困局，再展SBAGA研究设计与核心mPFS/ORR数据，后收与ORIENT-16/KEYNOTE-859等方案的相对位置",
+        "persona": "治疗创新解读者——站在追求更优一线方案的肿瘤医生视角，把新联合的数据翻译成为什么这个组合值得关注的临床意义",
+        "range": "RANGE-01",
+        "min_content_unit": [
+          "一条硬事实",
+          "一个判断",
+          "一条边界声明",
+          "数据锤击",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04"
+        ],
+        "effective_content_unit": [
+          "一条关于mPFS 12.2个月突破既有方案瓶颈的硬事实",
+          "一个关于SBAGA研究中新联合在CPS<5人群潜力的判断",
+          "一条关于56例样本量与单臂试验本质的边界声明",
+          "mPFS 12.2个月+ORR 87%+12个月PFS率52%/12个月OS率76%的数据锤击",
+          "ESMO正式发表作为学术权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'一线mPFS瓶颈→新联合设计→核心结果→亚组见光亮→既有方案对标→临床位置'单一主线贯穿"
+        ],
+        "content_combo": "创新方案定位型——一线治疗困局引出+新联合核心数据+突破点强调+与既有方案对标+探索前景",
+        "logic_combo": "ARCH-04承重——沿'PD-1瓶颈→新靶点思路→核心数据说话→对标既有方案→定位新可能'单一主线",
+        "outline": [
+          "[背景锚定] 一线胃癌mPFS瓶颈与CPS<5人群的困局",
+          "[研究设计] SBAGA为何选择信迪利+IBI305+化疗的联合思路",
+          "[核心成果] mPFS突破、ORR高、长期生存苗头的数据呈现",
+          "[亚组亮点] CPS分层中各人群的mPFS/ORR表现",
+          "[临床定位] 与ORIENT-16/KEYNOTE-859等既有方案的相对位置"
+        ],
+        "effective_outline": [
+          "[背景锚定] 一线PD-1+化疗的mPFS天花板约为10-11个月，CPS<5人群获益陷入困顿",
+          "[设计创新] SBAGA为什么选择CD39靶向(IBI305)作为突破口",
+          "[核心锤击] mPFS 12.2个月+ORR 87%→数值上看到了突破的可能性",
+          "[人群见光] CPS<5人群的PFS数据与既有方案比较→看得见新联合的潜力在哪",
+          "[学术定位] ESMO发表的探索性阳性结果，可作后续确证研究的设计参考，但还不到临床推荐阶段"
+        ]
+      },
+      "core_data_points": [
+        "SBAGA研究名称(必须明确标识)",
+        "mPFS 12.2个月",
+        "ORR 87.0%",
+        "6个月/12个月PFS率",
+        "CPS<1和CPS<5人群数据",
+        "与ORIENT-16的mOS 15.2个月对比"
+      ],
+      "required_structure": [
+        "研究背景与治疗瓶颈",
+        "SBAGA研究设计",
+        "主要疗效结果(含关键数字)",
+        "亚组分析(CPS分层)",
+        "竞品对比与临床意义"
+      ],
+      "input_rules": [
+        {
+          "path": "poster.jpg",
+          "mode": "allow_file"
+        },
+        {
+          "path": "poster（压缩）.jpg",
+          "mode": "allow_file"
+        },
+        {
+          "path": "补充材料1-胃癌探索失败的VEGF研究.pptx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "补充材料2-免疫时代，胃癌联合治疗策略思考 6.24.pptx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "补充材料3-晚期胃癌全程管理之道.pdf",
+          "mode": "allow_file"
+        },
+        {
+          "path": "胃癌表.xlsx",
+          "mode": "allow_file"
+        }
+      ],
+      "blocked_by": []
+    },
+    {
+      "id": "ctad_lb13_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "CTAD LB13 持续治疗累积获益",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\等墨墨-LB13",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\等墨墨-LB13\\V4-斑块清除后，抗Aβ治疗到底该不该停药？研究显示：不停 vs 停，效果竟差66%！.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2200,
+      "purpose": "持续治疗在斑块清除后仍能继续累积获益，用来区隔“可停药”叙事。",
+      "genre": "CTAD口头报告单一研究解读",
+      "formula_positions": {
+        "write_target": "让神经科医生理解斑块清除后停药为什么可能牺牲66%获益——用数据说服'不该停'",
+        "arrangement_rule": "先锚停药争议，再展LB13方法学与核心对比，后收停药策略启示",
+        "persona": "治疗策略解读者——站在面临停药决策的神经科医生视角，把停药vs持续治疗数据翻译成临床决策依据",
+        "range": "RANGE-01",
+        "min_content_unit": [
+          "一条硬事实",
+          "一个判断",
+          "一条边界声明",
+          "数据锤击",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04"
+        ],
+        "effective_content_unit": [
+          "一条关于停药vs不停药获益差66%的硬事实",
+          "一个关于斑块清除后持续治疗必要性的判断",
+          "一条关于time-shift method适用性边界的声明",
+          "66%差异+模拟匹配安慰剂组数据的数据锤击",
+          "Clarity AD长期随访作为证据基础的权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'停药争议→方法学创新→核心结果→策略启示'单一主线贯穿全文"
+        ],
+        "content_combo": "治疗策略解读型——临床争议引出+方法学亮点+核心数据对比锤击+策略启示收口",
+        "logic_combo": "ARCH-04承重——沿'争议问题→方法学→数据对比→启示'单一主线贯穿",
+        "outline": [
+          "停药争议背景",
+          "LB13研究方法学亮点",
+          "核心结果:停药vs持续治疗",
+          "66%差异的临床解读",
+          "对停药策略的启示"
+        ],
+        "effective_outline": [
+          "[争议锚定] 斑块清除后到底该不该停药——临床中的真实困惑",
+          "[方法学] time-shift method与模拟匹配安慰剂组如何让对比成立",
+          "[核心锤击] 停药vs持续治疗获益差66%→用数字做判断依据",
+          "[解读] 66%差异背后的临床意义——失去的不是数字而是认知保护时间",
+          "[策略收口] 对当前停药策略的直接启示"
+        ]
+      },
+      "core_data_points": [
+        "停药vs不停药获益差66%(计算:(28.8-17.4)/17.4)",
+        "时间映射法(Time-shift method)的操作原理",
+        "模拟匹配安慰剂组(simulated matched placebo)构建逻辑",
+        "斑块清除后持续治疗的获益量化"
+      ],
+      "required_structure": [
+        "停药争议背景",
+        "LB13研究方法学亮点",
+        "核心结果:停药vs持续治疗对比",
+        "66%差异的临床解读",
+        "对停药策略的启示"
+      ],
+      "input_rules": [
+        {
+          "path": "CTAD重点报告传播策略.xlsx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "等墨墨-LB13",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": []
+    },
+    {
+      "id": "ctad_lb21_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "CTAD LB21 长期治疗时间获益换算",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写\\等墨墨-LB21\\V4-停药超过两年，AD抗Aβ治疗的获益——就全没了？！.docx",
+      "reference_sample_path": "等墨墨-LB21\\reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2200,
+      "purpose": "长期治疗可把获益换算成更长疾病进展延缓时间，强调长期价值。",
+      "genre": "CTAD口头报告单一研究解读",
+      "formula_positions": {
+        "write_target": "让神经科医生理解持续治疗能把获益换算成多少年的疾病进展延缓——从抽象指标到可感知时间",
+        "arrangement_rule": "先锚长期治疗价值问题，再展LB21核心发现与时间换算，后收停药风险与长期价值",
+        "persona": "长期价值翻译者——帮神经科医生把抽象临床指标换算成患者可感知的时间获益，建立'持续用药值不值'的判断依据",
+        "range": "RANGE-01",
+        "min_content_unit": [
+          "一条硬事实",
+          "一个判断",
+          "一条边界声明",
+          "数据锤击",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04"
+        ],
+        "effective_content_unit": [
+          "一条关于13.2年/18.4年进展时间的硬事实",
+          "一个关于长期治疗价值确立的判断",
+          "一条关于停药后获益消失边界的声明",
+          "进展时间换算+CDR-SB延缓数据的数据锤击",
+          "Clarity AD OLE长期随访的权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'价值问题→核心发现→时间换算→停药风险→长期价值'单一主线贯穿"
+        ],
+        "content_combo": "长期价值解读型——治疗价值问题引出+核心发现+时间换算锤击+停药风险对比+价值确立",
+        "logic_combo": "ARCH-04承重——沿'价值困惑→核心发现→时间换算→停药代价→长期价值确立'单一主线",
+        "outline": [
+          "长期治疗价值的核心问题",
+          "LB21核心发现",
+          "停药后获益变化",
+          "长期价值的时间换算",
+          "临床启示"
+        ],
+        "effective_outline": [
+          "[价值问题] AD长期治疗到底值不值——医生和患者都在问",
+          "[核心发现] 停药超两年获益消失的数据直陈",
+          "[停药代价] 停药前后获益对比→不是数字差而是时间差",
+          "[时间换算] 13.2年vs18.4年进展时间→换算成日常能力保留时间",
+          "[价值收口] 长期治疗的直接临床启示"
+        ]
+      },
+      "core_data_points": [
+        "停药超过两年获益消失的核心发现",
+        "13.2年/18.4年进展时间的具体数字",
+        "停药后获益变化的直观描述",
+        "长期获益换算为疾病进展延缓时间"
+      ],
+      "required_structure": [
+        "长期治疗价值的核心问题",
+        "LB21核心发现",
+        "停药后获益变化",
+        "长期价值的时间换算",
+        "临床启示"
+      ],
+      "input_rules": [
+        {
+          "path": "CTAD重点报告传播策略.xlsx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "等墨墨-LB21",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": []
+    },
+    {
+      "id": "ctad_p096_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "CTAD P096 ARIA 风险竞品区隔",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写\\等老刘-P096（学士）\\V1-AD新药对比！仑卡奈单抗的「安全性」还是太突出了…….docx",
+      "reference_sample_path": "等老刘-P096（学士）\\reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2200,
+      "purpose": "从 ARIA 风险比较切入，做与多奈单抗的安全性区隔。",
+      "genre": "CTAD poster竞品安全性区隔解读",
+      "formula_positions": {
+        "write_target": "让神经科医生从ARIA风险差异角度理解仑卡奈单抗vs多奈单抗的安全性区隔——数据说话而非观点站队",
+        "arrangement_rule": "先锚ARIA比较问题，再展P096核心安全性数据，后收临床选择启示",
+        "persona": "安全性区隔分析师——站在面临AD双抗选择的神经科医生视角，从ARIA风险差异角度帮助做竞品取舍",
+        "range": "RANGE-05/结果边界澄清",
+        "min_content_unit": [
+          "一个判断",
+          "一条边界声明",
+          "风险解剖",
+          "数据锤击",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04",
+          "人群分流/选择建议落点"
+        ],
+        "effective_content_unit": [
+          "一个关于仑卡奈单抗ARIA风险更低的判断",
+          "一条关于TB-ALZ 6人群规模和APOE比例限制的边界声明",
+          "一段ARIA-E/H各型风险差异+额外MRI/门诊负担的风险解剖",
+          "仑卡10.1%降低+3.3%症状性降低+资源消耗差的数据锤击",
+          "P096作为头对头安全性poster的权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'ARIA比较问题→安全性数据→风险解剖→资源差异→选择启示'单一链贯穿",
+          "人群分流/选择建议落点——最终回收到'APOE不同分型患者选药考量'"
+        ],
+        "content_combo": "安全性区隔型——ARIA比较问题引出+核心安全性数据锤击+风险解剖+医疗资源差异+选择启示",
+        "logic_combo": "ARCH-04承重+人群分流/选择建议落点——先锚ARIA选择困惑，沿安全性数据链展开，回收到选药建议",
+        "outline": [
+          "ARIA风险比较背景",
+          "P096核心安全性数据",
+          "与多奈单抗直接对比",
+          "医疗资源消耗差异",
+          "临床选择启示"
+        ],
+        "effective_outline": [
+          "[比较问题] AD双抗时代ARIA风险差异为什么重要",
+          "[核心数据] 仑卡ARIA风险降低10.1%+症状性降低3.3%→直接锤击",
+          "[竞品对比] 与多奈单抗改良方案头对头→看得见的差距",
+          "[资源差异] 额外3次MRI+2-3次门诊+85分钟医生时间→风险管理负担",
+          "[选择收口] TB-ALZ 6的局限性声明+不同APOE分型患者的选药考量"
+        ]
+      },
+      "core_data_points": [
+        "仑卡奈单抗任何ARIA风险降低10.1%",
+        "ARIA-E风险降低10.7%",
+        "症状性ARIA-E风险降低3.3%",
+        "与多奈单抗改良方案对比(4.6%、2.1%、8.1%等)",
+        "额外资源消耗:3次MRI、2-3次门诊、3次远程医疗、85分钟医生时间",
+        "TB-ALZ 6人群规模小、APOE ε4纯合子比例低(10% vs 17%)"
+      ],
+      "required_structure": [
+        "ARIA风险比较背景",
+        "P096核心安全性数据",
+        "与多奈单抗的直接对比",
+        "医疗资源消耗差异",
+        "临床选择启示"
+      ],
+      "input_rules": [
+        {
+          "path": "CTAD重点报告传播策略.xlsx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "等老刘-P096（学士）",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": []
+    },
+    {
+      "id": "ctad_p279_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "CTAD P279 长期治疗机制支撑",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\2025项目表\\卫材\\仑卡奈单抗\\2025 CTAD\\文章撰写\\等老刘-P279（学士）\\V1-治疗48个月获益提高到3.7倍？仑卡奈单抗长期获益持续递增，刷新AD治疗认知…….docx",
+      "reference_sample_path": "等老刘-P279（学士）\\reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2200,
+      "purpose": "用机制/模型支撑“持续治疗获益递增”，给长期治疗提供理论支撑。",
+      "genre": "CTAD poster机制与模型解读",
+      "formula_positions": {
+        "write_target": "让临床医生理解QSP模型如何支撑持续治疗获益递增——从机制到临床的因果链",
+        "arrangement_rule": "先锚持续治疗核心问题，再展P279模型发现与机制支撑，后收长期治疗理论基础",
+        "persona": "机制模型翻译者——把计算药理学模型的结论翻译成临床医生读得懂的因果推理链，用解释桥让抽象模型变得可见",
+        "range": "RANGE-04",
+        "min_content_unit": [
+          "解释桥",
+          "比喻承重",
+          "一条硬事实",
+          "数据锤击",
+          "一个判断",
+          "一条边界声明"
+        ],
+        "min_logic_unit": [
+          "ARCH-04"
+        ],
+        "effective_content_unit": [
+          "一个从amyloid→tau→cognition的解释桥",
+          "一段用比喻承重的QSP模型解释(让看不见的模型变得可见)",
+          "一条关于48个月获益3.7倍的硬事实(CDR-SB数据)",
+          "48个月vs18个月获益+OLE数据+血浆标志物的数据锤击",
+          "一个关于持续治疗机制合理性的判断",
+          "一条关于模型预测vs实际观测对齐边界的声明"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'治疗问题→模型发现→机制解释→临床获益→理论支撑'单一因果主线贯穿"
+        ],
+        "content_combo": "机制模型解读型——核心问题锚定+模型核心发现+解释桥展开机制链+数据锤击+比喻承重+临床意义回收",
+        "logic_combo": "ARCH-04承重——沿'持续治疗问题→QSP验证→机制因果链→获益递增证据→理论收口'单一主线",
+        "outline": [
+          "持续治疗的核心问题",
+          "P279研究核心发现",
+          "QSP模型机制支撑",
+          "长期获益递增证据链",
+          "临床意义"
+        ],
+        "effective_outline": [
+          "[问题锚定] 持续治疗获益为什么递增——临床需要机制解释",
+          "[核心发现] 48个月获益3.7倍+CDR-SB 1.73分→模型和数据一起说",
+          "[机制桥接] amyloid清除→tau减缓→认知保护的因果链→用比喻让QSP可见",
+          "[证据锤击] OLE 81.4%维持轻度+血浆标志物预测→多维证据交叉确认",
+          "[意义收口] 模型支撑+临床观测对齐→持续治疗的理论基础"
+        ]
+      },
+      "core_data_points": [
+        "48个月获益提高到3.7倍(vs 18个月)",
+        "CDR-SB评分:1.73分(48个月) vs 0.47分(18个月)",
+        "QSP模型对安慰剂组的48个月模拟",
+        "81.4%患者维持轻度AD或MCI状态(OLE数据)",
+        "血浆Aβ42/40比值变化预测"
+      ],
+      "required_structure": [
+        "持续治疗的核心问题",
+        "P279研究核心发现",
+        "QSP模型机制支撑",
+        "长期获益递增证据链",
+        "临床意义"
+      ],
+      "input_rules": [
+        {
+          "path": "CTAD重点报告传播策略.xlsx",
+          "mode": "allow_file"
+        },
+        {
+          "path": "等老刘-P279（学士）",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": []
+    },
+    {
+      "id": "iie_reg_patient_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "IIE回归：仑卡奈单抗患者向文章",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章\\gold\\V2-仑卡奈单抗4年数据炸了！阿尔茨海默病竟能抢回15个月黄金时光.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "患者/家属/科普读者",
+      "target_word_count": 2000,
+      "purpose": "面向患者和家属，用他们能理解的语言翻译仑卡奈单抗48个月临床数据的价值，帮助理解长期治疗获益",
+      "genre": "患者向科普解读",
+      "core_data_points": [
+        "48个月随访核心获益数据",
+        "临床衰退延缓百分比与时间换算",
+        "非携带者与杂合子亚组获益差异",
+        "长期治疗获益量化指标"
+      ],
+      "required_structure": [
+        "患者痛点与治疗期待",
+        "核心获益数据翻译",
+        "亚组人群获益解读",
+        "长期治疗价值",
+        "患者理解与选择路径"
+      ],
+      "input_rules": [
+        {
+          "path": "inputs",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": [],
+      "formula_positions": {
+        "write_target": "让患者/家属理解仑卡奈单抗4年数据意味着'AD治疗可以抢回多少时间'",
+        "arrangement_rule": "先用患者痛感锚定，再做数据翻译，后给选择引导",
+        "persona": "患者关怀者——站在患者和家属的焦虑与期待中，把临床试验数字翻译成'这对我意味着什么'，用温度而非术语建立信任",
+        "range": "RANGE-05/患者选择沟通",
+        "min_content_unit": [
+          "一个判断",
+          "一条边界声明",
+          "风险解剖",
+          "解释桥"
+        ],
+        "min_logic_unit": [
+          "ARCH-04",
+          "人群分流/选择建议落点"
+        ],
+        "effective_content_unit": [
+          "一个关于长期获益的可感知判断",
+          "一条关于适用人群边界的明确声明",
+          "一段关于治疗代价与风险的患者语言解剖",
+          "一个从临床数字到'这意味着什么'的解释桥"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重贯穿全文——从焦虑到数据到理解的单一主线",
+          "人群分流/选择建议落点——最终回收到'这对你意味着什么'"
+        ],
+        "content_combo": "患者选择沟通型——患者痛感起手 + 核心获益翻译 + 风险坦诚 + 理解引导",
+        "logic_combo": "ARCH-04承重 + 人群分流/选择建议落点——先锚定患者关切，沿获益证据链展开，回收到选择理解",
+        "outline": [
+          "患者痛点锚定：AD治疗的焦虑与期待",
+          "核心数据翻译：48个月数据说明了什么",
+          "亚组理解：不同人群获益有何不同",
+          "风险与边界：长期治疗的代价和局限",
+          "理解路径：这对治疗选择意味着什么"
+        ],
+        "effective_outline": [
+          "[患者痛感锚定] 以患者/家属最常问的问题开场，建立共情锚点",
+          "[核心获益翻译] 48个月延缓数据→抢回多少个月→日常能力保留",
+          "[人群差异理解] 非携带者vs杂合子→不同人获益不同→别套别人的结论",
+          "[风险与边界] 长期治疗要付出什么、有什么局限",
+          "[选择引导] 这些数据放在你的处境里意味着什么"
+        ]
+      }
+    },
+    {
+      "id": "iie_reg_mechanism_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "IIE回归：仑卡奈单抗机制科普",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗机制科普",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗机制科普\\gold\\V1-Nature重磅！仑卡奈单抗作用机制全景揭秘，小胶质细胞被精准“拿捏”了…….docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2200,
+      "purpose": "解读仑卡奈单抗的分子作用机制(Nature Neuroscience论文)，重点揭示其如何通过小胶质细胞实现Aβ斑块清除",
+      "genre": "顶刊机制论文科普解读",
+      "core_data_points": [
+        "仑卡奈单抗选择性结合Aβ原纤维和寡聚体",
+        "小胶质细胞FcγR介导的吞噬清除通路",
+        "与其他抗Aβ抗体(aducanumab/donanemab)的机制差异",
+        "斑块清除动力学与临床获益的关联证据"
+      ],
+      "required_structure": [
+        "核心发现与研究意义",
+        "仑卡奈单抗靶向选择性",
+        "小胶质细胞清除机制全景",
+        "与竞品的机制区隔",
+        "临床意义与展望"
+      ],
+      "input_rules": [
+        {
+          "path": "inputs",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": [],
+      "formula_positions": {
+        "write_target": "让临床医生理解仑卡奈单抗为什么能实现稳定斑块清除——从分子到细胞到临床的因果链",
+        "arrangement_rule": "先锚核心发现，再展机制因果链，后收临床意义",
+        "persona": "机制翻译者——把分子/细胞层面的复杂实验发现翻译成临床医生读得懂的因果推理链，用解释桥和比喻让机制'可见'",
+        "range": "RANGE-04",
+        "min_content_unit": [
+          "解释桥",
+          "比喻承重",
+          "一条硬事实",
+          "数据锤击",
+          "一个判断",
+          "一条边界声明"
+        ],
+        "min_logic_unit": [
+          "ARCH-04"
+        ],
+        "effective_content_unit": [
+          "一个从分子→细胞→临床的解释桥",
+          "一段用比喻承重的机制解释(让看不见的微观过程变得'可见')",
+          "一条关于选择性结合的硬事实(实验数据直接支撑)",
+          "一段关键实验数据锤击(定量证据)",
+          "一个关于机制优势的判断",
+          "一条关于当前认知边界的声明"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'靶向选择→小胶质细胞激活→吞噬清除→临床获益'单一因果主线贯穿全文"
+        ],
+        "content_combo": "机制科普型——核心发现锚定 + 解释桥展开机制链 + 比喻承重让微观可见 + 数据锤击 + 竞品区隔 + 临床意义回收",
+        "logic_combo": "ARCH-04承重——沿'靶向→激活→清除→获益'单一因果主线贯穿，不在中途岔开多条解释分支",
+        "outline": [
+          "核心发现锚定：Nature论文揭示了什么",
+          "靶向选择性：仑卡奈单抗为什么选择寡聚体和原纤维",
+          "清除机制全景：小胶质细胞如何被精准驱动",
+          "机制区隔：与其他抗Aβ抗体有何不同",
+          "临床意义：机制发现对治疗策略意味着什么"
+        ],
+        "effective_outline": [
+          "[核心发现锚定] Nature论文一句话核心结论，抛出'为什么这个发现重要'",
+          "[靶向解释桥] 选择性结合寡聚体/原纤维的机制——用比喻说清'瞄准的是什么'",
+          "[清除机制数据锤击] FcγR通路激活→吞噬清除的实验证据链",
+          "[竞品区隔判断] 与aducanumab/donanemab机制差异→临床差异的推理",
+          "[边界与展望] 当前机制认知的局限 + 对未来治疗策略的启示"
+        ]
+      }
+    },
+    {
+      "id": "lecanemab_news_c",
+      "case_type": "C",
+      "status": "ready",
+      "name": "仑卡奈单抗中国真实世界新闻报道",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗新闻报道",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗新闻报道\\gold\\【V1-浙二报道】AD发病年龄越早，认知下降越快！浙二团队仑卡奈单抗真实世界研究发表.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士/科普读者",
+      "target_word_count": 2000,
+      "purpose": "把仑卡奈单抗在中国多中心真实世界中的疗效与安全性数据写成有临床落地感的新闻报道。",
+      "genre": "医学新闻报道",
+      "core_data_points": [
+        "浙二队列76例早期AD、IRSE 18.4%、ARIA 11例",
+        "华西68例短期疗效：ADAS-cog14 -4.32(2.5月)/-4.62(7月)",
+        "华山407例多中心安全性：12.15% ARIA、22.22%治疗相关症状",
+        "海南64例：ARIA-H 9.4%、ARIA-E 3.1%",
+        "CDR分期与认知下降速度分层",
+        "血浆生物标志物(p-tau181/p-tau217)变化"
+      ],
+      "required_structure": [
+        "新闻导语（核心发现一句话）",
+        "研究背景与中国真实世界意义",
+        "浙二主线数据（安全性+认知变化）",
+        "多中心补线（华西疗效+华山安全性+海南补充）",
+        "安全性关注与临床落地"
+      ],
+      "input_rules": [
+        {
+          "path": "inputs",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": [],
+      "formula_positions": {
+        "write_target": "让读者理解仑卡奈单抗在中国真实世界中的疗效与安全性全貌——多中心证据汇成一条新闻线",
+        "arrangement_rule": "先锚核心新闻点，再展主线数据，后补多中心佐证，收安全性关注",
+        "persona": "科学新闻记者——把多中心真实世界数据写成有临床落地感的新闻报道，用问题线拉动叙事而非罗列数据",
+        "range": "RANGE-03",
+        "min_content_unit": [
+          "一条硬事实",
+          "一个判断",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04",
+          "人物线/问题线主从"
+        ],
+        "effective_content_unit": [
+          "一条关于中国多中心真实世界队列规模与核心发现的硬事实",
+          "一个关于真实世界数据与III期试验安全性对齐度的判断",
+          "浙二+华西+华山+海南多中心发表的权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿'真实世界落地问题→浙二主线→多中心佐证→安全性关注'单一叙事线贯穿",
+          "问题线主从——以'中国患者真实世界用药后怎么样'为主问题线拉动全文"
+        ],
+        "content_combo": "新闻报道型——核心发现导语+浙二主线数据+多中心补线+安全性坦陈+落地意义",
+        "logic_combo": "ARCH-04承重+问题线——先抛核心新闻点，沿问题线展开多中心证据，回收到临床落地",
+        "outline": [
+          "新闻导语",
+          "研究背景",
+          "浙二主线数据",
+          "多中心补线",
+          "安全性关注与临床落地"
+        ],
+        "effective_outline": [
+          "[导语] 一句话核心新闻点——中国首批真实世界数据说了什么",
+          "[背景] 仑卡奈单抗获批后中国真实世界数据为什么重要",
+          "[浙二主线] 76例队列安全性+认知变化+CDR分层+EOAD发现",
+          "[多中心补线] 华西短期疗效+华山安全性+海南补充→不是单点而是多中心共同指向",
+          "[安全性收口] ARIA总体可控+与Clarity AD对齐度+真实世界用药注意事项"
+        ]
+      }
+    }
+  ]
+}

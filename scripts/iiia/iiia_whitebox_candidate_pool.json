@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "candidates": [
+    {
+      "id": "lecanemab_patient",
+      "benchmark_case_id": "lecanemab_patient",
+      "case_type": "C",
+      "status": "ready",
+      "name": "仑卡奈单抗患者向文章",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章\\gold\\V2-仑卡奈单抗4年数据炸了！阿尔茨海默病竟能抢回15个月黄金时光.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "患者和家属",
+      "target_word_count": 1500,
+      "purpose": "面向患者和家属，用他们能理解的语言翻译仑卡奈单抗48个月临床数据的价值，帮助理解长期治疗获益。",
+      "genre": "患者向科普解读",
+      "core_data_points": [
+        "48个月随访核心获益数据",
+        "临床衰退延缓百分比与时间换算",
+        "非携带者与杂合子亚组获益差异",
+        "长期治疗获益量化指标"
+      ],
+      "required_structure": [
+        "患者痛点与治疗期待",
+        "核心获益数据翻译",
+        "亚组人群获益解读",
+        "长期治疗价值",
+        "患者理解与选择路径"
+      ],
+      "input_rules": [
+        {
+          "path": "inputs",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": [],
+      "formula_positions": {
+        "write_target": "让患者和家属理解仑卡奈单抗4年数据意味着阿尔茨海默病治疗究竟能抢回多少时间。",
+        "arrangement_rule": "先用患者痛感锚定，再做核心获益翻译，后给风险与选择引导。",
+        "persona": "患者关怀者——站在患者和家属的焦虑与期待中，把临床试验数字翻译成“这对我意味着什么”，用温度而非术语建立信任。",
+        "range": "RANGE-05/患者选择沟通",
+        "min_content_unit": [
+          "一个判断",
+          "一条边界声明",
+          "风险解剖",
+          "解释桥"
+        ],
+        "min_logic_unit": [
+          "ARCH-04",
+          "人群分流/选择建议落点"
+        ],
+        "effective_content_unit": [
+          "一个关于长期获益的可感知判断",
+          "一条关于适用人群边界的明确声明",
+          "一段关于治疗代价与风险的患者语言解剖",
+          "一个从临床数字到“这意味着什么”的解释桥"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重贯穿全文——从焦虑到数据到理解的单一主线",
+          "人群分流/选择建议落点——最终回收到“这对你意味着什么”"
+        ],
+        "content_combo": "患者选择沟通型——患者痛感起手 + 核心获益翻译 + 风险坦诚 + 理解引导",
+        "logic_combo": "ARCH-04承重 + 人群分流/选择建议落点——先锚定患者关切，沿获益证据链展开，回收到选择理解",
+        "outline": [
+          "患者痛点锚定：阿尔茨海默病治疗的焦虑与期待",
+          "核心数据翻译：48个月数据说明了什么",
+          "亚组理解：不同人群获益有何不同",
+          "风险与边界：长期治疗的代价和局限",
+          "理解路径：这对治疗选择意味着什么"
+        ],
+        "effective_outline": [
+          "[患者痛感锚定] 以患者和家属最常问的问题开场，建立共情锚点",
+          "[核心获益翻译] 48个月延缓数据→抢回多少个月→日常能力保留",
+          "[人群差异理解] 非携带者vs杂合子→不同人获益不同→别套别人的结论",
+          "[风险与边界] 长期治疗要付出什么、有什么局限",
+          "[选择引导] 这些数据放在你的处境里意味着什么"
+        ]
+      }
+    },
+    {
+      "id": "lecanemab_mechanism",
+      "benchmark_case_id": "lecanemab_mechanism",
+      "case_type": "C",
+      "status": "ready",
+      "name": "仑卡奈单抗机制科普",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗机制科普",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗机制科普\\gold\\V1-Nature重磅！仑卡奈单抗作用机制全景揭秘，小胶质细胞被精准“拿捏”了…….docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "对医学感兴趣的普通读者",
+      "target_word_count": 2500,
+      "purpose": "解读仑卡奈单抗的分子作用机制，重点揭示其如何通过小胶质细胞实现Aβ斑块清除，并把顶刊机制链翻译成普通读者能跟上的因果叙事。",
+      "genre": "顶刊机制论文科普解读",
+      "core_data_points": [
+        "仑卡奈单抗选择性结合Aβ原纤维和寡聚体",
+        "小胶质细胞FcγR介导的吞噬清除通路",
+        "与其他抗Aβ抗体的机制差异",
+        "斑块清除动力学与临床获益的关联证据"
+      ],
+      "required_structure": [
+        "核心发现与研究意义",
+        "仑卡奈单抗靶向选择性",
+        "小胶质细胞清除机制全景",
+        "与竞品的机制区隔",
+        "临床意义与展望"
+      ],
+      "input_rules": [
+        {
+          "path": "inputs",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": [],
+      "formula_positions": {
+        "write_target": "让对医学感兴趣的普通读者理解仑卡奈单抗为什么能实现稳定斑块清除——从分子到细胞到临床的因果链。",
+        "arrangement_rule": "先锚核心发现，再展机制因果链，后收临床意义。",
+        "persona": "机制翻译者——把分子和细胞层面的复杂实验发现翻译成普通读者读得懂的因果推理链，用解释桥和比喻让机制“可见”。",
+        "range": "RANGE-04",
+        "min_content_unit": [
+          "解释桥",
+          "比喻承重",
+          "一条硬事实",
+          "数据锤击",
+          "一个判断",
+          "一条边界声明"
+        ],
+        "min_logic_unit": [
+          "ARCH-04"
+        ],
+        "effective_content_unit": [
+          "一个从分子→细胞→临床的解释桥",
+          "一段用比喻承重的机制解释，让看不见的微观过程变得可见",
+          "一条关于选择性结合的硬事实",
+          "一段关键实验数据锤击",
+          "一个关于机制优势的判断",
+          "一条关于当前认知边界的声明"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿“靶向选择→小胶质细胞激活→吞噬清除→临床获益”单一因果主线贯穿全文"
+        ],
+        "content_combo": "机制科普型——核心发现锚定 + 解释桥展开机制链 + 比喻承重让微观可见 + 数据锤击 + 竞品区隔 + 临床意义回收",
+        "logic_combo": "ARCH-04承重——沿“靶向→激活→清除→获益”单一因果主线贯穿，不在中途岔开多条解释分支",
+        "outline": [
+          "核心发现锚定：Nature论文揭示了什么",
+          "靶向选择性：仑卡奈单抗为什么选择寡聚体和原纤维",
+          "清除机制全景：小胶质细胞如何被精准驱动",
+          "机制区隔：与其他抗Aβ抗体有何不同",
+          "临床意义：机制发现对治疗策略意味着什么"
+        ],
+        "effective_outline": [
+          "[核心发现锚定] Nature论文一句话核心结论，抛出为什么这个发现重要",
+          "[靶向解释桥] 选择性结合寡聚体和原纤维的机制——用比喻说清瞄准的是什么",
+          "[清除机制数据锤击] FcγR通路激活→吞噬清除的实验证据链",
+          "[竞品区隔判断] 与aducanumab、donanemab机制差异→临床差异的推理",
+          "[边界与展望] 当前机制认知的局限 + 对未来治疗策略的启示"
+        ]
+      }
+    },
+    {
+      "id": "lecanemab_news",
+      "benchmark_case_id": "lecanemab_news",
+      "case_type": "C",
+      "status": "ready",
+      "name": "仑卡奈单抗中国真实世界新闻报道",
+      "source_root": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗新闻报道",
+      "reference_answer_path": "D:\\汇度编辑部1\\项目文章\\侠客岛测试任务\\仑卡奈单抗新闻报道\\gold\\【V1-浙二报道】AD发病年龄越早，认知下降越快！浙二团队仑卡奈单抗真实世界研究发表.docx",
+      "reference_sample_path": "reference_sample.docx",
+      "reference_sample_roles": [
+        "style_anchor",
+        "structure_anchor",
+        "revision_anchor"
+      ],
+      "reference_sample_selection_owner": "user",
+      "reference_sample_visibility_stage": "draft_only_when_enabled",
+      "reference_sample_boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+      "reference_sample_frozen": true,
+      "audience": "医学专业人士",
+      "target_word_count": 2800,
+      "purpose": "把仑卡奈单抗在中国多中心真实世界中的疗效与安全性数据写成有临床落地感的新闻报道，突出浙二主线，并用其他中心作为补线佐证。",
+      "genre": "医学新闻报道",
+      "core_data_points": [
+        "浙二队列76例早期AD、IRSE 18.4%、ARIA 11例",
+        "CDR分期与认知下降速度分层",
+        "EOAD与LOAD的认知轨迹差异",
+        "中国多中心真实世界安全性与疗效信号"
+      ],
+      "required_structure": [
+        "新闻导语（核心发现一句话）",
+        "研究背景与中国真实世界意义",
+        "浙二主线数据（安全性+认知变化）",
+        "多中心补线（其他中心作为佐证）",
+        "安全性关注与临床落地"
+      ],
+      "input_rules": [
+        {
+          "path": "inputs",
+          "mode": "allow_all_except_docx"
+        }
+      ],
+      "blocked_by": [],
+      "formula_positions": {
+        "write_target": "让读者理解仑卡奈单抗在中国真实世界中的疗效与安全性全貌——以浙二主线带出多中心证据。",
+        "arrangement_rule": "先锚核心新闻点，再展浙二主线，后补多中心佐证，收安全性关注与临床落地。",
+        "persona": "科学新闻记者——把多中心真实世界数据写成有临床落地感的新闻报道，用问题线拉动叙事而非罗列数据。",
+        "range": "RANGE-03",
+        "min_content_unit": [
+          "一条硬事实",
+          "一个判断",
+          "权威锚定"
+        ],
+        "min_logic_unit": [
+          "ARCH-04",
+          "人物线/问题线主从"
+        ],
+        "effective_content_unit": [
+          "一条关于中国真实世界主队列规模与核心发现的硬事实",
+          "一个关于真实世界数据与III期试验安全性对齐度的判断",
+          "浙二主线加其他中心补线的权威锚定"
+        ],
+        "effective_logic_unit": [
+          "ARCH-04承重——沿“真实世界落地问题→浙二主线→多中心佐证→安全性关注”单一叙事线贯穿",
+          "问题线主从——以“中国患者真实世界用药后怎么样”为主问题线拉动全文"
+        ],
+        "content_combo": "新闻报道型——核心发现导语 + 浙二主线数据 + 多中心补线 + 安全性坦陈 + 落地意义",
+        "logic_combo": "ARCH-04承重 + 问题线——先抛核心新闻点，沿问题线展开证据，回收到临床落地",
+        "outline": [
+          "新闻导语",
+          "研究背景",
+          "浙二主线数据",
+          "多中心补线",
+          "安全性关注与临床落地"
+        ],
+        "effective_outline": [
+          "[导语] 一句话核心新闻点——中国首批真实世界数据说了什么",
+          "[背景] 仑卡奈单抗获批后中国真实世界数据为什么重要",
+          "[浙二主线] 76例队列安全性+认知变化+CDR分层+EOAD发现",
+          "[多中心补线] 其他中心共同指向，不是单点而是多中心支撑",
+          "[安全性收口] ARIA总体可控+与Clarity AD对齐度+真实世界用药注意事项"
+        ]
+      }
+    }
+  ]
+}

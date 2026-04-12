@@ -1,0 +1,59 @@
+{
+  "version": 2,
+  "profiles": {
+    "draft": {
+      "inherit_default": true,
+      "description": "首稿生成 profile；优先绑定中文成稿能力强的模型。",
+      "api_key_env": "XIAGEDAO_WHITEBOX_DRAFT_API_KEY",
+      "base_url_env": "XIAGEDAO_WHITEBOX_DRAFT_BASE_URL",
+      "model_env": "XIAGEDAO_WHITEBOX_DRAFT_MODEL",
+      "protocol_env": "XIAGEDAO_WHITEBOX_DRAFT_PROTOCOL",
+      "prompt_prefix": "你当前承担的是首稿生成节点。先忠实执行写作合同、样稿母本边界和题目主线，再追求中文表现力。允许把稿件写顺、写稳、写成人类编辑会交付的成熟文本，但不得为追求观感擅自改题、偷换证据边界、补不存在的事实。"
+    },
+    "review_score": {
+      "inherit_default": true,
+      "description": "审稿/评分回指 profile；优先绑定指令遵循和稳定判别更强的模型。",
+      "api_key_env": "XIAGEDAO_WHITEBOX_REVIEW_SCORE_API_KEY",
+      "base_url_env": "XIAGEDAO_WHITEBOX_REVIEW_SCORE_BASE_URL",
+      "model_env": "XIAGEDAO_WHITEBOX_REVIEW_SCORE_MODEL",
+      "protocol_env": "XIAGEDAO_WHITEBOX_REVIEW_SCORE_PROTOCOL",
+      "prompt_prefix": "你当前承担的是审稿与门禁节点。先做硬层审查：题目路线、关键事实、结构承重和证据边界；再做软层审查：是否像一篇成熟中文医学稿。硬层决定 benchmark 合格与否，软层决定编辑观感和可发表性。不要把软层偏好伪装成硬性事实错误。"
+    },
+    "whole_revise": {
+      "inherit_default": true,
+      "description": "整稿返修 profile；优先绑定结构重写与整体控制更强的模型。",
+      "api_key_env": "XIAGEDAO_WHITEBOX_WHOLE_REVISE_API_KEY",
+      "base_url_env": "XIAGEDAO_WHITEBOX_WHOLE_REVISE_BASE_URL",
+      "model_env": "XIAGEDAO_WHITEBOX_WHOLE_REVISE_MODEL",
+      "protocol_env": "XIAGEDAO_WHITEBOX_WHOLE_REVISE_PROTOCOL",
+      "prompt_prefix": "你当前承担的是整稿返修节点。目标不是从零重写，而是在保持稿件正确承重部分不塌的前提下，按问题单把路线、结构、事实承重和中文表现力整体修正到更像成熟编辑交稿。优先修主线、承重段和关键证据位，避免为修一个局部而带坏全稿。"
+    },
+    "local_task_router": {
+      "inherit_default": true,
+      "description": "局部返修任务路由 profile；优先绑定拆解和分级更强的模型。",
+      "api_key_env": "XIAGEDAO_WHITEBOX_LOCAL_TASK_ROUTER_API_KEY",
+      "base_url_env": "XIAGEDAO_WHITEBOX_LOCAL_TASK_ROUTER_BASE_URL",
+      "model_env": "XIAGEDAO_WHITEBOX_LOCAL_TASK_ROUTER_MODEL",
+      "protocol_env": "XIAGEDAO_WHITEBOX_LOCAL_TASK_ROUTER_PROTOCOL",
+      "prompt_prefix": "你当前承担的是局部返修任务分流节点。目标是把问题单压成最小可执行 patch，不负责创作，不负责改风格，不负责扩大修改范围。"
+    },
+    "local_patch": {
+      "inherit_default": true,
+      "description": "局部返修执行 profile；优先绑定最小改动与中文精准补位更强的模型。",
+      "api_key_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_API_KEY",
+      "base_url_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_BASE_URL",
+      "model_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_MODEL",
+      "protocol_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_PROTOCOL",
+      "prompt_prefix": "你当前承担的是局部返修执行节点。只做定点补位与最小改单元，不顺手改全段风格，不扩写新主线，不引入新事实。执行精度优先于文采。"
+    },
+    "local_patch_audit": {
+      "inherit_default": true,
+      "description": "局部返修核验 profile；优先绑定范围控制与审计稳定性更强的模型。",
+      "api_key_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_AUDIT_API_KEY",
+      "base_url_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_AUDIT_BASE_URL",
+      "model_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_AUDIT_MODEL",
+      "protocol_env": "XIAGEDAO_WHITEBOX_LOCAL_PATCH_AUDIT_PROTOCOL",
+      "prompt_prefix": "你当前承担的是局部返修审计节点。只判断有没有按任务改准、有没有越界、有没有带入新风险，不负责再创作。"
+    }
+  }
+}

@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>藏经阁 III 期节点与路由总图</title>
+  <style>
+    :root {
+      --bg: #07111a;
+      --bg-deep: #03070c;
+      --panel: rgba(10, 22, 35, 0.78);
+      --panel-strong: rgba(11, 26, 40, 0.96);
+      --line: rgba(126, 226, 204, 0.38);
+      --line-soft: rgba(145, 182, 220, 0.24);
+      --text: #ebf5f4;
+      --muted: #8ca8b3;
+      --accent: #7ee2cc;
+      --accent-warm: #f3b37a;
+      --accent-cold: #85b7ff;
+      --danger: #ff8b8b;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.42);
+      --shadow-soft: 0 16px 50px rgba(0, 0, 0, 0.28);
+      --grid: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.08);
+      --card-radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(126, 226, 204, 0.18), transparent 22%),
+        radial-gradient(circle at 80% 8%, rgba(133, 183, 255, 0.15), transparent 24%),
+        radial-gradient(circle at 50% 85%, rgba(243, 179, 122, 0.12), transparent 28%),
+        linear-gradient(180deg, #09131d 0%, #050a10 52%, #04070b 100%);
+      color: var(--text);
+      font-family: "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 92%);
+    }
+
+    body::after {
+      background: radial-gradient(circle at center, transparent 55%, rgba(0, 0, 0, 0.42) 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1820px;
+      margin: 0 auto;
+      padding: 40px 24px 96px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 28px;
+      align-items: stretch;
+      margin-bottom: 34px;
+    }
+
+    .hero-main,
+    .hero-side,
+    .section-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(13, 28, 42, 0.9), rgba(8, 17, 28, 0.82));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      overflow: hidden;
+    }
+
+    .hero-main::before,
+    .hero-side::before,
+    .section-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 42%, transparent 66%, rgba(126, 226, 204, 0.08));
+      pointer-events: none;
+    }
+
+    .hero-main {
+      padding: 34px 34px 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(126, 226, 204, 0.1);
+      border: 1px solid rgba(126, 226, 204, 0.18);
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(126, 226, 204, 0.8);
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 1.08;
+    }
+
+    .hero-subtitle {
+      max-width: 900px;
+      margin-top: 18px;
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(235, 245, 244, 0.82);
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .hero-point {
+      padding: 18px 18px 16px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-point strong {
+      display: block;
+      color: var(--accent);
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .hero-point span {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .hero-side {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .hero-side h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .hero-side p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .chip-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: rgba(133, 183, 255, 0.09);
+      border: 1px solid rgba(133, 183, 255, 0.18);
+      color: #d2e4ff;
+    }
+
+    .chip.warm {
+      background: rgba(243, 179, 122, 0.09);
+      border-color: rgba(243, 179, 122, 0.2);
+      color: #ffd7b3;
+    }
+
+    .chip.accent {
+      background: rgba(126, 226, 204, 0.1);
+      border-color: rgba(126, 226, 204, 0.18);
+      color: #d3fff5;
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section-card {
+      padding: 30px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 3vw, 42px);
+    }
+
+    .section-heading p {
+      max-width: 640px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    .scene-shell {
+      position: relative;
+      min-height: 1120px;
+      border-radius: 30px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 16%, rgba(126, 226, 204, 0.12), transparent 20%),
+        radial-gradient(circle at 12% 76%, rgba(133, 183, 255, 0.12), transparent 20%),
+        linear-gradient(180deg, rgba(4, 11, 18, 0.7), rgba(6, 11, 16, 0.94));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), var(--shadow);
+      perspective: 1800px;
+    }
+
+    .scene-floor {
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      top: 18%;
+      bottom: 6%;
+      transform: rotateX(68deg) translateY(132px);
+      transform-origin: center top;
+      background:
+        linear-gradient(var(--line-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+      background-size: 88px 88px;
+      opacity: 0.38;
+      filter: blur(0.2px);
+      pointer-events: none;
+    }
+
+    .scene-lane {
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(126, 226, 204, 0.32), transparent);
+      box-shadow: 0 0 18px rgba(126, 226, 204, 0.18);
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .scene-lane.bottom {
+      background: linear-gradient(90deg, transparent, rgba(133, 183, 255, 0.28), transparent);
+      box-shadow: 0 0 18px rgba(133, 183, 255, 0.14);
+    }
+
+    .scene-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 22%, rgba(126, 226, 204, 0.18), transparent 22%),
+        radial-gradient(circle at 22% 80%, rgba(133, 183, 255, 0.16), transparent 20%),
+        radial-gradient(circle at 78% 68%, rgba(243, 179, 122, 0.12), transparent 16%);
+      pointer-events: none;
+      mix-blend-mode: screen;
+    }
+
+    .graph-layer {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    .graph-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    .graph-svg path {
+      fill: none;
+      stroke: rgba(126, 226, 204, 0.82);
+      stroke-width: 3.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 16px rgba(126, 226, 204, 0.28));
+    }
+
+    .graph-svg path.alt {
+      stroke: rgba(133, 183, 255, 0.52);
+      stroke-width: 2.6;
+      stroke-dasharray: 10 10;
+    }
+
+    .graph-node {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--w, 236px);
+      transform: translate(-50%, -50%) translateZ(var(--z, 0px));
+      padding: 18px;
+      border-radius: var(--card-radius);
+      background:
+        linear-gradient(180deg, rgba(13, 28, 42, 0.94), rgba(7, 16, 25, 0.92));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      transform-style: preserve-3d;
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .graph-node::before {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: calc(var(--card-radius) - 1px);
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 48%, rgba(126, 226, 204, 0.07));
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .graph-node::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: -18px;
+      height: 26px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.48), transparent 72%);
+      transform: translateZ(-30px) scale(1.02);
+      filter: blur(9px);
+      pointer-events: none;
+    }
+
+    .graph-node:hover {
+      transform: translate(-50%, -50%) translateZ(calc(var(--z, 0px) + 10px));
+      border-color: rgba(126, 226, 204, 0.42);
+      box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.4),
+        0 0 28px rgba(126, 226, 204, 0.08);
+    }
+
+    .node-tier {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(126, 226, 204, 0.1);
+      border: 1px solid rgba(126, 226, 204, 0.18);
+    }
+
+    .node-tier.mid {
+      color: #dce6ff;
+      background: rgba(133, 183, 255, 0.11);
+      border-color: rgba(133, 183, 255, 0.2);
+    }
+
+    .node-tier.warm {
+      color: #ffe3c7;
+      background: rgba(243, 179, 122, 0.1);
+      border-color: rgba(243, 179, 122, 0.2);
+    }
+
+    .node-name {
+      margin-top: 14px;
+      font-size: 26px;
+      line-height: 1.18;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif;
+    }
+
+    .node-summary {
+      margin-top: 12px;
+      color: rgba(235, 245, 244, 0.78);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
+    .node-meta {
+      display: grid;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .meta-row {
+      display: flex;
+      gap: 10px;
+      align-items: start;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .meta-label {
+      flex: 0 0 auto;
+      min-width: 54px;
+      color: rgba(255,255,255,0.62);
+    }
+
+    .risk-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .risk-tags span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.86);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .risk-tags span.danger {
+      color: #ffd2d2;
+      background: rgba(255, 139, 139, 0.08);
+      border-color: rgba(255, 139, 139, 0.16);
+    }
+
+    .risk-tags span.key {
+      color: #d4fff7;
+      background: rgba(126, 226, 204, 0.08);
+      border-color: rgba(126, 226, 204, 0.16);
+    }
+
+    .focus-grid,
+    .hypothesis-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .focus-card,
+    .hypothesis-card {
+      padding: 22px;
+      border-radius: 24px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .focus-card strong,
+    .hypothesis-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .focus-card p,
+    .hypothesis-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.78;
+      font-size: 14px;
+    }
+
+    .focus-card .mini-chip,
+    .hypothesis-card .mini-chip {
+      display: inline-flex;
+      margin-top: 14px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--accent);
+      background: rgba(126, 226, 204, 0.08);
+      border: 1px solid rgba(126, 226, 204, 0.15);
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(126, 226, 204, 0.65);
+    }
+
+    .legend-dot.mid {
+      background: var(--accent-cold);
+      box-shadow: 0 0 16px rgba(133, 183, 255, 0.65);
+    }
+
+    .legend-dot.warm {
+      background: var(--accent-warm);
+      box-shadow: 0 0 16px rgba(243, 179, 122, 0.65);
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .flat-chain {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .chain-intro {
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(126, 226, 204, 0.1), rgba(255,255,255,0.03));
+      border: 1px solid rgba(126, 226, 204, 0.16);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .chain-intro p {
+      margin: 0;
+      color: rgba(235, 245, 244, 0.86);
+      line-height: 1.82;
+      font-size: 17px;
+    }
+
+    .chain-node {
+      padding: 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(13, 28, 42, 0.94), rgba(7, 16, 25, 0.92));
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .chain-node.ready {
+      border-color: rgba(126, 226, 204, 0.2);
+    }
+
+    .chain-node.partial {
+      border-color: rgba(243, 179, 122, 0.18);
+    }
+
+    .chain-node.pending {
+      border-color: rgba(133, 183, 255, 0.18);
+    }
+
+    .chain-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 16px;
+    }
+
+    .chain-kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(126, 226, 204, 0.1);
+      border: 1px solid rgba(126, 226, 204, 0.18);
+    }
+
+    .chain-node.pending .chain-kicker {
+      color: #dce6ff;
+      background: rgba(133, 183, 255, 0.1);
+      border-color: rgba(133, 183, 255, 0.18);
+    }
+
+    .chain-node.partial .chain-kicker {
+      color: #ffe4ca;
+      background: rgba(243, 179, 122, 0.1);
+      border-color: rgba(243, 179, 122, 0.18);
+    }
+
+    .chain-top h3 {
+      margin-top: 12px;
+      font-size: 34px;
+      line-height: 1.12;
+    }
+
+    .chain-state {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      white-space: nowrap;
+    }
+
+    .chain-node.ready .chain-state {
+      color: #d4fff7;
+      background: rgba(126, 226, 204, 0.1);
+      border-color: rgba(126, 226, 204, 0.16);
+    }
+
+    .chain-node.partial .chain-state {
+      color: #ffe7cc;
+      background: rgba(243, 179, 122, 0.1);
+      border-color: rgba(243, 179, 122, 0.16);
+    }
+
+    .chain-node.pending .chain-state {
+      color: #dce7ff;
+      background: rgba(133, 183, 255, 0.1);
+      border-color: rgba(133, 183, 255, 0.16);
+    }
+
+    .chain-summary {
+      margin: 14px 0 0;
+      color: rgba(235, 245, 244, 0.82);
+      line-height: 1.82;
+      font-size: 17px;
+    }
+
+    .node-flow {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr) 42px minmax(0, 1fr) 42px minmax(0, 1fr);
+      gap: 10px;
+      align-items: stretch;
+      margin-top: 20px;
+    }
+
+    .flow-step {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      min-height: 126px;
+    }
+
+    .flow-step strong {
+      display: block;
+      margin-bottom: 10px;
+      color: rgba(255,255,255,0.96);
+      font-size: 15px;
+      letter-spacing: 0.04em;
+    }
+
+    .flow-step p {
+      margin: 0;
+      color: rgba(235, 245, 244, 0.82);
+      font-size: 15px;
+      line-height: 1.78;
+    }
+
+    .flow-step.highlight {
+      background: linear-gradient(180deg, rgba(126, 226, 204, 0.08), rgba(255,255,255,0.03));
+      border-color: rgba(126, 226, 204, 0.16);
+    }
+
+    .flow-step.output {
+      background: linear-gradient(180deg, rgba(133, 183, 255, 0.08), rgba(255,255,255,0.03));
+      border-color: rgba(133, 183, 255, 0.16);
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(126, 226, 204, 0.62);
+      font-size: 22px;
+      text-shadow: 0 0 14px rgba(126, 226, 204, 0.18);
+    }
+
+    .node-expand {
+      margin-top: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      overflow: hidden;
+    }
+
+    .node-expand summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 14px 16px;
+      color: rgba(235, 245, 244, 0.9);
+      font-size: 15px;
+      line-height: 1.6;
+      user-select: none;
+    }
+
+    .node-expand summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .node-expand summary::before {
+      content: "展开节点说明";
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .node-expand[open] summary::before {
+      content: "收起节点说明";
+    }
+
+    .node-expand summary::after {
+      content: "▾";
+      float: right;
+      color: rgba(255,255,255,0.5);
+      transition: transform 160ms ease;
+    }
+
+    .node-expand[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .node-core {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 16px 16px;
+    }
+
+    .node-cell {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .node-cell strong {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(255,255,255,0.94);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+    }
+
+    .node-cell p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.78;
+    }
+
+    .route-strip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      margin-left: 26px;
+      border-left: 2px solid rgba(126, 226, 204, 0.32);
+      background: rgba(255,255,255,0.03);
+      border-radius: 0 18px 18px 0;
+    }
+
+    .route-strip.pending {
+      border-left-color: rgba(133, 183, 255, 0.28);
+    }
+
+    .route-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(126, 226, 204, 0.08);
+      border: 1px solid rgba(126, 226, 204, 0.15);
+      flex: 0 0 auto;
+    }
+
+    .route-strip.pending .route-label {
+      color: #dce7ff;
+      background: rgba(133, 183, 255, 0.08);
+      border-color: rgba(133, 183, 255, 0.15);
+    }
+
+    .route-strip p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 1240px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-points,
+      .focus-grid,
+      .hypothesis-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .node-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-arrow {
+        display: none;
+      }
+
+      .scene-shell {
+        min-height: 1420px;
+      }
+
+      .graph-node {
+        width: min(var(--w, 240px), 280px);
+      }
+    }
+
+    @media (max-width: 840px) {
+      .page {
+        padding: 24px 16px 72px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .section-card {
+        padding: 22px;
+      }
+
+      .hero-points,
+      .focus-grid,
+      .hypothesis-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .node-flow,
+      .node-core {
+        grid-template-columns: 1fr;
+      }
+
+      .chain-top {
+        flex-direction: column;
+      }
+
+      .route-strip {
+        margin-left: 0;
+      }
+
+      .section-heading {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .scene-shell {
+        min-height: auto;
+        padding: 26px 14px;
+      }
+
+      .scene-floor,
+      .graph-svg {
+        display: none;
+      }
+
+      .graph-layer {
+        position: relative;
+        display: grid;
+        gap: 14px;
+        transform: none !important;
+      }
+
+      .graph-node {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        transform: none !important;
+      }
+
+      .graph-node:hover {
+        transform: translateY(-4px) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow">III 期节点与路由总图</div>
+        <h1>现在要画清的，<br />不是“节点名”，而是“节点怎么过”</h1>
+        <p class="hero-subtitle">
+          这张图不再把 `R-01` 误看成整稿总流程，也不把模块误看成一条平行主链。
+          当前更准确的总逻辑是：`用户输入 -> 节点 -> 节点内路由逻辑 -> 节点输出 -> 节点间路由 -> 下一个节点`。
+          模块路由不是另起一条链，而是嵌进某些节点内部的一层。
+        </p>
+        <div class="hero-points">
+          <div class="hero-point">
+            <strong>节点先吃输入</strong>
+            <span>不是“先有路由再有节点”，而是先进入节点，再在节点内部做判断与分支。</span>
+          </div>
+          <div class="hero-point">
+            <strong>R-01 只是第一条节点间路由</strong>
+            <span>它只管“需求对齐回执层 -> 输入冻结层”这一跳，不代表整稿从头到尾的总流程。</span>
+          </div>
+          <div class="hero-point">
+            <strong>模块嵌在节点内部</strong>
+            <span>模块不会各跑一条小主线，而是在回执、冻结、合同、门禁这些节点里被挂载、限制和判错。</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div>
+          <h2>一句话看图方式</h2>
+          <p>
+            先看节点自己内部怎么判断，再看两个节点之间怎么交接，最后再看模块在哪些节点已经能稳定被路由，
+            哪些节点还停在母图层。
+          </p>
+        </div>
+        <div>
+          <div class="chip-stack">
+            <span class="chip accent">节点</span>
+            <span class="chip">节点内路由逻辑</span>
+            <span class="chip warm">节点间路由</span>
+            <span class="chip accent">模块路由</span>
+            <span class="chip">节点输出</span>
+            <span class="chip warm">主链继续往下</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <div class="section-heading">
+          <div>
+            <h2>III 期当前总链</h2>
+          </div>
+          <p>
+            这张主图把 `节点`、`节点间路由`、`节点内模块路由成熟度` 画在同一条链上。
+            已经正式写成规格的地方直接标明；还没有单拆的地方，不再假装已经打通。
+          </p>
+        </div>
+
+        <div class="flat-chain">
+          <div class="chain-intro">
+            <p>主链只看一条：`用户输入 -> 节点 -> 节点内路由逻辑 -> 节点输出 -> 节点间路由 -> 下一个节点`。模块不是平行链，只在部分节点内部被路由和处理。</p>
+          </div>
+
+          <article class="chain-node pending">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Input Hub</span>
+                <h3>任务进入池</h3>
+              </div>
+              <span class="chain-state">入口节点</span>
+            </div>
+            <p class="chain-summary">先全量接住任务描述、附件、样稿、批注、路径，不先切碎。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>brief、PDF、样稿、修改意见、禁区。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>只做全量接收，不先切碎，也不在这里做复杂判断。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>不适用。模块不会在入口节点成立。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>未切碎的原始任务包。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>防止材料丢失、输入碎片化，以及把“还没建目录”误判成 blocker。</p></div>
+                <div class="node-cell"><strong>这一层不干什么</strong><p>这里不锁主路线，不判稿型，也不决定模块挂不挂。</p></div>
+                <div class="node-cell"><strong>当前状态</strong><p>它是入口节点，不是当前 III 期主建设对象。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>如果入口就切碎，回执层后面拿到的就不是完整任务包，容易从第一步开始跑偏。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip pending">
+            <span class="route-label">默认交接</span>
+            <p>当前没有单独编号的节点间路由文件，原始任务包直接送入需求对齐回执层。</p>
+          </div>
+
+          <article class="chain-node ready">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 01</span>
+                <h3>需求对齐回执层</h3>
+              </div>
+              <span class="chain-state">模块路由可跑</span>
+            </div>
+            <p class="chain-summary">先锁真实场景、一级稿型、主二级稿型、主样稿母本；现在也开始在这里锁主线与挂载模块。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>原始任务包 + 当前对任务的理解。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>先判真实场景、一级稿型、主二级稿型、主样稿母本，并分 `PASS / CORRECTION / BLOCK`。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>这里开始锁主线与挂载模块，但 `主线模块` 口径仍需收紧。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>极短回执 + 主路线锁定结果。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>在动笔前先冻结“这到底是什么任务”，不让后面在错方向上写得更认真。</p></div>
+                <div class="node-cell"><strong>当前已写到哪里</strong><p>已有正式路由逻辑，能分 `PASS_TO_FREEZE / CORRECTION_LOOP / HARD_BLOCK_MINIMAL`。</p></div>
+                <div class="node-cell"><strong>当前缺口</strong><p>模块已经进入回执，但主线和模块的命名边界还要再收紧，不然容易双编码。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>这层不稳，冻结、资产、合同、返修都会在错目标上继续施工。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip">
+            <span class="route-label">R-01</span>
+            <p>`需求对齐回执层 -> 输入冻结层`。只管这一跳：够稳才放行，不稳就纠偏或最小 blocker。</p>
+          </div>
+
+          <article class="chain-node partial">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 02</span>
+                <h3>输入冻结层</h3>
+              </div>
+              <span class="chain-state">模块路由半成型</span>
+            </div>
+            <p class="chain-summary">把散材料压成稳定输入；模块层补丁又要求再加每个模块的材料边界冻结。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>已锁定主路线的任务理解和模块列表。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>把散材料压成冻结输入，当前 `A-E` 冻结已在。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>每个模块的材料边界已经被提出，但目前只写到原则。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>冻结输入包 + 模块材料边界。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>把散乱输入压成后续节点能反复引用的稳定底稿，而不是继续边写边捞材料。</p></div>
+                <div class="node-cell"><strong>当前已写到哪里</strong><p>整稿冻结已经成型，模块冻结已被明确提出：必吃材料、不该吃的材料、样稿边界。</p></div>
+                <div class="node-cell"><strong>当前缺口</strong><p>还没有一份完整冻结规格说明“缺什么可降级、缺什么必须 blocker、冻结产物怎么写”。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>这层不硬，后面的资产选择和返修都会失去稳定锚点。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip pending">
+            <span class="route-label">待单拆</span>
+            <p>`输入冻结层 -> 资产路由层` 这一跳还没有正式节点间路由。</p>
+          </div>
+
+          <article class="chain-node pending">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 03</span>
+                <h3>资产路由层</h3>
+              </div>
+              <span class="chain-state">模块路由未建</span>
+            </div>
+            <p class="chain-summary">母图里有位置，但“主路线 + 模块 + 冻结结果 -> 任务级资产包”的正式逻辑还没单拆。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>冻结后的任务输入、模块材料边界、样稿边界。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>理论上应判主路线和各模块分别该调哪些 evidence / rule / style 资产。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>还没单拆，是当前最大的空档。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>理想上应给出任务级资产包。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>决定这次任务真正要调用哪些藏经阁资产，而不是把所有规则和证据一起塞进去。</p></div>
+                <div class="node-cell"><strong>当前已写到哪里</strong><p>目前只有母图职责描述，没有正式节点逻辑文件，也没有模块到资产包的映射。</p></div>
+                <div class="node-cell"><strong>当前缺口</strong><p>这是现在最该单拆的节点：主线、模块、冻结结果与资产包之间还没有正式路由逻辑。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>这里不补，后面的合同层就会拿着不稳定、过量或错配的资产继续编译。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip pending">
+            <span class="route-label">待单拆</span>
+            <p>`资产路由层 -> 写作合同与结构编译层` 目前仍只有母图级描述。</p>
+          </div>
+
+          <article class="chain-node ready">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 04</span>
+                <h3>写作合同与结构编译层</h3>
+              </div>
+              <span class="chain-state">模块路由可跑</span>
+            </div>
+            <p class="chain-summary">这是当前模块层最硬的一段：模块卡、映射表、挂载顺序、位置、篇幅、禁止动作都已经写出来。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>主路线锁定结果、冻结输入、理论上的任务级资产包。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>把主线和模块编成顺序、位置、篇幅、禁止动作，并让 8 公式在这里接上。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>模块卡、映射表、顺序规则都已到可跑级。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>可执行写作合同 + 结构骨架。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>把“知道要写什么”压成“知道该怎样推进、怎样挂模块、怎样收口”。</p></div>
+                <div class="node-cell"><strong>当前已写到哪里</strong><p>已有模块卡标准字段、模块库、稿型-模块映射表、挂载顺序与门禁衔接。</p></div>
+                <div class="node-cell"><strong>当前缺口</strong><p>它现在主要受制于上游资产路由不完整，而不是自身规则不够细。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>这是当前模块层真正已经落到硬规格的一层。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip pending">
+            <span class="route-label">未单拆</span>
+            <p>`合同编译 -> 主写作执行` 当前默认放行，尚未写成独立节点间路由。</p>
+          </div>
+
+          <article class="chain-node pending">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 05</span>
+                <h3>主写作执行层</h3>
+              </div>
+              <span class="chain-state">吃合同节点</span>
+            </div>
+            <p class="chain-summary">这里主要负责吃合同和资产，把约束真正翻成首稿。它会放大上游路由质量。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>写作合同、样稿边界、资产包、事实锚点。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>按合同执行，把约束真正翻成首稿，不应在这里重判主路线。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>这里只执行模块，不在这里定义模块规则。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>首稿。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>吃合同、吃资产、吃锚点，把系统前面压好的约束翻成文本。</p></div>
+                <div class="node-cell"><strong>这一层不该做什么</strong><p>不该一边写一边重判主路线，也不该自行发明新的模块逻辑。</p></div>
+                <div class="node-cell"><strong>当前状态</strong><p>它不是当前主建设对象，更像被上游质量放大的执行节点。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>上游不稳时，这里会把错方向写得更像样；上游稳时，这里才能真正成为产出层。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip pending">
+            <span class="route-label">未单拆</span>
+            <p>`主写作执行 -> 质量与语义门禁层` 当前也还是默认交接，没有单独路由规格。</p>
+          </div>
+
+          <article class="chain-node ready">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 06</span>
+                <h3>质量与语义门禁层</h3>
+              </div>
+              <span class="chain-state">模块路由可跑</span>
+            </div>
+            <p class="chain-summary">模块层已经把门禁写到判据级：抢主线、越界展开、回收错位、模块占比失控都能被明确点名。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>首稿 + 原合同 + 模块挂载信息。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>判模块有没有抢主线、越界展开、回收错位或占比失控。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>已有 `MODULE_OVERREACH` 等正式判据。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>问题单 + 门禁结论。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>把“感觉模块写歪了”翻成明确问题类型、具体证据和处置建议。</p></div>
+                <div class="node-cell"><strong>当前已写到哪里</strong><p>模块层已经给出 `MODULE_OVERREACH / EXPANSION / MISPLACED / SHARE_OVERFLOW` 等正式判据。</p></div>
+                <div class="node-cell"><strong>当前缺口</strong><p>门禁前半段已成型，但门禁后到底怎么分到返修或回上游重冻，还没有正式路由。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>没有这层，模块层就只是编排规则，没有真正的纠偏落点。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip pending">
+            <span class="route-label">当前断点</span>
+            <p>`门禁层 -> 返修层 / 回上游重冻` 这一跳还没有正式节点间路由。</p>
+          </div>
+
+          <article class="chain-node pending">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 07</span>
+                <h3>定向返修层</h3>
+              </div>
+              <span class="chain-state">模块路由未建</span>
+            </div>
+            <p class="chain-summary">现在已经能知道模块错在哪，但还没有单独说明这些问题分别该缩、移、删、重编还是回冻结层。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>问题单 + 首稿 + 原合同。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>理论上应把问题翻成缩、移、删、重编或回冻结层。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>门禁后的模块返修逻辑还没有正式化。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>理想上应给出修订稿或回退决定。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>把门禁层给出的错误类型翻成最小修复动作，而不是重写全文。</p></div>
+                <div class="node-cell"><strong>当前缺口</strong><p>还没有一份正式规格说明不同模块问题分别该缩、移、删、重编还是回上游重冻。</p></div>
+                <div class="node-cell"><strong>当前状态</strong><p>这是门禁后半段当前最明显的断点。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>如果返修层不单拆，门禁再清楚也会停在“指出问题”，没法形成闭环。</p></div>
+              </div>
+            </details>
+          </article>
+
+          <div class="route-strip pending">
+            <span class="route-label">未单拆</span>
+            <p>`定向返修 -> 人审交付与经验回流` 还没有独立节点间路由。</p>
+          </div>
+
+          <article class="chain-node pending">
+            <div class="chain-top">
+              <div>
+                <span class="chain-kicker">Node 08</span>
+                <h3>人审交付与经验回流层</h3>
+              </div>
+              <span class="chain-state">回流逻辑未建</span>
+            </div>
+            <p class="chain-summary">终稿不仅是交付物，还应回收真实终稿偏好、退稿点和新硬闸门；但这层目前还没有节点级规格。</p>
+            <div class="node-flow">
+              <div class="flow-step"><strong>1 输入</strong><p>修订稿、编辑判断、客户反馈、法务要求。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step highlight"><strong>2 节点内路由</strong><p>理论上应判哪些进入语料、哪些进入规则、哪些升级成新闸门。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step"><strong>3 模块路由</strong><p>模块回流还没有正式写法。</p></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-step output"><strong>4 节点输出</strong><p>终稿 + 新语料 / 新规则 / 新闸门。</p></div>
+            </div>
+            <details class="node-expand">
+              <summary></summary>
+              <div class="node-core">
+                <div class="node-cell"><strong>这一层在干什么</strong><p>把真实终稿偏好和真实退稿点回收到系统，不让实验只停在“一次写过”。</p></div>
+                <div class="node-cell"><strong>当前缺口</strong><p>回流目标已经清楚，但还没有节点级规格说明怎么分类、怎么沉淀、怎么回写。</p></div>
+                <div class="node-cell"><strong>模块状态</strong><p>模块层当前还没有回流规则，所以这层仍停在母图级目标。</p></div>
+                <div class="node-cell"><strong>为什么重要</strong><p>没有回流层，III 期就很难从“会写一次”变成“系统真的学会了一类东西”。</p></div>
+              </div>
+            </details>
+          </article>
+        </div>
+
+        <div class="legend">
+          <span class="legend-item"><span class="legend-dot"></span>模块路由已到可跑级</span>
+          <span class="legend-item"><span class="legend-dot mid"></span>模块路由半成型 / 节点间路由待单拆</span>
+          <span class="legend-item"><span class="legend-dot warm"></span>吃合同节点或中游节点</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <div class="section-heading">
+          <div>
+            <h2>四个词，先钉死</h2>
+          </div>
+          <p>
+            这部分用来防止继续混词。这里不再把 `R-01` 叫成全流程，也不再把模块误看成一条平行主链。
+          </p>
+        </div>
+
+        <div class="focus-grid">
+          <article class="focus-card">
+            <strong>节点</strong>
+            <p>一个稳定职责点，例如需求对齐回执层、输入冻结层、资产路由层。节点负责吃输入、做判断、产出稳定结果。</p>
+            <span class="mini-chip">是“站点”</span>
+          </article>
+          <article class="focus-card">
+            <strong>节点内路由逻辑</strong>
+            <p>节点自己内部怎么判断、怎么分支、怎么放行或打回。模块层补丁本质上就是在给多个节点补这一层。</p>
+            <span class="mini-chip">是“站内过闸规则”</span>
+          </article>
+          <article class="focus-card">
+            <strong>节点间路由</strong>
+            <p>两个节点之间怎么交接。`R-01` 只管“需求对齐回执层 -> 输入冻结层”这一跳，不是整稿总流程。</p>
+            <span class="mini-chip">是“节点之间怎么过”</span>
+          </article>
+          <article class="focus-card">
+            <strong>模块路由</strong>
+            <p>模块在哪些节点成立、吃什么材料、怎么挂、怎么限、怎么判抢主线。它嵌在节点内部，不是平行主链。</p>
+            <span class="mini-chip">是“节点内部第二维”</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <div class="section-heading">
+          <div>
+            <h2>当前建设状态</h2>
+          </div>
+          <p>
+            这里不再泛说“体系还可以继续细化”，而是直接把当前已经写成规格的地方、只写到原则的地方、
+            以及还停在母图层的地方摆出来。
+          </p>
+        </div>
+
+        <div class="hypothesis-grid">
+          <article class="hypothesis-card">
+            <strong>节点总数</strong>
+            <p>当前主链按 `8` 个关键节点理解；如果把“任务进入池”算上，就是 `8 + 1` 个入口节点。</p>
+            <span class="mini-chip">母图主链已固定</span>
+          </article>
+          <article class="hypothesis-card">
+            <strong>正式节点间路由</strong>
+            <p>目前只有 `1` 条已经正式写成文件：`R-01`，也就是 `需求对齐回执层 -> 输入冻结层`。</p>
+            <span class="mini-chip">其余仍待单拆</span>
+          </article>
+          <article class="hypothesis-card">
+            <strong>模块路由已可跑节点</strong>
+            <p>当前已经满足“用模块去跑节点逻辑”的，是 `3` 个：回执层、合同编译层、门禁层。</p>
+            <span class="mini-chip">这是现在最硬的部分</span>
+          </article>
+          <article class="hypothesis-card">
+            <strong>当前最大缺口</strong>
+            <p>不是再补一个模块，而是把 `资产路由层` 和 `门禁后的返修路由` 补到跟模块层同样的粒度。</p>
+            <span class="mini-chip">最大空档仍在中游与下游交接处</span>
+          </article>
+        </div>
+
+        <div class="footer-note">
+          这版 HTML 服务的是“节点、节点内路由逻辑、节点间路由、模块路由成熟度”的现状可视化。
+          后续继续改时，优先补真实状态，不要再把局部路由误写成整稿总流程。
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

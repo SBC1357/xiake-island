@@ -74,8 +74,8 @@
 
 典型文件：
 
-1. `C:\\Users\\96138\\.codex\\config.toml`
-2. `C:\\Users\\96138\\.config\\opencode\\opencode.json`
+1. `用户主目录/.codex/config.toml`
+2. `用户主目录/.config/opencode/opencode.json`
 3. PowerShell profile、npm shim、Codex 宿主兜底环境
 
 固定边界：
@@ -134,4 +134,4 @@
 1. 已直接核对仓库根目录 `.env`，确认后端写作链当前由 `OPENAI_BASE_URL / OPENAI_API_KEY` 等键驱动。
 2. 已直接核对 `src\\adapters\\llm_gateway\\openai_provider.py` 与 `provider_factory.py`，确认后端实际走的是 `chat/completions` 路径。
 3. 已直接核对 `scripts\\run_ii_benchmark.ps1` 与 `scripts\\benchmark_runner.ps1`，确认评分链是独立执行链，且当前仍存在多 provider 候选逻辑。
-4. 已直接核对 `C:\\Users\\96138\\.config\\opencode\\opencode.json`，确认其中的 provider 配置属于 CLI/评分辅助链，不属于后端生成链真相源。
+4. 已直接核对个人 `opencode.json` 配置文件，确认其中的 provider 配置属于 CLI/评分辅助链，不属于后端生成链真相源。

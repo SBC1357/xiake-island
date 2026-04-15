@@ -1,19 +1,21 @@
-# 仑卡奈单抗患者向文章（整稿 Loop 后局部返修单题全貌）
+# 仑卡奈单抗患者向文章（历史局部返修单题档案）
 
-状态：loop 成稿后的局部返修实验结果
+状态：历史归档
 日期：2026-04-12
-用途：人工直接评估“整稿 loop 成稿”再做一轮局部返修，是否真的能精准命中剩余问题。本文主判据是执行精度与问题关闭率，不拿最终分数作为唯一裁决。
+用途：历史留档，记录“整稿 loop 成稿”后的一轮局部返修如何命中剩余问题；仅供回看，不承接当前活状态。
 
-## 当前有效口径
+当前活状态只回指：[03_当前阶段任务卡.md](../../../../00_入口索引/03_当前阶段任务卡.md) 与 [白盒系统第四轮收口长线程包.md](../../../../07_白盒施工包/04_第四轮白盒测试+建设/白盒系统第四轮收口长线程包.md)。
 
-1. 当前口径只认：整稿 loop 成稿作为新基线，再在同一份 loop 成稿上做一轮 local revise。
-2. 本文不替代上一层整稿 loop 全貌；整稿 loop 本身的轮次轨迹仍回看上一层返修 Loop 全貌。
-3. 本文主判据：`execution_precision_rate`、`issue_close_rate`、`scope_violation_count`、`introduced_new_risk`。
-4. 如果分数不涨，但局部返修执行精度高、问题关闭率高、无越界、无新风险，只能判定为“局部返修执行有效但评分未继续给分”，不能偷换成“局部返修没用”。
+## 历史口径回放
+
+1. 本档当时采用的口径是：整稿 loop 成稿作为新基线，再在同一份 loop 成稿上做一轮 local revise。
+2. 本档不替代上一层整稿 loop 全貌；整稿 loop 本身的轮次轨迹仍应回看上一层返修 Loop 全貌。
+3. 本档主判据记录为：`execution_precision_rate`、`issue_close_rate`、`scope_violation_count`、`introduced_new_risk`。
+4. 当轮结论是：如果分数不涨，但局部返修执行精度高、问题关闭率高、无越界、无新风险，只能判定为“局部返修执行有效但评分未继续给分”，不能偷换成“局部返修没用”。
 
 case_id: `lecanemab_patient`
-loop_fullview: `D:\汇度编辑部1\侠客岛\docs\多Agent藏经阁实验\8条公式总实验目录\III期临床\07_白盒施工包\01_第一轮白盒完整可实验版\03_返修Loop单题全貌档案\01_lecanemab_patient.md`
-eval_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient`
+loop_fullview: [上一层返修Loop单题全貌档案](../03_返修Loop单题全貌档案/01_lecanemab_patient.md)
+eval_dir: 当轮 runtime 归档目录（路径不收录）
 
 ## 主阅读层
 
@@ -21,7 +23,7 @@ eval_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eva
 
 1. loop 基线分数：`78`；局部返修后分数：`78`；最终达标：`true`。
 2. 本轮主判据：执行精度率 `1.0`；问题关闭率 `1.0`；越界 `0`；新风险 `0`。
-3. 当前裁定：当前稿件存在5处关键偏差：2026年ADPD来源锚点缺失、APOE术语表述模糊、风险段位置与content_combo要求的'风险坦诚'嵌入节奏不符、开篇医学术语前置削弱情感锚定、结尾情感回收不足。需执行3处local修正（来源补充、术语精确化、情感落点强化）和2处structural调整（风险段前置交织、开篇重构）。
+3. 当轮裁定：归档稿件存在5处关键偏差：2026年ADPD来源锚点缺失、APOE术语表述模糊、风险段位置与content_combo要求的'风险坦诚'嵌入节奏不符、开篇医学术语前置削弱情感锚定、结尾情感回收不足。需要执行3处local修正（来源补充、术语精确化、情感落点强化）和2处structural调整（风险段前置交织、开篇重构）。
 4. 建议阅读顺序：先看“轮次轨迹”，再看“局部任务清单”，然后看“逐任务执行结果”，最后看当前稿件全文和最终剩余缺口。
 
 ### 二、轮次轨迹
@@ -116,7 +118,7 @@ eval_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eva
 对于阿尔茨海默病这种至今无法治愈的疾病，**时间本身就是最珍贵的疗效**。而四年数据告诉我们：**有些时间，是可以抢回来的**。这四年，值得。而下一个四年，从您决定开始的那一刻，才算真正开始。
 ```
 
-### 五、当前稿件全文（局部返修后）
+### 五、归档稿件全文（局部返修后快照）
 
 ```text
 # 仑卡奈单抗四年数据：这对您和家人的生活意味着什么
@@ -177,29 +179,29 @@ eval_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eva
 
 ```
 
-### 六、当前评分与剩余缺口
+### 六、归档评分与剩余缺口
 
-1. 当前总分与判定：`78`；`qualified=true`。
-2. 当前 blocker：无
-3. 当前剩余缺项：APOE杂合子具体获益数据未单独呈现（仅 bundled 于'前两类人'）；参考答案标题的'15个月黄金时光'具象数字未在系统稿标题或核心位置突出；'36个月vs48个月'对比为假设推演，未明确标注为示意性场景
-4. 当前下一刀：标题优化：嵌入'近一年'或'15个月'等具象数字，强化记忆锚点；术语患者化：将'APOE ε4非携带者或杂合子'首次出现改为'八成不携带或只携带一份风险基因的人'，术语后置解释；人群边界集中：将'两个分水岭'合并为单一强声明句，如'如果您的基因背景和疾病分期与这八成患者不同，这些数字可能不适用于您'；选择落点精简：将'这对你意味着什么'段拆分为'如果您是患者'和'如果您是家属'两个干净落点，或保留单一视角形成张力峰值；增加差异幅度：补充非携带者vs杂合子的具体延缓差异（如有数据），或明确说明'本次数据未单独区分这两组'
+1. 归档时总分与判定：`78`；`qualified=true`。
+2. 归档时 blocker：无
+3. 归档时剩余缺项：APOE杂合子具体获益数据未单独呈现（仅 bundled 于'前两类人'）；参考答案标题的'15个月黄金时光'具象数字未在系统稿标题或核心位置突出；'36个月vs48个月'对比为假设推演，未明确标注为示意性场景
+4. 当轮后续修订建议：标题优化，嵌入'近一年'或'15个月'等具象数字，强化记忆锚点；术语患者化，将'APOE ε4非携带者或杂合子'首次出现改为'八成不携带或只携带一份风险基因的人'，术语后置解释；人群边界集中，将'两个分水岭'合并为单一强声明句，如'如果您的基因背景和疾病分期与这八成患者不同，这些数字可能不适用于您'；选择落点精简，将'这对你意味着什么'段拆分为'如果您是患者'和'如果您是家属'两个干净落点，或保留单一视角形成张力峰值；增加差异幅度，补充非携带者vs杂合子的具体延缓差异（如有数据），或明确说明'本次数据未单独区分这两组'
 
-## 工程附录
+## 历史产物名录
 
-### Runtime 指针
+### 运行产物名录
 
-1. `local_revise_manifest.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise_manifest.json`
-2. `revise_manifest.json`（沿用统一入口的总返修摘要）：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\revise_manifest.json`
-3. `score.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\score.json`
-4. `draft.txt`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\draft.txt`
-5. `round_1\revision_task_list.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise\round_1\revision_task_list.json`
-6. `round_1\revised_draft.txt`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise\round_1\revised_draft.txt`
-7. `L1.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise\round_1\local_patch_results\L1.json`
-8. `L2.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise\round_1\local_patch_results\L2.json`
-9. `L3.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise\round_1\local_patch_results\L3.json`
+1. `local_revise_manifest.json`（历史运行产物，路径不收录）
+2. `revise_manifest.json`（沿用统一入口的总返修摘要，路径不收录）
+3. `score.json`（路径不收录）
+4. `draft.txt`（路径不收录）
+5. `round_1/revision_task_list.json`（路径不收录）
+6. `round_1/revised_draft.txt`（路径不收录）
+7. `L1.json`（路径不收录）
+8. `L2.json`（路径不收录）
+9. `L3.json`（路径不收录）
 
 ### 证据摘要
 
-1. 已直接核对：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise_manifest.json` 中执行精度率为 `1.0`、问题关闭率为 `1.0`、最终总分为 `78`。
-2. 已直接核对：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_patient\local_revise\round_1\local_patch_results` 中逐任务核验结果为 `L1:passed；L2:passed；L3:passed`，可直接复盘哪些 patch 被应用、哪些被挡下。
-3. 已直接核对：当前 `draft.txt` 与 `score.json` 已落盘，人工可顺着“loop 基线全貌 -> 本轮局部任务 -> 逐 patch 结果 -> 当前稿件”评估局部返修是否真的有效。
+1. 已记录的历史核对结果显示：`local_revise_manifest.json` 中执行精度率为 `1.0`、问题关闭率为 `1.0`、最终总分为 `78`。
+2. 已记录的历史核对结果显示：`round_1/local_patch_results` 中逐任务核验结果为 `L1:passed；L2:passed；L3:passed`，可直接复盘哪些 patch 被应用、哪些被挡下。
+3. 已记录的历史核对结果显示：`draft.txt` 与 `score.json` 已落盘，人工可顺着“loop 基线全貌 -> 本轮局部任务 -> 逐 patch 结果 -> 归档稿件”评估局部返修是否真的有效。

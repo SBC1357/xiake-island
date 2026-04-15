@@ -1,39 +1,43 @@
-# 仑卡奈单抗患者向文章（deepseek-reasoner 模型测试单题全貌）
+# 仑卡奈单抗患者向文章（deepseek-reasoner 模型测试单题历史档案）
 
-状态：deepseek-reasoner 模型实验结果
+状态：历史档案 / 已冻结
 日期：2026-04-12
-用途：人工直接评估 `deepseek-reasoner` 在白盒链中的三段表现：初稿、整稿返修 loop、整稿 loop 后局部返修。本文只认冻结当前评分器后的结果，自评分结果只作辅助观察。
+用途：留存 `deepseek-reasoner` 在当次白盒链单题测试中的三段表现记录，仅供回看，不再作为当前活状态真相源。
 
-## 当前有效口径
+## 当前活状态回指
 
-1. 当前口径只认：`frozen_scorer_true_loop_summary.json` 与对应 runtime manifest。
-2. `deepseek_reasoner_eval_summary.json` 里的自评分结果只作为辅助现象，不作为当前 benchmark 裁定。
-3. 本文比较的是同一模型在同一题上的三段能力：`初稿`、`whole revise`、`whole revise + local revise`。
-4. 本文已核对 `draft_manifest.json`，当前初稿链路中 `reference_answer_visible_before_draft=false`、`reference_sample_enabled_for_draft=false`，不按泄题口径处理。
+当前活状态请回指 [00_入口索引/03_当前阶段任务卡.md](../../../../00_入口索引/03_当前阶段任务卡.md) 与 [07_白盒施工包/04_第四轮白盒测试+建设/白盒系统第四轮收口长线程包.md](../04_第四轮白盒测试+建设/白盒系统第四轮收口长线程包.md)。本档案只保留历史测试结论。
+
+## 历史有效口径回放
+
+1. 当次裁定只认：`frozen_scorer_true_loop_summary.json` 与对应 runtime manifest。
+2. `deepseek_reasoner_eval_summary.json` 里的自评分结果仅作辅助现象，不进入当次 benchmark 裁定。
+3. 当次比较的是同一模型在同一题上的三段能力：`初稿`、`whole revise`、`whole revise + local revise`。
+4. 当次已核对 `draft_manifest.json`，初稿链路中 `reference_answer_visible_before_draft=false`、`reference_sample_enabled_for_draft=false`，不按泄题口径处理。
 
 case_id: `lecanemab_patient`
-summary_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1`
-base_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1\lecanemab_patient\base`
-whole_loop_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1\lecanemab_patient\whole_loop_frozenjudge`
-whole_plus_local_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1\lecanemab_patient\whole_plus_local_frozenjudge`
+summary_dir: `runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1`
+base_dir: `runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/base`
+whole_loop_dir: `runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_loop_frozenjudge`
+whole_plus_local_dir: `runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_plus_local_frozenjudge`
 
 ## 主阅读层
 
 ### 一、人工审核先看
 
-1. 自评分辅助结果：初稿 `78 / true`，但这层不是当前真相源。
+1. 自评分辅助结果：初稿 `78 / true`，但当次不作为最终真相源。
 2. 冻结评分器后的初稿结果：`58 / false`。
 3. 冻结评分器下的整稿返修结果：`58 -> 78`，两轮后达标。
 4. 冻结评分器下的整稿后局部返修结果：`78 -> 72`，仍达标，但分数回落。
 5. 局部返修执行指标：`execution_precision_rate=1.0`、`issue_close_rate=1.0`、`scope_violation_count=0`、`new_risk_count=0`。
-6. 当前裁定：`deepseek-reasoner` 在这题上最有价值的位置是 `whole revise`；局部返修执行很准，但在当前评分器下不构成稳定加分器。
+6. 当次裁定：`deepseek-reasoner` 在这题上最有价值的位置是 `whole revise`；局部返修执行很准，但在当次评分器下不构成稳定加分器。
 
 ### 二、实验设计与当前裁定
 
 1. 第一层先做了 `deepseek-reasoner` 的全链自评分实验；这层结果显示初稿和局部返修看起来都很强，但因为评分器也被换掉了，不作为最终 benchmark 结论。
-2. 第二层用当前冻结评分器重评同一批结果；此时初稿、whole、whole+local 都被打回 `58 / false`，说明自评分不能直接拿来当当前结论。
-3. 第三层才是当前有效实验：保留冻结评分器，只让 `whole_revise` 和 `local_patch` 这些白盒返修位吃 `deepseek-reasoner`。
-4. 当前有效结论来自第三层：整稿返修有用，局部返修执行精度高，但不稳定给分。
+2. 第二层用冻结评分器重评同一批结果；此时初稿、whole、whole+local 都被打回 `58 / false`，说明自评分不能直接拿来当最终结论。
+3. 第三层才是当次有效实验：保留冻结评分器，只让 `whole_revise` 和 `local_patch` 这些白盒返修位吃 `deepseek-reasoner`。
+4. 当次有效结论来自第三层：整稿返修有用，局部返修执行精度高，但不稳定给分。
 
 ### 三、轮次轨迹
 
@@ -49,7 +53,7 @@ whole_plus_local_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_dee
 1. 初稿：`58 / false`
 2. 自评分 whole 产物重评分：`58 / false`
 3. 自评分 whole+local 产物重评分：`58 / false`
-4. 备注：这层主要用于证明“自评分结果不能直接当当前结论”。
+4. 备注：这层主要用于证明“自评分结果不能直接当最终结论”。
 
 #### 3. 冻结评分器下的真实 loop 轨迹
 
@@ -60,17 +64,17 @@ whole_plus_local_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_dee
 
 ### 四、关键工件与阅读顺序
 
-1. 先看 `frozen_scorer_true_loop_summary.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1\frozen_scorer_true_loop_summary.json`
-2. 再看基线初稿 manifest：`D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1\lecanemab_patient\base\draft_manifest.json`
-3. 再看整稿返修 manifest：`D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1\lecanemab_patient\whole_loop_frozenjudge\revise_manifest.json`
-4. 最后看局部返修 manifest：`D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_deepseek_reasoner\20260412_ds_reasoner_round1\lecanemab_patient\whole_plus_local_frozenjudge\local_revise_manifest.json`
+1. 先看 `frozen_scorer_true_loop_summary.json`：`runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/frozen_scorer_true_loop_summary.json`
+2. 再看基线初稿 manifest：`runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/base/draft_manifest.json`
+3. 再看整稿返修 manifest：`runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_loop_frozenjudge/revise_manifest.json`
+4. 最后看局部返修 manifest：`runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_plus_local_frozenjudge/local_revise_manifest.json`
 
 ### 五、当前判断
 
 1. 初稿能力：在当前冻结评分器下，`deepseek-reasoner` 没证明自己比现有主链初稿更强。
-2. 整稿返修能力：这题上证明有效，而且提升明显，是当前最值得接入的角色位。
-3. 局部返修能力：执行非常精准，但会出现“改得准却不继续涨分”的情况；当前不能把它直接当成稳定提分器。
-4. 当前最合理的产品判断：如果现在就要接入这个模型，优先挂到 `whole_revise`，不优先挂 `draft`。
+2. 整稿返修能力：这题上证明有效，而且提升明显，是当次最值得接入的角色位。
+3. 局部返修能力：执行非常精准，但会出现“改得准却不继续涨分”的情况；当次不能把它直接当成稳定提分器。
+4. 当次最合理的产品判断：如果当时就要接入这个模型，优先挂到 `whole_revise`，不优先挂 `draft`。
 
 ### 六、初稿全文（冻结评分器下的基线稿）
 
@@ -190,6 +194,6 @@ whole_plus_local_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_model_eval_dee
 
 ## 证据摘要
 
-1. 已直接核对 [frozen_scorer_true_loop_summary.json](</abs/path/D:/汇度编辑部1/侠客岛-runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/frozen_scorer_true_loop_summary.json:1>)：`patient` 的 `whole_loop_score=78`、`whole_plus_local_score=72`。
-2. 已直接核对 [base draft_manifest.json](</abs/path/D:/汇度编辑部1/侠客岛-runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/base/draft_manifest.json:1>)：`draft_origin=llm_generated`、`reference_answer_visible_before_draft=false`、`reference_sample_enabled_for_draft=false`。
-3. 已直接核对 [whole revise manifest](</abs/path/D:/汇度编辑部1/侠客岛-runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_loop_frozenjudge/revise_manifest.json:1>) 与 [local revise manifest](</abs/path/D:/汇度编辑部1/侠客岛-runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_plus_local_frozenjudge/local_revise_manifest.json:1>)：整稿返修两轮达标，局部返修 `execution_precision_rate=1.0` 但分数从 `78` 回落到 `72`。
+1. 已直接核对 [frozen_scorer_true_loop_summary.json](runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/frozen_scorer_true_loop_summary.json)：`patient` 的 `whole_loop_score=78`、`whole_plus_local_score=72`。
+2. 已直接核对 [base draft_manifest.json](runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/base/draft_manifest.json)：`draft_origin=llm_generated`、`reference_answer_visible_before_draft=false`、`reference_sample_enabled_for_draft=false`。
+3. 已直接核对 [whole revise manifest](runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_loop_frozenjudge/revise_manifest.json) 与 [local revise manifest](runtime/iiia_model_eval_deepseek_reasoner/20260412_ds_reasoner_round1/lecanemab_patient/whole_plus_local_frozenjudge/local_revise_manifest.json)：整稿返修两轮达标，局部返修 `execution_precision_rate=1.0` 但分数从 `78` 回落到 `72`。

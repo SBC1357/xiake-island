@@ -1,0 +1,23 @@
+{
+  "candidate_id": "lecanemab_patient",
+  "candidate_name": "仑卡奈单抗患者向文章",
+  "status": "completed",
+  "exit_code": 0,
+  "score_origin": "benchmark_llm_generated",
+  "external_score_source_path": null,
+  "llm_profile": "review_score",
+  "benchmark_mode": true,
+  "run_directory": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\runs\\review_score\\route3\\lecanemab_patient",
+  "score_started_at": "2026-04-12 21:40:44",
+  "score_completed_at": "2026-04-12 21:41:36",
+  "score_path": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\runs\\review_score\\route3\\lecanemab_patient\\score.json",
+  "score_prompt_path": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\runs\\review_score\\route3\\lecanemab_patient\\score_prompt.md",
+  "score_raw_output_path": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\runs\\review_score\\route3\\lecanemab_patient\\score_raw.txt",
+  "reference_answer_source_path": "项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章\\gold\\V2-仑卡奈单抗4年数据炸了！阿尔茨海默病竟能抢回15个月黄金时光.docx",
+  "reference_answer_materialized_path": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\runs\\review_score\\route3\\lecanemab_patient\\reference_answer.txt",
+  "reference_answer_written_at": "2026-04-12 21:40:44",
+  "draft_manifest_path": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\runs\\review_score\\route3\\lecanemab_patient\\draft_manifest.json",
+  "draft_reference_answer_visible_before_draft": false,
+  "error": null
+}
+

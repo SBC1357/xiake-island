@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>白盒系统编辑验收板 2026-04-13</title>
+  <style>
+    :root{
+      --bg:#f7f3ec;
+      --paper:#fffdf8;
+      --line:#d8cfbf;
+      --ink:#1f2937;
+      --muted:#5f6773;
+      --blue:#1f5ca8;
+      --blue-soft:#e8f0ff;
+      --green-soft:#eaf6ee;
+      --orange-soft:#fff0dd;
+      --purple-soft:#f1ebff;
+      --shadow:0 10px 24px rgba(31,41,55,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font:15px/1.65 "Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(31,92,168,.08), transparent 24%),
+        radial-gradient(circle at top right, rgba(24,129,84,.06), transparent 18%),
+        var(--bg);
+    }
+    .wrap{max-width:1420px;margin:0 auto;padding:20px}
+    .card,details{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+    }
+    .hero,.section{padding:22px 24px;margin-bottom:16px}
+    h1,h2,h3,h4{margin:0 0 10px;line-height:1.25}
+    h1{font-size:34px}
+    h2{font-size:28px}
+    h3{font-size:18px}
+    p{margin:0 0 10px;color:var(--muted)}
+    ul{margin:8px 0 0;padding-left:18px}
+    li{margin:5px 0}
+    code,pre{font-family:Consolas,Menlo,monospace}
+    .tag{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-size:12px;
+      font-weight:700;
+    }
+    .nav{
+      position:sticky;
+      top:8px;
+      z-index:4;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
+      padding:10px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,253,248,.92);
+      backdrop-filter:blur(8px);
+    }
+    .nav a{
+      padding:7px 11px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--ink);
+      text-decoration:none;
+      font-size:13px;
+    }
+    .nav a:hover{color:var(--blue);border-color:var(--blue)}
+    .grid{display:grid;gap:12px}
+    .two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .three{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .flow{grid-template-columns:repeat(6,1fr)}
+    .tile,.mini{
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#faf7f1;
+    }
+    .tile strong{display:block;margin-bottom:6px}
+    .metric{
+      padding:14px 16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#faf7f1;
+    }
+    .metric small{display:block;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+    .metric strong{display:block;font-size:24px;margin-top:6px}
+    .box{padding:16px;border-radius:16px;border:1px solid var(--line)}
+    .src{background:#f3f1ec}
+    .main{background:var(--blue-soft);border-color:#c7d9fb}
+    .review{background:var(--orange-soft);border-color:#edd0a5}
+    .back{background:var(--purple-soft);border-color:#d8c9f8}
+    .side{background:var(--green-soft);border-color:#c7e1d1}
+    .arrow{text-align:center;font-size:24px;color:var(--muted);margin:6px 0}
+    .note{
+      margin-top:12px;
+      padding:12px 14px;
+      border:1px dashed var(--line);
+      border-radius:14px;
+      background:#fff;
+      color:var(--muted);
+    }
+    details{overflow:hidden}
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding:18px 20px;
+      font-weight:800;
+      font-size:22px;
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:flex-start;
+    }
+    summary::-webkit-details-marker{display:none}
+    .summary-right{font-size:13px;color:var(--muted);font-weight:600;white-space:nowrap}
+    .body{padding:0 20px 20px;border-top:1px solid var(--line)}
+    .label{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
+    .snippet{
+      margin-top:8px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:#111827;
+      color:#f8fafc;
+      font-size:12px;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
+    .fold{
+      margin-top:12px;
+      padding:12px 14px;
+      border:1px dashed var(--line);
+      border-radius:14px;
+      background:#fff;
+    }
+    .fold summary{
+      padding:0;
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .fold pre{
+      margin:10px 0 0;
+      padding:12px 14px;
+      border-radius:12px;
+      background:#f4f1ea;
+      color:#2c3645;
+      white-space:pre-wrap;
+      word-break:break-word;
+      font-size:12px;
+    }
+    @media (max-width:1120px){.flow{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:760px){
+      .wrap{padding:12px}
+      .hero,.section,.body,summary{padding-left:14px;padding-right:14px}
+      .grid,.flow,.two,.three{grid-template-columns:1fr}
+      h1{font-size:28px}
+      .summary-right{white-space:normal}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="card hero" id="top">
+      <span class="tag">给验收这套白盒系统的人看</span>
+      <h1>白盒系统编辑验收板</h1>
+      <p>这页的目标不是给程序员看 schema，而是帮你快速判断 4 件事：主链有没有跑偏、每层到底交付什么、当前样例到底跑出了什么、如果不对先去改哪里。</p>
+      <div class="grid three" style="margin-top:16px">
+        <div class="metric"><small>当前样例第一层</small><strong>direct</strong></div>
+        <div class="metric"><small>当前样例前审</small><strong>pass</strong></div>
+        <div class="metric"><small>后审原始裁定</small><strong>local_patch</strong></div>
+        <div class="metric"><small>本轮最终停点</small><strong>whole_revise_exhausted</strong></div>
+      </div>
+      <div class="grid two" style="margin-top:14px">
+        <div class="tile">
+          <strong>给谁看</strong>
+          这是给验收这套白盒系统的人看的，不是给写代码的人看的。
+        </div>
+        <div class="tile">
+          <strong>你应该先看什么</strong>
+          先看主链图，再看“后审原始裁定”和“本轮最终停点”的区别，最后顺着节点卡片看每层交付和改动入口。
+        </div>
+      </div>
+      <div class="tile" style="margin-top:12px">
+        <strong>这页应该怎么用</strong>
+        <ul>
+          <li>先看主链图，判断链路有没有跑偏。</li>
+          <li>再看“当前样例”，判断这次到底卡在哪一层、为什么没过。</li>
+          <li>最后看节点卡，判断这层交付件和边界是不是对的；真要动手改，再去“去哪改”区找文件入口。</li>
+        </ul>
+      </div>
+    </section>
+
+    <nav class="nav">
+      <a href="#flow">主链图</a>
+      <a href="#sample">当前样例</a>
+      <a href="#nodes">逐层看板</a>
+      <a href="#where">去哪改</a>
+      <a href="#evidence">证据摘要</a>
+    </nav>
+
+    <section class="card section" id="flow">
+      <h2>先看主链，不要先看字段</h2>
+      <p>真正要审的是交付关系。冻结架构已经定死：第一层冻结意图和证据，合同层编译执行规格，大纲层编译骨架，成稿节点负责首稿 / 整改，后审回原始数据核，然后只允许固定回流。</p>
+      <div class="grid flow">
+        <div class="box src"><h3>取材</h3><p>把候选材料整理成可消费清单。</p></div>
+        <div class="box main"><h3>第一层</h3><p>分流，然后冻结意图包和证据包。</p></div>
+        <div class="box main"><h3>写作合同</h3><p>把任务编译成正式执行规格。</p></div>
+        <div class="box main"><h3>大纲</h3><p>把模块承重和证据锚点编成骨架。</p></div>
+        <div class="box main"><h3>成稿节点</h3><p>首稿或整改，都在这里完成。</p></div>
+        <div class="box review"><h3>后审</h3><p>回原始数据核，再决定回流。</p></div>
+      </div>
+      <div class="arrow">→ → → → →</div>
+      <div class="grid two" style="margin-top:12px">
+        <div class="box back">
+          <h3>后审后的固定去向</h3>
+          <ul>
+          <li><code>pass</code>：通过。</li>
+          <li><code>requirement_rework</code>：回第一层。</li>
+          <li><code>whole_revise</code>：回成稿节点整改模式。</li>
+          <li><code>local_patch</code>：进局改 loop，再回后审。</li>
+          </ul>
+        </div>
+        <div class="box side">
+          <h3>两个容易搞错的边界</h3>
+          <ul>
+            <li><strong>前审</strong>：并行，只判断“按当前结构化证据够不够开写”。</li>
+            <li><strong>补充证据</strong>：独立侧链，默认不进主链，不得污染主证据包 JSON。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section" id="sample">
+      <h2>这次真实样例现在到了哪</h2>
+      <div class="grid two">
+        <div class="tile">
+          <strong>样例任务</strong>
+          <ul>
+            <li>要写什么：把仑卡奈单抗 48 个月临床数据翻成患者 / 家属能懂的科普解读。</li>
+            <li>核心问题：这 4 年数据，对患者到底意味着抢回多少时间、保住多少日常能力。</li>
+            <li>要求结构：患者痛点 → 核心获益翻译 → 亚组理解 → 长期价值 / 风险 → 选择路径。</li>
+          </ul>
+        </div>
+        <div class="tile">
+          <strong>样例当前状态</strong>
+          <ul>
+            <li>第一层：<code>direct</code>，因为目标、约束、材料和验收标准都已清楚。</li>
+            <li>前审：<code>pass</code>，说明当前结构化证据足够开写。</li>
+            <li>后审原始裁定：<code>needs_local_patch</code> → <code>local_patch</code>。</li>
+            <li>局改 loop：已跑满 3 轮，仍未收口。</li>
+            <li>本轮最终停点：<code>whole_revise_exhausted</code>。</li>
+            <li>原因：后审认为问题本来只该局改，但局改 3 轮后仍没收口，所以这次整轮运行最终没有通过。</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tile" style="margin-top:12px">
+        <strong>这次样例最关键的一句判断</strong>
+        要分两层看：后审原始裁定是 <code>local_patch</code>，这说明主链、模块承重和回流方向基本对了；但这次整轮运行最后停在 <code>whole_revise_exhausted</code>，说明局改 loop 没能把问题收掉。
+      </div>
+    </section>
+
+    <section class="card section" id="nodes">
+      <h2>逐层看板</h2>
+      <p>每张卡只默认回答 5 个问题：这层干嘛、这层收什么、这层交什么、这次样例实际是什么、如果不对先去改哪里。原始字段名全部收在折叠区。</p>
+
+      <details open>
+        <summary><span>1. 取材节点 materials</span><span class="summary-right">把候选材料整理成正式材料入口</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini">
+              <div class="label">这层干嘛</div>
+              它不理解任务，只负责把候选材料整理干净，给第一层提供正式材料入口。
+            </div>
+            <div class="mini">
+              <div class="label">这层收什么</div>
+              候选题和候选材料池。关键输入形式是 <code>CandidateId / CandidatePool / input_rules</code>。
+            </div>
+            <div class="mini">
+              <div class="label">这层交什么</div>
+              <code>materials_manifest.json</code>、<code>materials_digest.md</code>、<code>materials_compiled.txt</code>。
+            </div>
+            <div class="mini">
+              <div class="label">如果不对先去改</div>
+              脚本：<code>run_ii_whitebox_materials.ps1</code>。
+            </div>
+          </div>
+          <details class="fold">
+            <summary>展开看这层原始字段</summary>
+            <pre>candidate_id, candidate_name, status, exit_code, run_directory,
+extractable_count, total_items, compiled_text, coverage_audit, items</pre>
+          </details>
+        </div>
+      </details>
+
+      <details open>
+        <summary><span>2. 第一层 layer1</span><span class="summary-right">先分流，再冻结意图包 / 证据包 / 样稿边界</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini">
+              <div class="label">这层干嘛</div>
+              把“用户到底要写什么”和“现在手上的材料到底能当什么证据”冻结下来。它不是写稿层。
+            </div>
+            <div class="mini">
+              <div class="label">这层收什么</div>
+              用户原话、候选上下文、<code>materials_manifest.json</code>、<code>materials_compiled.txt</code>。
+            </div>
+            <div class="mini">
+              <div class="label">这层交什么</div>
+              给合同层：<code>intent_pack.json</code> + <code>evidence_pack.json</code>。<br>
+              给成稿层：<code>evidence_pack.md</code>。<br>
+              同时落盘：<code>route_decision.json</code>、<code>sample_boundary.json</code>。
+            </div>
+            <div class="mini">
+              <div class="label">这次样例实际是什么</div>
+              这次冻出来的是一篇“仑卡奈单抗 48 个月数据”的患者向解读；核心问题是“这 4 年到底为我抢回了什么”。分流是 <code>direct</code>。样稿只允许借结构 / 语气 / 风格，不允许借事实 / 数字 / 结论 / 标题。
+            </div>
+          </div>
+          <div class="grid two" style="margin-top:12px">
+            <div class="mini">
+              <div class="label">如果你觉得这层不对，先去改哪里</div>
+              <ul>
+                <li>分流逻辑：<code>prompts/layer1_main.md</code></li>
+                <li>直通冻结：<code>prompts/layer1_direct.md</code></li>
+                <li>SP 澄清：<code>prompts/layer1_sp.md</code></li>
+                <li>意图包结构：<code>prompts/intent_extraction.md</code></li>
+                <li>证据包：<code>prompts/evidence_preprocessing.md</code></li>
+                <li>样稿边界：<code>prompts/sample_boundary.md</code></li>
+                <li>脚本：<code>run_whitebox_layer1.ps1</code></li>
+              </ul>
+            </div>
+            <div class="mini">
+              <div class="label">这一层你真正该盯什么</div>
+              <ul>
+                <li>意图包有没有把用户真实目标保住，而不是缩水摘要。</li>
+                <li>证据包 JSON 有没有把来源、边界、冲突、缺口说清。</li>
+                <li>证据包 md 是不是预处理材料，不是粗糙摘要。</li>
+                <li>是否把 gold / reference_answer 排除在生产链外。</li>
+              </ul>
+            </div>
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段与样例片段</summary>
+            <pre>intent_pack:
+user_raw_input, task_name, what_to_write, target_audience, core_question,
+purpose, genre, case_type, target_word_count, implicit_requirements,
+forbidden_zones, must_keep, acceptance_criteria, required_structure,
+core_data_points, formula_positions, input_rules, blocked_by, release_status,
+freeze_status, freeze_timestamp, reference_sample, reference_sample_boundary
+
+evidence_pack:
+evidence_items, total_items, coverage_summary, source_registry,
+usage_boundary_summary, conflict_register, gap_register,
+freeze_status, freeze_timestamp</pre>
+            <div class="snippet"># 证据包预处理文档：仑卡奈单抗48个月OLE研究（ApoE ε4非携带者/杂合子）
+## 来源文档
+Froelich_48M Noncarriers and Heterozyg_ADPD26 FINAL.pdf
+## 一、研究基本信息
+### 标题
+LECANEMAB FOR EARLY ALZHEIMER'S DISEASE...</div>
+          </details>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>3. 写作合同 writing_contract</span><span class="summary-right">把任务编译成正式执行规格</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini"><div class="label">这层干嘛</div>把意图包和证据包 JSON 编译成正式合同，让大纲层和成稿层知道“必须怎么写、必须保什么、不许越什么边界”。</div>
+            <div class="mini"><div class="label">这层收什么</div><code>intent_pack.json</code> + <code>evidence_pack.json</code>。固定不吃原始材料，也不吃 <code>evidence_pack.md</code>。</div>
+            <div class="mini"><div class="label">这层交什么</div><code>writing_contract.json</code>。</div>
+            <div class="mini"><div class="label">这次样例实际是什么</div>这次合同把任务钉成“患者向科普解读”，目标字数 <code>2000</code>，并明确必须写到 48 个月 OLE 结果、55% 相对风险降低、人群限定和欧盟适应症等关键事实。</div>
+          </div>
+          <div class="mini" style="margin-top:12px">
+            <div class="label">如果不对先去改哪里</div>
+            Prompt：<code>prompts/writing_contract.md</code>；Profile：<code>whitebox_llm_profiles.json</code> 中的 <code>writing_contract</code>；脚本：<code>run_whitebox_writing_contract.ps1</code>。
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段</summary>
+            <pre>contract_version, generated_at, task_summary, audience, purpose, genre,
+target_word_count, must_include_facts, required_structure, forbidden_zones,
+formula_contract, evidence_coverage, reference_sample_boundary,
+acceptance_criteria</pre>
+          </details>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>4. 前审 pre_review</span><span class="summary-right">并行判断“现在够不够开写”</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini"><div class="label">这层干嘛</div>它不是内容审稿人，只是判断“按当前结构化证据，能不能开写”。</div>
+            <div class="mini"><div class="label">这层收什么</div><code>intent_pack.json</code>、<code>writing_contract.json</code>、<code>evidence_pack.json</code>。</div>
+            <div class="mini"><div class="label">这层交什么</div><code>pre_review_result.json</code>。</div>
+            <div class="mini"><div class="label">这次样例实际是什么</div>当前样例这里是 <code>pass</code>，说明冻结后的结构化证据已经够支持成稿开写。</div>
+          </div>
+          <div class="mini" style="margin-top:12px">
+            <div class="label">如果不对先去改哪里</div>
+            Prompt：<code>prompts/pre_review.md</code>；脚本：<code>run_whitebox_pre_review.ps1</code>。红线：它不该去吃原始数据。
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段</summary>
+            <pre>pre_review_status, can_proceed_to_draft, hard_blocks, soft_warnings,
+evidence_coverage, reviewed_at, hard_block</pre>
+          </details>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>5. 大纲 outline</span><span class="summary-right">把模块承重和证据锚点编成骨架</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini"><div class="label">这层干嘛</div>把合同里的任务要求、结构要求和证据锚点编成成稿节点可以直接执行的大纲骨架。</div>
+            <div class="mini"><div class="label">这层收什么</div><code>intent_pack.json</code>、<code>writing_contract.json</code>、<code>evidence_pack.json</code>。</div>
+            <div class="mini"><div class="label">这层交什么</div><code>outline.json</code>（机器流转主文件）+ <code>outline.md</code>（人工复核镜像）。</div>
+            <div class="mini"><div class="label">这次样例实际是什么</div>这次大纲拆成了 5 段：患者痛点、核心获益翻译、亚组理解、风险与边界、选择引导。</div>
+          </div>
+          <div class="mini" style="margin-top:12px">
+            <div class="label">如果不对先去改哪里</div>
+            Prompt：<code>prompts/outline.md</code>；Profile：<code>outline</code>；脚本：<code>run_whitebox_outline.ps1</code>。
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段与样例标题</summary>
+            <pre>outline_version, generated_at, total_sections, sections, global_constraints</pre>
+            <div class="snippet">患者痛点锚定：AD治疗的焦虑与期待
+核心获益翻译：48个月数据说明了什么
+亚组理解：不同人群获益有何不同
+风险与边界：长期治疗要付出什么
+选择引导：这些数据放在你的处境里意味着什么</div>
+          </details>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>6. 成稿节点 draft_node</span><span class="summary-right">首稿和整改都在这个节点，不另起新层</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini"><div class="label">这层干嘛</div>按大纲和证据把稿子真正写出来。整改时也不新开层，而是回到同一个成稿节点。</div>
+            <div class="mini"><div class="label">这层收什么</div>首稿主吃 <code>outline.json + evidence_pack.md</code>；整改主吃 <code>当前稿 + revise_card.json + outline.json + evidence_pack.md</code>。</div>
+            <div class="mini"><div class="label">这层交什么</div><code>draft.txt</code> + <code>draft_manifest.json</code>。</div>
+            <div class="mini"><div class="label">这次样例实际是什么</div>当前样例最新 manifest 是 <code>mode = revise</code>，说明它已经按后审回到了整改模式，而不是跑偏到别处。</div>
+          </div>
+          <div class="grid two" style="margin-top:12px">
+            <div class="mini">
+              <div class="label">如果不对先去改哪里</div>
+              <ul>
+                <li>首稿 prompt：<code>prompts/draft_first.md</code></li>
+                <li>整改 prompt：<code>prompts/draft_revise.md</code></li>
+                <li>Profile：<code>draft_first</code> / <code>draft_revise</code></li>
+                <li>脚本：<code>run_whitebox_draft_node.ps1</code></li>
+              </ul>
+            </div>
+            <div class="mini">
+              <div class="label">这次样例开头</div>
+              标题已经被写成“仑卡奈单抗四年数据：这四年，能为你留住什么？”，开头是从患者家属最常问的问题切入，而不是直接扔临床术语。
+            </div>
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段与样例片段</summary>
+            <pre>draft_manifest:
+mode, draft_path, prompt_path, profile, inputs, completed_at, note</pre>
+            <div class="snippet">## 仑卡奈单抗四年数据：这四年，能为你留住什么？
+
+### 一、患者痛点锚定：AD治疗的焦虑与期待
+
+"这药能打多久？真的能拖住病情吗？"</div>
+          </details>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>7. 后审 post_review</span><span class="summary-right">回原始数据核，再决定回哪</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini"><div class="label">这层干嘛</div>它是最后的裁判，但不是复述上游结论，而是回原始数据核事实、边界和路线。</div>
+            <div class="mini"><div class="label">这层收什么</div><code>intent_pack.json</code>、<code>writing_contract.json</code>、<code>draft.txt</code>，再加原始材料。</div>
+            <div class="mini"><div class="label">这层交什么</div><code>post_review_result.json</code>、<code>flow_decision.json</code>；需要整改时再给 <code>revise_card.json</code>。</div>
+            <div class="mini"><div class="label">这次样例实际是什么</div>后审把问题归到 <code>local_patch</code>，不是 <code>whole_revise</code>。说明它原始判断是局部精修，而不是整篇承重错误。</div>
+          </div>
+          <div class="grid two" style="margin-top:12px">
+            <div class="mini">
+              <div class="label">这次样例具体在挑什么问题</div>
+              <ul>
+                <li>“55% 相对风险降低”后面的时间感知化翻译还不够。</li>
+                <li>BioFINDER 这个对照来源要补一句。</li>
+                <li>长期安全性边界表述有重复。</li>
+                <li>少量术语还不够患者化。</li>
+              </ul>
+            </div>
+            <div class="mini">
+              <div class="label">如果不对先去改哪里</div>
+              Prompt：<code>prompts/post_review.md</code>；Profile：<code>post_review</code>；脚本：<code>run_whitebox_post_review.ps1</code>。
+            </div>
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段</summary>
+            <pre>post_review_result:
+post_review_status, hard_layer, soft_layer, flow_decision, flow_reason,
+revise_card, blocking_issues, reviewed_at, local_issues
+
+flow_decision:
+flow, reason, decided_at
+
+revise_card:
+priority_issues, forbidden_changes, scope</pre>
+          </details>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>8. 局改 loop local_patch_loop</span><span class="summary-right">只修少量段落，修完再审</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini"><div class="label">这层干嘛</div>只做局部 patch，不顺手改整篇主线。</div>
+            <div class="mini"><div class="label">这层收什么</div>协议主输入是 <code>draft.txt</code>、<code>revise_card.json</code>、<code>evidence_pack.md</code>。</div>
+            <div class="mini"><div class="label">这层交什么</div>更新后的 <code>draft.txt</code> + <code>patch_log.json</code>。</div>
+            <div class="mini"><div class="label">这次样例实际是什么</div>当前样例这里已经跑了 3 轮，<code>all_passed = false</code>。也就是说，后审虽然先判了 <code>local_patch</code>，但局改 loop 最终没能把这轮跑通。</div>
+          </div>
+          <div class="mini" style="margin-top:12px">
+            <div class="label">如果不对先去改哪里</div>
+            <code>prompts/local_patch.md</code>、<code>prompts/local_patch_audit.md</code>、<code>run_whitebox_local_patch_loop.ps1</code>。
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段</summary>
+            <pre>total_rounds, max_rounds, all_passed, final_draft, rounds, timestamp</pre>
+          </details>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>9. 补充证据 supplementary_evidence</span><span class="summary-right">独立侧链，不回写主证据包</span></summary>
+        <div class="body">
+          <div class="grid two">
+            <div class="mini"><div class="label">这层干嘛</div>当主证据包真有缺口时，单独去补证据。默认先藏经阁，不够再搜网。</div>
+            <div class="mini"><div class="label">这层收什么</div><code>intent_pack.json</code>、<code>evidence_pack.json</code>，加上用户的补证据请求或后审缺口提示。</div>
+            <div class="mini"><div class="label">这层交什么</div><code>supplementary_evidence.json</code> + <code>supplementary_evidence.md</code>。</div>
+            <div class="mini"><div class="label">这次样例实际是什么</div>当前样例走的是 <code>cangjingge_first</code>，命中产品是 <code>lecanemab / 仑卡奈单抗</code>，补了 6 条补充证据。</div>
+          </div>
+          <div class="mini" style="margin-top:12px">
+            <div class="label">如果不对先去改哪里</div>
+            <code>prompts/supplementary_evidence.md</code>、<code>run_whitebox_supplementary_evidence.ps1</code>。红线：它不应该回写主证据包 JSON。
+          </div>
+          <details class="fold">
+            <summary>展开看原始字段</summary>
+            <pre>source_priority, product_match, requested_domains, keyword_hints,
+supplementary_items, search_status, search_log, generated_at</pre>
+          </details>
+        </div>
+      </details>
+    </section>
+
+    <section class="card section" id="where">
+      <h2>如果你现在就要改东西，先去哪里</h2>
+      <div class="grid two">
+        <div class="tile">
+          <strong>你要改 prompt</strong>
+          <ul>
+            <li>第一层：<code>layer1_main.md / layer1_direct.md / layer1_sp.md / intent_extraction.md / evidence_preprocessing.md / sample_boundary.md</code></li>
+            <li>中段：<code>writing_contract.md / pre_review.md / outline.md</code></li>
+            <li>成稿：<code>draft_first.md / draft_revise.md</code></li>
+            <li>审核：<code>post_review.md / local_patch.md / local_patch_audit.md / supplementary_evidence.md</code></li>
+          </ul>
+        </div>
+        <div class="tile">
+          <strong>你要改模型 / profile / base_url / protocol</strong>
+          直接看 <code>config/whitebox_llm_profiles.json</code>。每个独立 LLM 节点都已经有自己的 <code>prompt_file / model_env / base_url_env / protocol_env / api_key_env / prompt_prefix</code>。
+        </div>
+        <div class="tile">
+          <strong>你要查真实实现，不是只看页面</strong>
+          <ul>
+            <li><code>run_whitebox_main_chain.ps1</code>：真实执行顺序。</li>
+            <li><code>config/node_io_protocol.json</code>：冻结输入 / 输出协议。</li>
+            <li><code>prompts/</code>：各节点提示词正文。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card section" id="evidence">
+      <h2>证据摘要</h2>
+      <ul>
+        <li>主链锚点：已直接核过 <code>run_whitebox_main_chain.ps1</code>、<code>flow_decision.json</code> 和 <code>run_result.json</code>；后审原始裁定是 <code>local_patch</code>，但本轮最终停点是 <code>whole_revise_exhausted</code>。</li>
+        <li>配置锚点：已直接核过 <code>whitebox_llm_profiles.json</code>，节点级 prompt / model / base_url / protocol 绑定都在。</li>
+        <li>样例锚点：已直接读取 <code>intent_pack.json</code>、<code>writing_contract.json</code>、<code>outline.json</code>、<code>draft_manifest.json</code>、<code>post_review_result.json</code>、<code>patch_log.json</code>、<code>supplementary_evidence.json</code> 的真实内容，并把关键结论写进了这页。</li>
+      </ul>
+      <p>这页只用相对路径名字，不放本机绝对路径，也不要求你自己翻 runtime 才能理解结论。</p>
+    </section>
+  </div>
+</body>
+</html>

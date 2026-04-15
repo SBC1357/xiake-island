@@ -1,0 +1,160 @@
+{
+  "weighted_total": 78,
+  "qualified": true,
+  "dimensions": [
+    {
+      "id": "route_alignment",
+      "score": 85,
+      "weight": 25,
+      "reason": "完全符合患者向文章定位，从患者关切出发，围绕4年数据价值展开，逻辑组合ARCH-04承重贯穿全文"
+    },
+    {
+      "id": "key_facts",
+      "score": 80,
+      "weight": 25,
+      "reason": "准确传达了48个月数据核心信息，包括9.8-14.2个月延缓时间、32%进展风险降低、72%极早期患者稳定等关键数据"
+    },
+    {
+      "id": "audience_style",
+      "score": 75,
+      "weight": 20,
+      "reason": "使用患者易懂语言，通过'抢回时间'、'下坡车'等比喻帮助理解，体现了患者关怀者persona"
+    },
+    {
+      "id": "structure",
+      "score": 80,
+      "weight": 15,
+      "reason": "按照患者痛感锚定→核心获益翻译→人群差异理解→风险与边界→选择引导的outline执行良好"
+    },
+    {
+      "id": "hallucination_control",
+      "score": 70,
+      "weight": 15,
+      "reason": "整体事实准确，但部分表述如72%数据在参考答案中有而在白盒稿中未充分体现"
+    }
+  ],
+  "editorial_total": 82,
+  "editorial_dimensions": [
+    {
+      "id": "publishability",
+      "score": 80,
+      "reason": "内容完整，表达清晰，接近可发布状态，但需微调部分表述"
+    },
+    {
+      "id": "narrative_drive",
+      "score": 85,
+      "reason": "从问题提出到数据解读再到个人化建议，有很好的推进力"
+    },
+    {
+      "id": "reader_fit",
+      "score": 82,
+      "reason": "真正站在患者和家属角度思考问题，不只是机械命中合同字段"
+    },
+    {
+      "id": "naturalness",
+      "score": 80,
+      "reason": "中文表达自然流畅，避免了模板腔"
+    }
+  ],
+  "writing_strength": [
+    {
+      "id": "opening_hook",
+      "score": 85,
+      "reason": "以患者最常问的问题开场，建立了很好的共情锚点"
+    },
+    {
+      "id": "transition_flow",
+      "score": 80,
+      "reason": "段落间过渡自然，沿着从焦虑到数据到理解的主线推进"
+    },
+    {
+      "id": "midgame_drive",
+      "score": 78,
+      "reason": "中段信息密度适中，按内容组合要求推进"
+    },
+    {
+      "id": "closing_tension",
+      "score": 82,
+      "reason": "收尾回到个人选择，体现了'这对你意味着什么'的落点"
+    },
+    {
+      "id": "anchor_fidelity",
+      "score": 75,
+      "reason": "大部分锚点落地良好，但72%极早期患者数据体现不够充分"
+    }
+  ],
+  "formula_compliance": 85,
+  "formula_trace": [
+    {
+      "position": "persona",
+      "status": "hit",
+      "evidence": "站在患者和家属角度，用温度语言翻译临床数据"
+    },
+    {
+      "position": "range",
+      "status": "hit",
+      "evidence": "聚焦患者选择沟通，讨论适用人群边界"
+    },
+    {
+      "position": "write_target",
+      "status": "hit",
+      "evidence": "明确帮助理解4年数据抢回多少时间的价值"
+    },
+    {
+      "position": "content_combo",
+      "status": "hit",
+      "evidence": "患者痛感起手+核心获益翻译+风险坦诚+理解引导完整体现"
+    },
+    {
+      "position": "logic_combo",
+      "status": "hit",
+      "evidence": "ARCH-04承重+人群分流选择建议落点执行良好"
+    },
+    {
+      "position": "effective_content_unit",
+      "status": "partial",
+      "evidence": "长期获益判断和适用人群边界声明完整，但72%数据体现不如参考答案充分"
+    },
+    {
+      "position": "effective_logic_unit",
+      "status": "hit",
+      "evidence": "ARCH-04承重贯穿全文，最终回收到选择理解"
+    },
+    {
+      "position": "effective_outline",
+      "status": "hit",
+      "evidence": "五个outline要素全部覆盖"
+    }
+  ],
+  "formula_compliance_summary": "整体公式合规度较高，主要有效内容单元和逻辑单元均得到体现，但72%极早期患者数据在白盒稿中体现略显不足",
+  "layer_judgment": {
+    "hard_layer_verdict": "合同命中良好，关键事实准确，路线正确",
+    "editorial_layer_verdict": "成稿观感优秀，可读性强，贴近目标受众",
+    "overall_note": "硬层和软层结论一致，均认为稿件质量良好，只是在某些细节数据体现上略有差异"
+  },
+  "blocking_issues": [],
+  "missing_or_misaligned": [
+    "72%极早期患者4年认知稳定的数据在白盒稿中体现不够充分，虽有提及但不如参考答案突出"
+  ],
+  "backtrace": [
+    {
+      "target_layer": "writing_contract",
+      "issue": "effective_content_unit中关于长期获益可感知判断体现充分",
+      "evidence": "文章明确提到9.8-14.2个月延缓时间"
+    },
+    {
+      "target_layer": "writing_contract",
+      "issue": "适用人群边界声明明确",
+      "evidence": "清楚说明ApoE ε4非携带者或杂合子的限制"
+    },
+    {
+      "target_layer": "formula_contract",
+      "issue": "effective_outline执行良好",
+      "evidence": "五个outline要素完整覆盖"
+    }
+  ],
+  "next_actions": [
+    "补充72%极早期患者数据的强调",
+    "微调部分表述使其更贴近参考答案的表达力度"
+  ]
+}

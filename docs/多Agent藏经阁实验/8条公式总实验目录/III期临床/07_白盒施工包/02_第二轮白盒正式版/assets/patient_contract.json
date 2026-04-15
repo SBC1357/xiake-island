@@ -1,0 +1,130 @@
+{
+  "generated_at": "2026-04-12 19:19:39",
+  "candidate_id": "lecanemab_patient",
+  "candidate_name": "仑卡奈单抗患者向文章",
+  "case_type": "C",
+  "status": "ready",
+  "exit_code": 0,
+  "source_root": "项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章",
+  "candidate_pool": "侠客岛\\scripts\\iiia\\iiia_whitebox_candidate_pool.json",
+  "input_contract": {
+    "allowed_inputs": [
+      {
+        "path": "inputs",
+        "mode": "allow_all_except_docx"
+      }
+    ],
+    "forbidden_inputs": [
+      "禁止使用 inputs 下任何 docx 作为正式输入",
+      "禁止把 reference_sample.docx / 参考样稿当作事实源或 gold 替身"
+    ]
+  },
+  "writing_contract": {
+    "audience": "患者和家属",
+    "target_word_count": 1500,
+    "purpose": "面向患者和家属，用他们能理解的语言翻译仑卡奈单抗48个月临床数据的价值，帮助理解长期治疗获益。",
+    "genre": "患者向科普解读",
+    "must_include_facts": [
+      "48个月随访核心获益数据",
+      "临床衰退延缓百分比与时间换算",
+      "非携带者与杂合子亚组获益差异",
+      "长期治疗获益量化指标"
+    ],
+    "required_structure": [
+      "患者痛点与治疗期待",
+      "核心获益数据翻译",
+      "亚组人群获益解读",
+      "长期治疗价值",
+      "患者理解与选择路径"
+    ]
+  },
+  "benchmark_evaluation_contract": {
+    "enabled": true,
+    "reference_answer_path": "项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章\\gold\\V2-仑卡奈单抗4年数据炸了！阿尔茨海默病竟能抢回15个月黄金时光.docx",
+    "scoring_mode": "closed_book_then_reference_compare",
+    "boundary": "仅供 benchmark comparator 使用，不得进入上游写作编排和人工阻塞条件。"
+  },
+  "reference_sample_contract": {
+    "declared_path": "reference_sample.docx",
+    "resolved_path": "项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章\\reference_sample.docx",
+    "exists": true,
+    "frozen": true,
+    "selection_owner": "user",
+    "visibility_stage": "draft_only_when_enabled",
+    "boundary": "只作风格、结构和返修锚点，不作事实源或 gold 替身。",
+    "roles": [
+      "style_anchor",
+      "structure_anchor",
+      "revision_anchor"
+    ],
+    "requested_for_draft": false,
+    "enabled_for_draft": false
+  },
+  "orchestration_contract": {
+    "route_profile": {
+      "mode": "closed_book_clean",
+      "required_steps": [
+        "锁定题型与受众",
+        "从允许材料提取主承重事实",
+        "组装成稿合同",
+        "闭卷输出整稿"
+      ],
+      "required_outputs": [
+        "主承重清单",
+        "必须写入的数字/事实",
+        "成稿合同"
+      ],
+      "failure_modes": [
+        "路线不稳",
+        "数字漏写",
+        "语体不匹配"
+      ]
+    },
+    "pseudo_load_bearing_points": []
+  },
+  "formula_contract": {
+    "write_target": "让患者和家属理解仑卡奈单抗4年数据意味着阿尔茨海默病治疗究竟能抢回多少时间。",
+    "arrangement_rule": "先用患者痛感锚定，再做核心获益翻译，后给风险与选择引导。",
+    "persona": "患者关怀者——站在患者和家属的焦虑与期待中，把临床试验数字翻译成“这对我意味着什么”，用温度而非术语建立信任。",
+    "range": "RANGE-05/患者选择沟通",
+    "min_content_unit": [
+      "一个判断",
+      "一条边界声明",
+      "风险解剖",
+      "解释桥"
+    ],
+    "min_logic_unit": [
+      "ARCH-04",
+      "人群分流/选择建议落点"
+    ],
+    "effective_content_unit": [
+      "一个关于长期获益的可感知判断",
+      "一条关于适用人群边界的明确声明",
+      "一段关于治疗代价与风险的患者语言解剖",
+      "一个从临床数字到“这意味着什么”的解释桥"
+    ],
+    "effective_logic_unit": [
+      "ARCH-04承重贯穿全文——从焦虑到数据到理解的单一主线",
+      "人群分流/选择建议落点——最终回收到“这对你意味着什么”"
+    ],
+    "content_combo": "患者选择沟通型——患者痛感起手 + 核心获益翻译 + 风险坦诚 + 理解引导",
+    "logic_combo": "ARCH-04承重 + 人群分流/选择建议落点——先锚定患者关切，沿获益证据链展开，回收到选择理解",
+    "outline": [
+      "患者痛点锚定：阿尔茨海默病治疗的焦虑与期待",
+      "核心数据翻译：48个月数据说明了什么",
+      "亚组理解：不同人群获益有何不同",
+      "风险与边界：长期治疗的代价和局限",
+      "理解路径：这对治疗选择意味着什么"
+    ],
+    "effective_outline": [
+      "[患者痛感锚定] 以患者和家属最常问的问题开场，建立共情锚点",
+      "[核心获益翻译] 48个月延缓数据→抢回多少个月→日常能力保留",
+      "[人群差异理解] 非携带者vs杂合子→不同人获益不同→别套别人的结论",
+      "[风险与边界] 长期治疗要付出什么、有什么局限",
+      "[选择引导] 这些数据放在你的处境里意味着什么"
+    ]
+  },
+  "anchor_card_path": "项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章\\g0_evidence_card.md",
+  "anchor_card_source": "legacy_g0_fallback",
+  "manual_gates": []
+}

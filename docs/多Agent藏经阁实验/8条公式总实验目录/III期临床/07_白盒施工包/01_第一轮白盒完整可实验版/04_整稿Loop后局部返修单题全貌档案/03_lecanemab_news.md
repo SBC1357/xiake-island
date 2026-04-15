@@ -1,19 +1,21 @@
-# 仑卡奈单抗中国真实世界新闻报道（整稿 Loop 后局部返修单题全貌）
+# 仑卡奈单抗中国真实世界新闻报道（历史局部返修单题档案）
 
-状态：loop 成稿后的局部返修实验结果
+状态：历史归档
 日期：2026-04-12
-用途：人工直接评估“整稿 loop 成稿”再做一轮局部返修，是否真的能精准命中剩余问题。本文主判据是执行精度与问题关闭率，不拿最终分数作为唯一裁决。
+用途：历史留档，记录“整稿 loop 成稿”后的一轮局部返修如何命中剩余问题；仅供回看，不承接当前活状态。
 
-## 当前有效口径
+当前活状态只回指：[03_当前阶段任务卡.md](../../../../00_入口索引/03_当前阶段任务卡.md) 与 [白盒系统第四轮收口长线程包.md](../../../../07_白盒施工包/04_第四轮白盒测试+建设/白盒系统第四轮收口长线程包.md)。
 
-1. 当前口径只认：整稿 loop 成稿作为新基线，再在同一份 loop 成稿上做一轮 local revise。
-2. 本文不替代上一层整稿 loop 全貌；整稿 loop 本身的轮次轨迹仍回看上一层返修 Loop 全貌。
-3. 本文主判据：`execution_precision_rate`、`issue_close_rate`、`scope_violation_count`、`introduced_new_risk`。
-4. 如果分数不涨，但局部返修执行精度高、问题关闭率高、无越界、无新风险，只能判定为“局部返修执行有效但评分未继续给分”，不能偷换成“局部返修没用”。
+## 历史口径回放
+
+1. 本档当时采用的口径是：整稿 loop 成稿作为新基线，再在同一份 loop 成稿上做一轮 local revise。
+2. 本档不替代上一层整稿 loop 全貌；整稿 loop 本身的轮次轨迹仍应回看上一层返修 Loop 全貌。
+3. 本档主判据记录为：`execution_precision_rate`、`issue_close_rate`、`scope_violation_count`、`introduced_new_risk`。
+4. 当轮结论是：如果分数不涨，但局部返修执行精度高、问题关闭率高、无越界、无新风险，只能判定为“局部返修执行有效但评分未继续给分”，不能偷换成“局部返修没用”。
 
 case_id: `lecanemab_news`
-loop_fullview: `D:\汇度编辑部1\侠客岛\docs\多Agent藏经阁实验\8条公式总实验目录\III期临床\07_白盒施工包\01_第一轮白盒完整可实验版\03_返修Loop单题全貌档案\03_lecanemab_news.md`
-eval_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news`
+loop_fullview: [上一层返修Loop单题全貌档案](../03_返修Loop单题全貌档案/03_lecanemab_news.md)
+eval_dir: 当轮 runtime 归档目录（路径不收录）
 
 ## 主阅读层
 
@@ -21,7 +23,7 @@ eval_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eva
 
 1. loop 基线分数：`72`；局部返修后分数：`72`；最终达标：`true`。
 2. 本轮主判据：执行精度率 `0.6667`；问题关闭率 `0.6667`；越界 `0`；新风险 `0`。
-3. 当前裁定：当前稿件存在导语结构偏差、核心数据章节缺失、关键病例归属模糊、p值误植及背景占比过大等问题。需重构导语以硬事实开篇，增设PET疗效独立章节，明确1例SUVr升高病例归属浙二，核查并修正MMSE分层p值标注，压缩背景段释放空间。
+3. 当轮裁定：归档稿件存在导语结构偏差、核心数据章节缺失、关键病例归属模糊、p值误植及背景占比过大等问题。需要重构导语以硬事实开篇，增设PET疗效独立章节，明确1例SUVr升高病例归属浙二，核查并修正MMSE分层p值标注，压缩背景段释放空间。
 4. 建议阅读顺序：先看“轮次轨迹”，再看“局部任务清单”，然后看“逐任务执行结果”，最后看当前稿件全文和最终剩余缺口。
 
 ### 二、轮次轨迹
@@ -125,7 +127,7 @@ eval_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eva
 华西医院牵头的多中心前瞻性研究纳入68例AD患者，覆盖不同严重程度阶段，在2.5个月和7个月两个时间点进行认知与血浆生物标志物评估。ADAS-cog14评分在2.5个月时改善4.32分，7个月时改善4.62分；该研究中，血浆p-tau181在2.5个月时下降2.05 pg/ml，7个月时下降3.57 pg/ml。这一生物标志物-认知的联动模式，与Clarity AD中观察到的"先生物标志物响应、后认知获益"时序一致。更具临床操作性的是，华西数据显示p-tau181和p-tau217对疗效预测的AUC值分别为0.734和0.713——提示血浆磷酸化tau蛋白可能成为治疗早期的响应指示器。安全性方面，华西队列ARIA-H 9.4%、ARIA-E 3.1%，与浙二队列及Clarity AD亚洲亚组高度吻合。
 ```
 
-### 五、当前稿件全文（局部返修后）
+### 五、归档稿件全文（局部返修后快照）
 
 ```text
 仑卡奈单抗中国真实世界数据首揭：76例队列勾勒早期阿尔茨海默病治疗新图景
@@ -202,29 +204,29 @@ CDR 0.5分者可能处于干预的"黄金窗口"，而CDR 1分者即使接受治
 
 ```
 
-### 六、当前评分与剩余缺口
+### 六、归档评分与剩余缺口
 
-1. 当前总分与判定：`72`；`qualified=true`。
-2. 当前 blocker：无
-3. 当前剩余缺项：导语未按公式要求呈现为'一句话核心新闻点'，而是段落式问题导入；12个月Aβ显著下降（p=0.004）作为核心发现，在导语和浙二主线中呈现不足，被PET数据的一般性描述替代；浙二队列自身是否有'1例SUVR升高特殊病例'未明确，仅作为海南瑞金数据提及，可能遗漏关键发现；安全性收口未形成独立模块，内容分散于主线、补线、落地三段；多中心补线篇幅过长，有从'补线'滑向'并列主线'之势，弱化了浙二主线的核心地位
-4. 当前下一刀：重构导语为一句话硬新闻格式，直接亮出'76例''12个月随访''Aβ显著下降'等核心数据，再承接问题线；核实浙二原文是否有'1例SUVR升高病例'，如有应在主线明确呈现并解读，作为精准医学探索的关键发现；将'安全性收口'整合为独立段落，前置至多中心补线之前，形成'主线安全性→收口判断→多中心佐证'的清晰结构；压缩多中心补线篇幅，聚焦与浙二结论'交叉验证'的要点，删除过度细节（如华西p-tau181具体数值、华山具体百分比），以'问题句'牵引（如'这些发现是否仅为单中心特例？'）；强化问题线的中段存在感，在CDR分层、EOAD发现等关键转折处增设显性提问句，避免纯数据陈列
+1. 归档时总分与判定：`72`；`qualified=true`。
+2. 归档时 blocker：无
+3. 归档时剩余缺项：导语未按公式要求呈现为'一句话核心新闻点'，而是段落式问题导入；12个月Aβ显著下降（p=0.004）作为核心发现，在导语和浙二主线中呈现不足，被PET数据的一般性描述替代；浙二队列自身是否有'1例SUVR升高特殊病例'未明确，仅作为海南瑞金数据提及，可能遗漏关键发现；安全性收口未形成独立模块，内容分散于主线、补线、落地三段；多中心补线篇幅过长，有从'补线'滑向'并列主线'之势，弱化了浙二主线的核心地位
+4. 当轮后续修订建议：重构导语为一句话硬新闻格式，直接亮出'76例''12个月随访''Aβ显著下降'等核心数据，再承接问题线；核实浙二原文是否有'1例SUVR升高病例'，如有应在主线明确呈现并解读，作为精准医学探索的关键发现；将'安全性收口'整合为独立段落，前置至多中心补线之前，形成'主线安全性→收口判断→多中心佐证'的清晰结构；压缩多中心补线篇幅，聚焦与浙二结论'交叉验证'的要点，删除过度细节（如华西p-tau181具体数值、华山具体百分比），以'问题句'牵引（如'这些发现是否仅为单中心特例？'）；强化问题线的中段存在感，在CDR分层、EOAD发现等关键转折处增设显性提问句，避免纯数据陈列
 
-## 工程附录
+## 历史产物名录
 
-### Runtime 指针
+### 运行产物名录
 
-1. `local_revise_manifest.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise_manifest.json`
-2. `revise_manifest.json`（沿用统一入口的总返修摘要）：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\revise_manifest.json`
-3. `score.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\score.json`
-4. `draft.txt`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\draft.txt`
-5. `round_1\revision_task_list.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise\round_1\revision_task_list.json`
-6. `round_1\revised_draft.txt`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise\round_1\revised_draft.txt`
-7. `L3.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise\round_1\local_patch_results\L3.json`
-8. `L4.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise\round_1\local_patch_results\L4.json`
-9. `L6.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise\round_1\local_patch_results\L6.json`
+1. `local_revise_manifest.json`（历史运行产物，路径不收录）
+2. `revise_manifest.json`（沿用统一入口的总返修摘要，路径不收录）
+3. `score.json`（路径不收录）
+4. `draft.txt`（路径不收录）
+5. `round_1/revision_task_list.json`（路径不收录）
+6. `round_1/revised_draft.txt`（路径不收录）
+7. `L3.json`（路径不收录）
+8. `L4.json`（路径不收录）
+9. `L6.json`（路径不收录）
 
 ### 证据摘要
 
-1. 已直接核对：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise_manifest.json` 中执行精度率为 `0.6667`、问题关闭率为 `0.6667`、最终总分为 `72`。
-2. 已直接核对：`D:\汇度编辑部1\侠客岛-runtime\iiia_whitebox_local_on_loop_eval\20260412_local_on_loop_round1\lecanemab_news\local_revise\round_1\local_patch_results` 中逐任务核验结果为 `L3:failed；L4:passed；L6:passed`，可直接复盘哪些 patch 被应用、哪些被挡下。
-3. 已直接核对：当前 `draft.txt` 与 `score.json` 已落盘，人工可顺着“loop 基线全貌 -> 本轮局部任务 -> 逐 patch 结果 -> 当前稿件”评估局部返修是否真的有效。
+1. 已记录的历史核对结果显示：`local_revise_manifest.json` 中执行精度率为 `0.6667`、问题关闭率为 `0.6667`、最终总分为 `72`。
+2. 已记录的历史核对结果显示：`round_1/local_patch_results` 中逐任务核验结果为 `L3:failed；L4:passed；L6:passed`，可直接复盘哪些 patch 被应用、哪些被挡下。
+3. 已记录的历史核对结果显示：`draft.txt` 与 `score.json` 已落盘，人工可顺着“loop 基线全貌 -> 本轮局部任务 -> 逐 patch 结果 -> 归档稿件”评估局部返修是否真的有效。

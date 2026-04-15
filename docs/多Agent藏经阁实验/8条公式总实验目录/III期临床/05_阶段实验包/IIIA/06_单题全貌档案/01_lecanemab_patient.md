@@ -1,20 +1,20 @@
-# 单题全貌档案：lecanemab_patient
+# 历史单题全貌档案 / 非当前活状态真相源：lecanemab_patient
 
-状态：2026-04-11 本轮三题 retest / 已按当前 runtime 更新  
+状态：2026-04-11 本轮三题 retest / 历史封存稿，非当前活状态真相源  
 日期：2026-04-11  
-用途：人工审核第一读物。先用主阅读层判断患者向题眼、喂料时间点、prompt 约束和当前稿件偏差，再用工程附录回查 runtime。  
+用途：历史人工审核第一读物。先用主阅读层判断患者向题眼、喂料时间点、prompt 约束和当时稿件偏差，再用工程附录回查 runtime。  
 
 case_id: `lecanemab_patient`
 task_id: `13d4be80-4f83-4396-be4c-38d15ea43f10`
-run_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest`
+run_dir: `侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest`
 
-## 当前有效口径
+## 历史有效口径
 
 1. 本档只认 2026-04-11 本轮三题 retest 的同轮 runtime 直证，不回收旧 run 或旧聊天结论。
-2. 主阅读层已经直接贴出材料整理稿、prompt 全文、当前稿件全文和返修抓手；人工审稿先看这里，不先点路径。
+2. 主阅读层已经直接贴出材料整理稿、prompt 全文、当时稿件全文和返修抓手；人工审稿先看这里，不先点路径。
 3. 本轮不存在的独立 planning / quality prompt 已明确写缺项；若 `score.json/summary.json` 未生成，也必须在本档中直接写明原因。
 
-## 当前明确缺项
+## 历史明确缺项
 
 1. 独立 planning prompt：本轮不存在；原因：当前 standard_chain 只在 `stage_artifacts` 与 `review_bundle.planning` 留存 planning 结果，不单独导出 planning prompt 文件。
 2. 独立 quality prompt：本轮不存在；原因：当前 quality 只落门禁结果与错误说明，不导出可回读 prompt 文件。
@@ -22,12 +22,12 @@ run_dir: `D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_c
 
 ## 主阅读层
 
-### 一、人工审核先看
+### 一、历史人工审核先看
 
 1. 写作合同：面向 `患者和家属`；目标字数 `1500`；题眼是“关键获益是否真的足以改写决策？把疗效分析获益翻译成读者能理解的现实变化。写作主轴采用续停药争议裁决，围绕疗效分析证据展开，面向患者和家属完成主张_证据 / 叙事_反思型论证。”。
-2. 当前判定：本轮 `score.json` 给出 `56.0/100` 且 `qualified=True`，但 `key_facts=40 < 60`，与当前评分硬门口径冲突；人工先按异常待裁定稿审，不把 PASS 标签当真。
+2. 当时判定：本轮 `score.json` 给出 `56.0/100` 且 `qualified=True`，但 `key_facts=40 < 60`，与评分硬门口径冲突；人工先按异常待裁定稿审，不把 PASS 标签当真。
 3. 审稿优先看：先看标题、导语、时间点切换句和停药争议段；这些位置最容易把 18 个月结果错写成 4 年患者结论。
-4. 当前最该改：先把标题和导语从“18个月差异/停药争议”切回题目真正要求的患者长期获益表达，并给每个关键数字补上明确时间点。
+4. 当时最该改：先把标题和导语从“18个月差异/停药争议”切回题目真正要求的患者长期获益表达，并给每个关键数字补上明确时间点。
 5. 为什么会写歪：本轮 planning thesis 仍然把主轴放在“续停药争议 + 疗效分析转译”，没有直接把 4 年患者收益当第一标题锚点，所以写手自然抓住了 18 个月主终点。
 
 ### 二、本轮真正喂给写手的材料（人工整理版）
@@ -242,7 +242,7 @@ user prompt：
 结构须与篇幅相匹配，避免泛化扩写。
 ```
 
-### 四、当前稿件全文
+### 四、当时稿件全文
 
 1. 生成稿全文（必须直接贴入，不得只写路径）：
 
@@ -302,7 +302,7 @@ user prompt：
 药物清除了原纤维和寡聚体，但它清除不了决策的复杂性。0.45分是一个数字，也是一个提醒：在阿尔茨海默病领域，"足够好"的治疗本身就是稀缺的。患者和家属需要做的，不是被数字说服或吓退，而是带着这些数字，与医生讨论"对我家而言，下18个月值不值得"。
 ```
 
-### 五、当前审核意见与返修抓手
+### 五、当时审核意见与返修抓手
 
 1. 总分与当前判定：`56.0/100`；`qualified=True`；评分状态 `ok`。
 2. 各维度关键失分：
@@ -324,15 +324,15 @@ user prompt：
 
 ### Runtime 指针
 
-1. `run_summary.md`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\run_summary.md`
-2. `task_detail.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\task_detail.json`
-3. `generated.txt`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\generated.txt`
-4. `materials_full.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\materials_full.json`
-5. `review_bundle.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\review_bundle.json`
-6. `score.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\score.json`
-7. `summary.json`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\summary.json`
-8. `writing_system_prompt.txt`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_system_prompt.txt`
-9. `writing_user_prompt.txt`：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_user_prompt.txt`
+1. `run_summary.md`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\run_summary.md`
+2. `task_detail.json`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\task_detail.json`
+3. `generated.txt`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\generated.txt`
+4. `materials_full.json`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\materials_full.json`
+5. `review_bundle.json`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\review_bundle.json`
+6. `score.json`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\score.json`
+7. `summary.json`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\summary.json`
+8. `writing_system_prompt.txt`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_system_prompt.txt`
+9. `writing_user_prompt.txt`：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_user_prompt.txt`
 
 ### 本轮关键证据
 
@@ -345,13 +345,13 @@ user prompt：
 
 ### materials 指针
 
-1. 当前人工审稿材料文件：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\materials_full.json`
+1. 历史人工审稿材料文件：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\materials_full.json`
 2. 同轮回退锚点：`task_detail.json -> output_data.evidence / stage_artifacts.evidence`；`review_bundle.json -> materials / evidence`
 
 ### prompt 指针
 
-1. system prompt：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_system_prompt.txt`
-2. user prompt：`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_user_prompt.txt`
+1. system prompt：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_system_prompt.txt`
+2. user prompt：`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_user_prompt.txt`
 3. 同轮回退锚点：`review_bundle.json -> writing.system_prompt / writing.user_prompt`
 
 ### 评分结果
@@ -370,12 +370,12 @@ user prompt：
 
 ### 本轮真实 blocker
 
-1. 当前主链没有 workflow blocker，evidence -> delivery -> review_bundle -> score 都已落盘。
-2. 当前真实 blocker 是内容事实与评分口径双重异常：正文仍抓住 18 个月疗效主终点，而 `score.json` 又给出 `56.0/100 + qualified=True` 的冲突结果。
+1. 当时主链没有 workflow blocker，evidence -> delivery -> review_bundle -> score 都已落盘。
+2. 当时真实 blocker 是内容事实与评分口径双重异常：正文仍抓住 18 个月疗效主终点，而 `score.json` 又给出 `56.0/100 + qualified=True` 的冲突结果。
 3. 下一棒应先修患者向主线与时间点，再单独核评分 `qualified` 口径为什么没有被 `key_facts<60` 拉成不达标。
 
 ### 证据摘要
 
-1. 已直接核对 `D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\summary.json`，本轮 `weighted_total=56.0`、`qualified=True`、`delivery_gate_passed=True`、`scoring_gate_passed=True`。
-2. 已直接核对 `D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\task_detail.json`，本轮阶段卡片完整到 `delivery`，`supplement_fact_count=1`、`supplement_upload_failures=[]`。
-3. 已直接核对 `D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_system_prompt.txt`、`D:\汇度编辑部1\侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_user_prompt.txt` 与 `generated.txt`，主阅读层贴出的 prompt 与正文均来自本轮 runtime。
+1. 已直接核对 `侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\summary.json`，本轮 `weighted_total=56.0`、`qualified=True`、`delivery_gate_passed=True`、`scoring_gate_passed=True`。
+2. 已直接核对 `侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\task_detail.json`，本轮阶段卡片完整到 `delivery`，`supplement_fact_count=1`、`supplement_upload_failures=[]`。
+3. 已直接核对 `侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_system_prompt.txt`、`侠客岛-runtime\iiia_rerun_20260411_post_noise_cleanup\20260411_173225_738_IIIA_20260411_retest\lecanemab_patient\writing_user_prompt.txt` 与 `generated.txt`，主阅读层贴出的 prompt 与正文均来自本轮 runtime。

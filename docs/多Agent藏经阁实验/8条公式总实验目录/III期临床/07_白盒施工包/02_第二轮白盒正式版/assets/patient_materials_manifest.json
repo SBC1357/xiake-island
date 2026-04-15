@@ -1,0 +1,38 @@
+{
+  "candidate_id": "lecanemab_patient",
+  "candidate_name": "仑卡奈单抗患者向文章",
+  "status": "ready",
+  "exit_code": 0,
+  "run_directory": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\baseline_phase\\20260412_191939_332_iiia_whitebox_v1\\contracts\\20260412_191939_381_lecanemab_patient\\materials",
+  "extractable_count": 1,
+  "total_items": 1,
+  "compiled_text": "侠客岛-runtime\\iiia_module_pk\\module_pk_20260412_191938_693\\baseline_freeze\\lecanemab_patient\\materials\\materials_compiled.txt",
+  "coverage_audit": {
+    "effective_content_unit_expected": [
+      "一个关于长期获益的可感知判断",
+      "一条关于适用人群边界的明确声明",
+      "一段关于治疗代价与风险的患者语言解剖",
+      "一个从临床数字到“这意味着什么”的解释桥"
+    ],
+    "min_content_unit_expected": [
+      "一个判断",
+      "一条边界声明",
+      "风险解剖",
+      "解释桥"
+    ],
+    "extractable_count": 1,
+    "compiled_text_length": 3060,
+    "audit_note": "content unit coverage 须在 draft 和 score 阶段由 LLM 逐条校验"
+  },
+  "items": [
+    {
+      "source_rule": "inputs",
+      "resolved_path": "项目文章\\侠客岛测试任务\\仑卡奈单抗患者向文章\\inputs\\Froelich_48M Noncarriers and Heterozyg_ADPD26 FINAL.pdf",
+      "extension": ".pdf",
+      "size": 1881736,
+      "extract_status": "ok",
+      "preview": "LECANEMAB FOR EARLY ALZHEIMER'S DISEASE:\r\n48-MONTH RESULTS FOR APOE 4 NON-CARRIERS OR HETEROZYGOTES\r\n\r\n              FROM THE CLARITY AD OPEN-LABEL EXTENSION\r\n\r\n                                          Lutz Froelich,1 Shobha Dhadda,2 Michio Kanekiyo,2 Amanda Goodwin,2\r\n                                        Mark Hodgkinson,3 Steven Hersch,2 Michael Irizarry,2 and Lynn D. Kramer2\r\n\r\n                       1. Medical Faculty Mannheim, University of Heidelberg, Central Institute of Mental Health, Mannheim, Germany. 2. Eisai Inc. Nutley, NJ, USA.\r\n                                                                               3. Eisai Europe Ltd - Hatfield (United Kingdom).\r\n\r\n                       Introduction                                                                                                                                                           Results (continued)\r\n\r\n� Approximately 7 million people in Europe are currently living     � CDR-SB results in ApoE 4 non-carriers or heterozygotes of                                                                                                                                           � Results for delaying the next stage of dementia (ie, moderate or\r\n\r\n  with Alzheimer's disease (AD), with estimates predicting a rise      Clarity AD are shown in Figure 2                                                                                                                                                                     severe AD) also favored lecanemab, with a relative risk of\r\n  to 14 million by 20301-2                                                                                                                                                                                                                                                  progression delayed with lecanemab treatment by 55% vs ADNI\r\n                                                                     Figure 2. CDR-SB in ApoE 4 Non-Carriers or Heterozygotes\r\n� Lecanemab is a humanized immunoglobulin G1 monoclonal                                                                                                                                                                                                                    Figure 5. Time to Worsening on CDR-SB\r\n\r\n  antibody that selectively binds to soluble A aggregate species3   Note: OLE includes those participants on intravenous and subcutaneous formulations. BioFINDER data are from BioFINDER 1. Analysis done in ApoE 4 Non-                                                                                                                                                                                    CDR-SB Range                               Staging Category\r\n                                                                    carriers or Heterozygotes. In the EU, lecanemab is indicated as an intravenous infusion at a dosage of 10 mg/kg body weight, administered once every 2"
+    }
+  ]
+}
+

@@ -1,0 +1,211 @@
+{
+  "weighted_total": 78,
+  "qualified": true,
+  "dimensions": [
+    {
+      "id": "route_alignment",
+      "score": 85,
+      "weight": 25,
+      "reason": "整体沿ARCH-04承重路径展开：从患者焦虑锚定→核心获益翻译→人群差异→风险边界→选择引导落点。但'72%极早期患者'这一高冲击力数据完全缺失，导致核心获益翻译的峰值不足，路线完整性受损。"
+    },
+    {
+      "id": "key_facts",
+      "score": 75,
+      "weight": 25,
+      "reason": "核心数字9.8-14.2个月、32%进展风险降低、ApoE分层、ARIA安全性趋势均准确。但遗漏关键事实：72%极早期患者4年认知稳定、55%疾病进展风险降低（参考答案数据，系统稿写32%存疑）、纯合子排除原因。数字口径不一致需核实。"
+    },
+    {
+      "id": "audience_style",
+      "score": 80,
+      "weight": 20,
+      "reason": "患者语言整体到位，'抢回时间''清醒时间'等翻译有效。但存在过度医学化表达：'SB Time Saved Analysis''相对风险降低''安全性profile'等术语未充分患者化；部分段落密度过高，如基因型说明段可能超出家属认知负荷。"
+    },
+    {
+      "id": "structure",
+      "score": 75,
+      "weight": 15,
+      "reason": "五段式结构清晰，但有效大纲中的'患者痛感锚定'被弱化为标题式提问，缺乏参考答案式的场景共情铺陈；'风险与边界'段位置后置导致安全焦虑未前置回应，与患者真实决策心理顺序略有错位。"
+    },
+    {
+      "id": "hallucination_control",
+      "score": 85,
+      "weight": 15,
+      "reason": "无显著编造。但'32%进展风险降低'与参考答案'55%'差异需溯源；'1,521位患者'与'超过280名患者'（参考答案）的样本量表述差异未解释，存在材料理解歧义风险。"
+    }
+  ],
+  "editorial_total": 72,
+  "editorial_dimensions": [
+    {
+      "id": "publishability",
+      "score": 70,
+      "reason": "基础可发布，但标题平淡、缺情感锚点，中段信息密度过高需分层，结尾'医学数据与人生选择'升华有效但前面积累不足。需一轮编辑润色方可上线。"
+    },
+    {
+      "id": "narrative_drive",
+      "score": 68,
+      "reason": "推进力中等偏上，'下坡的车'类比未出现导致核心意象缺失；中段基因型技术细节打断情绪流；结尾回收有力但中段缺乏'72%极早期'这类情绪高点支撑。"
+    },
+    {
+      "id": "reader_fit",
+      "score": 75,
+      "reason": "基本贴合患者家属，但ApoE ε4杂合子/非携带者/纯合子的区分对非医学读者仍显抽象；'每14天一次医院之旅'具象化好，但104次输注的计算未前置铺垫，突然出现可能造成压迫感。"
+    },
+    {
+      "id": "naturalness",
+      "score": 75,
+      "reason": "中文整体自然，但'安全性profile''统计显著性'等翻译腔残留；部分句子过长（如基因型说明段）；'好死不如赖活着'俗语使用略显突兀，与全文调性不完全统一。"
+    }
+  ],
+  "writing_strength": [
+    {
+      "id": "opening_hook",
+      "score": 70,
+      "reason": "以门诊提问开场符合content_combo要求，但缺乏persona要求的'温度'——参考答案的'还能记住我多久'场景共情更深。公式位'患者痛感锚定'partial：有痛感元素，但抓力不足。"
+    },
+    {
+      "id": "transition_flow",
+      "score": 78,
+      "reason": "沿ARCH-04路径的段间过渡基本顺畅，'怎么理解抢回时间''不是所有人都一样'等承转有效。但'长期治疗的代价与边界'前缺乏情绪缓冲，从获益到负担的转折略突兀。"
+    },
+    {
+      "id": "midgame_drive",
+      "score": 72,
+      "reason": "中段按content_combo要求覆盖获益翻译、人群差异、风险解剖，但effective_content_unit要求的'关于长期获益的可感知判断'因72%数据缺失而力度不足；基因型段信息过载，未充分'翻译'为家属语言。"
+    },
+    {
+      "id": "closing_tension",
+      "score": 82,
+      "reason": "收尾落回logic_combo要求的'选择理解'终点，'医学给了选项，选择是你的'张力回收有效；'稍微多一点信息，少一点盲目'余韵得当。但因中段缺乏情绪高点，收尾的升华基础略薄。"
+    },
+    {
+      "id": "anchor_fidelity",
+      "score": 75,
+      "reason": "核心锚点9.8-14.2个月、ApoE分层、ARIA安全性趋势均落地；但effective_content_unit要求的'一条关于适用人群边界的明确声明'被淹没在技术细节中，未以患者语言突出'别套别人的结论'；'72%极早期患者'锚点完全miss。"
+    }
+  ],
+  "formula_compliance": 72,
+  "formula_trace": [
+    {
+      "position": "persona: 患者关怀者",
+      "status": "partial",
+      "evidence": "'把临床试验数字翻译成这对我意味着什么'体现翻译意图，但'安全性profile''相对风险降低'等术语残留显示persona切换不彻底；温度建立有，但共情深度不及参考答案"
+    },
+    {
+      "position": "range: RANGE-05/患者选择沟通",
+      "status": "hit",
+      "evidence": "全文围绕患者选择展开，基因型讨论、风险边界、承诺维度均服务于知情决策"
+    },
+    {
+      "position": "write_target: 让患者和家属理解4年数据意味着抢回多少时间",
+      "status": "hit",
+      "evidence": "9.8-14.2个月、'抢回近一年的清醒时间'、'从轻度维持在轻度的额外窗口'等多次回应"
+    },
+    {
+      "position": "content_combo: 患者选择沟通型",
+      "status": "partial",
+      "evidence": "患者痛感起手（弱）、核心获益翻译（有）、风险坦诚（有）、理解引导（有）。但'患者痛感'未充分展开，72%极早期数据缺失导致获益翻译峰值不足"
+    },
+    {
+      "position": "logic_combo: ARCH-04承重 + 人群分流/选择建议落点",
+      "status": "hit",
+      "evidence": "从焦虑到数据到理解的单一主线清晰；最终回收至'这些数据放在你的处境里意味着什么'"
+    },
+    {
+      "position": "effective_content_unit: 关于长期获益的可感知判断",
+      "status": "partial",
+      "evidence": "'抢回9.8-14.2个月''32%进展风险降低'有，但缺乏72%极早期患者'4年不变差'这一最强可感知锚点"
+    },
+    {
+      "position": "effective_content_unit: 关于适用人群边界的明确声明",
+      "status": "partial",
+      "evidence": "ApoE分层说明存在，但'不能直接套用到纯合子'的警告未以患者语言突出呈现，边界感被技术细节稀释"
+    },
+    {
+      "position": "effective_content_unit: 关于治疗代价与风险的患者语言解剖",
+      "status": "hit",
+      "evidence": "'104次输注''每14天一次医院之旅''长期承诺'等具象化充分；ARIA安全性趋势解释清晰"
+    },
+    {
+      "position": "effective_content_unit: 从临床数字到这意味着什么的解释桥",
+      "status": "hit",
+      "evidence": "'还能自己管理药物''辨认回家的路''筹备照护资源的缓冲期'等翻译有效"
+    },
+    {
+      "position": "effective_logic_unit: ARCH-04承重贯穿全文",
+      "status": "hit",
+      "evidence": "焦虑锚定→数据展开→理解回收的主线完整"
+    },
+    {
+      "position": "effective_logic_unit: 人群分流/选择建议落点",
+      "status": "hit",
+      "evidence": "结尾'这些数据放在你的处境里意味着什么'及三个维度锚点明确回收"
+    },
+    {
+      "position": "effective_outline: 患者痛感锚定",
+      "status": "partial",
+      "evidence": "门诊提问有痛感元素，但缺乏参考答案式的场景铺陈和情绪渲染，锚定深度不足"
+    },
+    {
+      "position": "effective_outline: 核心获益翻译",
+      "status": "partial",
+      "evidence": "9.8-14.2个月翻译有效，但72%极早期数据缺失导致获益维度不完整"
+    },
+    {
+      "position": "effective_outline: 人群差异理解",
+      "status": "hit",
+      "evidence": "ApoE分层讨论充分，'你的基因型决定获益幅度'标题清晰"
+    },
+    {
+      "position": "effective_outline: 风险与边界",
+      "status": "hit",
+      "evidence": "长期治疗代价、ARIA安全性、治愈边界均覆盖"
+    },
+    {
+      "position": "effective_outline: 选择引导",
+      "status": "hit",
+      "evidence": "结尾三个判断锚点及'医学给了选项，选择是你的'明确落点"
+    }
+  ],
+  "formula_compliance_summary": "核心公式位命中约75%，关键miss为72%极早期患者数据（effective_content_unit和effective_outline双重缺失），导致核心获益翻译的峰值力度不足；persona温度建立有但深度不够；人群边界声明存在但患者化不足。无关键路线偏离。",
+  "layer_judgment": {
+    "hard_layer_verdict": "合格。路线正确，关键事实基本齐备（除72%数据遗漏），无越界编造，结构承重完整。qualified=true。",
+    "editorial_layer_verdict": "接近可发表但需打磨。标题平淡、中段密度过高、部分术语未充分患者化、72%数据缺失导致情绪高点不足。建议一轮编辑润色。",
+    "overall_note": "两层基本一致：硬层认定路线事实合格，软层认可基础质量但指出提升空间。差异在于软层更强调72%数据缺失对阅读体验的影响，而硬层认为该遗漏不触及合格底线。主要差距来自'有效内容单元'的峰值锚点未完全落地。"
+  },
+  "blocking_issues": [],
+  "missing_or_misaligned": [
+    "72%极早期患者4年认知稳定数据完全缺失（effective_content_unit/effective_outline双重miss）",
+    "疾病进展风险降低数字口径不一致：系统稿32% vs 参考答案55%，需溯源核实",
+    "样本量表述差异：系统稿1,521人 vs 参考答案280人，需澄清是否为不同分析集"
+  ],
+  "backtrace": [
+    {
+      "target_layer": "formula_contract",
+      "issue": "effective_content_unit要求'一个关于长期获益的可感知判断'，但系统稿遗漏72%极早期患者这一最强可感知锚点，导致判断力度不足",
+      "evidence": "公式位'关于长期获益的可感知判断'状态为partial，正文仅呈现9.8-14.2个月群体平均数据，无72%极早期患者分群结果"
+    },
+    {
+      "target_layer": "formula_contract",
+      "issue": "effective_outline中'核心获益翻译'因72%数据缺失而不完整",
+      "evidence": "公式位'核心获益翻译'状态为partial，大纲要求'48个月延缓数据→抢回多少个月→日常能力保留'，但'72%不变差'这一日常能力保留的最强证据未呈现"
+    },
+    {
+      "target_layer": "materials_coverage",
+      "issue": "关键数字32%与55%差异需溯源，可能涉及不同对照队列或计算方式",
+      "evidence": "系统稿'与ADNI自然病程队列相比降低32%'，参考答案'与不接受治疗相比降低55%'，材料理解存在歧义"
+    },
+    {
+      "target_layer": "writing_contract",
+      "issue": "persona温度建立深度不足，部分术语未充分患者化",
+      "evidence": "'安全性profile''相对风险降低''统计显著性'等表达残留，与persona要求的'温度而非术语'存在差距"
+    }
+  ],
+  "next_actions": [
+    "核实32%与55%数字差异来源，统一口径或说明不同对照队列",
+    "补充72%极早期患者4年认知稳定数据，作为'可感知判断'的峰值锚点",
+    "将'适用人群边界'从基因型技术细节中提取，以患者语言突出'别套别人的结论'",
+    "标题增强情感锚点，参考'抢回15个月黄金时光'方向",
+    "中段基因型段分层简化，降低非医学读者认知负荷",
+    "全文术语清扫：'profile''相对风险''统计显著性'等替换为患者语言"
+  ]
+}
